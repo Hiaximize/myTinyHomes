@@ -23,7 +23,7 @@ const PROJECT3_DB = process.env.PROJECT3_DB;
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+mongoose.connect(PROJECT3_DB ,  { useNewUrlParser: true});
 
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected'));
