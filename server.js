@@ -18,15 +18,17 @@ const PORT = process.env.PORT || 3000;
 //===================
 //DATABASE
 //===================
-const PROJECT3_DB = process.env.PROJECT3_DB;
+const PROJECT3_DB = process.env.PROJECT3_DB
 
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
+// Connect to Mongo
 mongoose.connect(PROJECT3_DB ,  { useNewUrlParser: true});
 
+// Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected'));
+db.on('connected', () => console.log('mongo connected: ', PROJECT3_DB));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
 //==================
