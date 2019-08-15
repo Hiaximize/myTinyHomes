@@ -1,0 +1,30 @@
+{
+  "name": "mytinyhomes",
+  "version": "1.0.0",
+  "description": "Group project with Danielle, Jiha and Derek.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hiaximize/myTinyHomes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hiaximize/myTinyHomes/issues"
+  },
+  "homepage": "https://github.com/Hiaximize/myTinyHomes#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.6.7",
+    "morgan": "^1.9.1"
+  }
+}
