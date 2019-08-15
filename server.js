@@ -37,38 +37,39 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(session({
-	secret: process.env.SECRET,
-	resave: false,
-	saveUninitialized: false
-}))
+// app.use(session({
+// 	secret: process.env.SECRET,
+// 	resave: false,
+// 	saveUninitialized: false
+// }))
 app.use(methodOverride('_method'));
 app.use(morgan('tiny'));
 
 //====================
 // ROUTES
 //====================
-app.get('/login', (req, res) => {
-  res.render('login.ejs', {
-	  currentUser: req.session.currentUser
-  })
-})
+// app.get('/login', (req, res) => {
+//   res.render('login.ejs', {
+// 	  currentUser: req.session.currentUser
+//   })
+// })
 
 app.get('/', (req, res) => {
-  res.redirect('/homes')
+  // res.redirect('/homes')
+  res.render("index.html")
 })
 
 //==================
 // CONTROLLERS
 //==================
-const userController = require('./controllers/users.js')
-app.use('/users', userController)
-
-const sessionsController = require('./controllers/sessions.js')
-app.use('/sessions', sessionsController)
-
-const homesController = require('./controllers/homes.js')
-app.use('/homes', homesController)
+// const userController = require('./controllers/users.js')
+// app.use('/users', userController)
+//
+// const sessionsController = require('./controllers/sessions.js')
+// app.use('/sessions', sessionsController)
+//
+// const homesController = require('./controllers/homes.js')
+// app.use('/homes', homesController)
 
 //==================
 // LISTENER
