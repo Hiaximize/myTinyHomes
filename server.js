@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 //===================
 //DATABASE
 //===================
-const MONGODB_URI = process.env.MONGODB_URI;
+const PROJECT3_DB = process.env.PROJECT3_DB;
 
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
