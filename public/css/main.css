@@ -1,0 +1,46 @@
+/* ==================
+      VARIABLES
+================== */
+:root {
+--hunter-green: #4C5958;
+--black: #0A0D0C;
+--dark-tan: #A6A59C;
+--light-tan: #BFBDB4;
+--brown: #735840;
+--body-font: 'Montserrat', sans-serif;
+--title-font: 'Lora', serif;
+}
+/* ==================
+      GENERAL
+================== */
+
+/* *{
+	border: 1px solid gold;
+} */
+
+body {
+	font-family: var(--body-font);
+	background-color: var(--light-tan);
+}
+
+p {
+	font-family: var(--body-font);
+	color: var(--black);
+	font-size: 25px;
+}
+
+h1 {
+ font-family: var(--title-font);
+  font-size: 60px;
+  color: var(--hunter-green);
+  text-align: center;
+  margin: 0;
+}
+
+h1:after {
+  content: '';
+  width: 100%;
+  height: 5px;
+  background: var(--hunter-green);
+  display: block;
+}
