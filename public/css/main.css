@@ -16,7 +16,7 @@
 ================== */
 body {
 	font-family: var(--body-font);
-	background-color: var(--light-tan);
+    background-color: white;
 }
 
 p {
@@ -41,18 +41,22 @@ h1:after {
   display: block;
 }
 
-sidebar{
-    width: 100px;
-    height: 100%;
-    border: 1px solid gold;
+footer{
+    margin-top: 25px;
+    text-align: center;
+    bottom: 0;
+    background-color: var(--dark-tan);
 }
 
-footer{
+#container{
+    margin: 0 auto;
+}
+/* footer{
     display: flex;
     margin-top: 35px;
     height: 150px;
     background-color: var(--dark-tan);
-}
+} */
 
 
 /* ==================
@@ -111,7 +115,6 @@ footer{
     left: 360px;
     margin-bottom: 10px;
     margin-left: 4px;
-    /* background-color: var(--hunter-green); */
     background-color: var(--forest-green);
     border-color: white;
     color: white;
@@ -123,7 +126,6 @@ footer{
     top: 0;
     position: absolute;
     margin-right: 4px;
-    /* font-size: 20px; */
     background-color: white;
     color: white;
     padding: 2px;
@@ -134,7 +136,6 @@ footer{
     right: 65px;
     top: 0;
     margin-top: 10px;
-    /* font-size: 20px; */
     position: absolute;
     background-color: white;
     color: white;
@@ -156,7 +157,6 @@ footer{
     all: unset;
     padding: 8px;
     position: absolute;
-    /* width: 50px; */
     top: 0;
     right: 100px;
     margin-right: 7px;
@@ -165,6 +165,10 @@ footer{
     font-size: 20px;
     color: white;
 }
+
+/* #contactForm{
+    margin: 0 auto;
+} */
 
 #tinyHomeTileContainer{
     padding: 5px;
