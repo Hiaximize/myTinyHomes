@@ -1,4 +1,4 @@
-const app = angular.module('MyApp', []);
+const app = angular.module('myTinyHomes', []);
 
 app.controller('MyController', ['$http', function($http){
 
