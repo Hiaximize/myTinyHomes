@@ -8,6 +8,7 @@ const homesSchema = new mongoose.Schema({
   price: String,
   image: String,
   mobile: Boolean,
+  sqft: Number,
   beds: Number,
   baths: Number,
   lofts: Number,
