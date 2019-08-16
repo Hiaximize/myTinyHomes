@@ -52,7 +52,9 @@ h1:after {
     left:0;
     position: absolute;
     background-image: url("../images/catskills-600.png");
-    background-size: cover;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 #logo{
@@ -70,12 +72,16 @@ h1:after {
     margin-left: 200px;
 }
 #searchBar{
-    left: 0;
-    bottom: 0;
-    position: absolute;
-    margin-left: 8px;
-    margin-bottom: 5px;
-    text-align: center;
+    position: relative;
+    font-size: 30px;
+    border-radius: 4px;
+    left: 500px;
+}
+#searchButton{
+    font-size: 30px;
+    border-radius: 4px;
+    position: relative;
+    right: 465px;
 }
 #loginUsername{
     margin-top: 10px;
