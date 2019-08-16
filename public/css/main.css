@@ -77,12 +77,6 @@ footer{
     background-position: center;
 }
 
-#stickHeader{
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
 #logo{
     height: 150px;
     width: 150px;
@@ -152,7 +146,9 @@ footer{
     font-size: 20px;
     color: white;  
     border-radius: 4px;
+    outline: none;
 }
+
 #loginButton{
     all: unset;
     padding: 8px;
@@ -178,7 +174,6 @@ footer{
     flex-wrap: wrap;
     width: 90%;
     height: 1200px;
-    border: 1px gold solid;
     z-index: -1;
 }
 
