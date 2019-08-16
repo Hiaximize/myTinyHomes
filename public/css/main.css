@@ -44,6 +44,10 @@ h1:after {
     border: 1px solid gold;
 }
 
+
+/* ==================
+      IDs
+================== */
 #header{
     z-index: 0;
     height: 500px;
