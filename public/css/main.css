@@ -40,9 +40,9 @@ h1:after {
   display: block;
 }
 
-*{
+/* *{
     border: 1px solid gold;
-}
+} */
 
 
 /* ==================
@@ -54,11 +54,12 @@ h1:after {
     width: 100%;
     top: 0;
     left:0;
-    position: absolute;
-    background-image: url("../images/catskills-600.png");
-    background-size: contain;
+    position: fixed;
+    background-image: url("../images/catskills-700.jpg");
+    background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 #logo{
@@ -76,30 +77,33 @@ h1:after {
     margin-left: 200px;
 }
 #searchBar{
-    position: relative;
+    position: fixed;
     font-size: 30px;
     border-radius: 4px;
     left: 500px;
+    padding: 2px;
 }
 #searchButton{
     font-size: 30px;
     border-radius: 4px;
-    position: relative;
-    right: 465px;
+    position: sticky;
+    margin: 0 auto;
 }
 #loginUsername{
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     right: 0;
     top: 0;
     position: absolute;
     margin-right: 8px;
+    font-size: 20px;
 }
 #loginPassword{
     margin-right: 8px;
     right: 0;
     top: 0;
     margin-top: 35px;
+    font-size: 20px;
     position: absolute;
 }
 #loginButton{
@@ -113,5 +117,6 @@ h1:after {
     width: 50%;
     height: 400px;
     background-color: red;
-    margin: 10px auto;
+    margin: 1000px auto;
+    z-index: 0;
 }
