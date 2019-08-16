@@ -13,22 +13,9 @@
 		<script src="/js/app.js" charset="utf-8"></script>
 	</head>
 	<body ng-controller="MainController as ctrl">
-		<div id="header">
-			<img src="#" id="logo">
-			
-			<div>
-				<form>
-					<input type="text" placeholder="search" id="searchBar">
-					<input id="searchButton" type="submit" value="Search">
-				</form>
-			</div>
 
-			<form ng-submit="ctrl.login">
-				<input type="text" id="loginUsername" placeholder="Username"{% comment %} add angular {% endcomment %}>
-				<input type="password" id="loginPassword" placeholder="Password">
-				<input id="loginButton" type="submit" value="Login">
-
-		</div>
+	<div ng-include="partials/header.html"></div>
+		
 	<div id="pageContainer">
 		<div id="leftSideBar">
 		</div>
