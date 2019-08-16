@@ -1,3 +1,6 @@
+console.log("hello");
+
+
 const app = angular.module('myTinyHomes', []);
 
 app.controller('MyController', ['$http', function($http){

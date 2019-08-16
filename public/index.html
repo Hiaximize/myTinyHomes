@@ -14,19 +14,52 @@
 	</head>
 	<body ng-controller="MainController as ctrl">
 
-	<div ng-include="partials/header.html"></div>
+	<div id="header">
+		<div id="stickyHeader">
+			<img src="#" id="logo">
+			
+			<div id="searchForm">
+				<form>
+					<input type="text" placeholder="search" id="searchBar">
+					<input id="searchButton" type="submit" value="Search">
+				</form>
+			</div>
+
+			<!--<form ng-submit="ctrl.login">
+				<input type="text" id="loginUsername" placeholder="Username"{% comment %} add angular {% endcomment %}>
+				<input type="password" id="loginPassword" placeholder="Password">-->
+				<input id="loginButton" type="submit" value="Login">
+                <input id="signUp" type="submit" value="SignUp">
+		</div><!--sticky Header closing-->
+	</div><!--Header closing-->
 		
 	<div id="pageContainer">
-		<div id="leftSideBar">
+	
+	<span id="sidebar">
+	dskfj
+	</span>
+		
+		<div id="tinyHomeTileContainer">
+				<div>test words</div>
+				<div>to see spacing</div>
+				<div>Ensuring it looks good</div>
+				<div>Do you like? </div>
+
+
 		</div>
-		<main>
-			<div id="tinyHomeTileContainer">
-					telkdjfskla
+		
+			s
+	</div>
+			
+		
 
-
-			</div>
-		</main>
-
- <footer></footer>
+ 		<footer>
+		 <div id="contactForm">
+		 	<form id="contactUs">
+				<input type="text" id="email" placeholder="Email">
+				<input type="submit" id="contactUsSubmit" value="Contact Us">
+			 </form>
+		 </div>
+ 		</footer>
 	</body>
 </html>
