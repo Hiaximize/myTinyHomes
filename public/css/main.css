@@ -40,21 +40,31 @@ h1:after {
   display: block;
 }
 
-/* *{
+sidebar{
+    width: 100px;
+    height: 100%;
     border: 1px solid gold;
-} */
+}
+
+footer{
+    display: flex;
+    margin-top: 35px;
+    height: 150px;
+    background-color: var(--dark-tan);
+}
 
 
 /* ==================
       IDs
 ================== */
 #header{
+    
     z-index: 0;
     height: 500px;
     width: 100%;
     top: 0;
     left:0;
-    position: fixed;
+    position: absolute;
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -62,75 +72,107 @@ h1:after {
     background-position: center;
 }
 
+#stickHeader{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 #logo{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     margin-top: 20px;
     margin-left: 20px;
 }
-
-#welcomeMessage{
-    position: absolute;
-    font-size: 40px;
-    color: white;
-    top: 0;
-    margin-left: 200px;
-    
+#pageContainer{
+    margin-top: 600px;
+    display: flex;
+    justify-content: space-between;
 }
 #searchBar{
     all: unset;
-    position: fixed;
     font-size: 30px;
     border-radius: 4px;
-    left: 500px;
     padding: 2px;
     color: white;
-    background-color: black;
+    /* background-color: non */
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+    margin-bottom: 5px;
 }
 #searchButton{
     font-size: 30px;
     border-radius: 4px;
-    position: sticky;
-    margin: 0 auto;
+    position: absolute;
+    bottom: 2px;
+    left: 360px;
+    margin-bottom: 10px;
+    margin-left: 4px;
 }
 #loginUsername{
     all: unset;
     margin-top: 10px;
-    right: 0;
+    right: 250px;
     top: 0;
-    position: fixed;
-    margin-right: 8px;
-    font-size: 20px;
+    position: absolute;
+    margin-right: 4px;
+    /* font-size: 20px; */
     background-color: white;
+    color: white;
     padding: 2px;
 }
 #loginPassword{
     all: unset;
     margin-right: 8px;
-    right: 0;
+    right: 65px;
     top: 0;
-    margin-top: 45px;
-    font-size: 20px;
+    margin-top: 10px;
+    /* font-size: 20px; */
     position: absolute;
     background-color: white;
+    color: white;
     padding: 2px;
 }
-#loginButton{
+#signUp{
     position: absolute;
     top: 0;
     right: 0;
     margin-right: 7px;
-    margin-top: 82px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;  
+}
+#loginButton{
+    padding: 8px;
+    position: absolute;
+    /* width: 50px; */
+    top: 0;
+    right: 100px;
+    margin-right: 7px;
+    margin-top: 12px;
     margin-bottom: 5px;
     font-size: 20px;
 }
 
+#sidebar{
+    margin-left: 10px;
+    margin-right: 20px;
+    justify-content: flex-start;
+    width: 20%;
+    border: 1px solid gold;
+    padding: 15px;
+}
+
 #tinyHomeTileContainer{
-    clear: fixed;
-    position: fixed;
-    width: 50%;
-    height: 400px;
-    background-color: red;
-   margin-top: 550px;
+    padding: 5px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 1200px;
+    border: 1px gold solid;
     z-index: -1;
 }
+
