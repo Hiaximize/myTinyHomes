@@ -64,7 +64,7 @@ footer{
 
 
 /* ==================
-      IDs
+      HEADER
 ================== */
 #header{
 
@@ -179,4 +179,56 @@ footer{
     width: 90%;
     height: 1200px;
     z-index: -1;
+}
+
+/* ==================
+     MODAL
+================== */
+#modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+	display: none;
+}
+
+#modal-textbox {
+	background-color: white;
+	height: auto;
+	width: 100%;
+	max-width: 400px;
+	border-radius: 2px;
+	line-height: 12px;
+	padding: 2px;
+	margin: 15px auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#modal-text > h3{
+		color: #000;
+	}
+
+#modal-footer {
+	text-align: center;
+}
+
+#drinkImage < img {
+	width: 250px;
+	height:250px;
+}
+
+#modal-recipe {
+	font-size: 25px;
+	line-height: 35px;
+	width: 80%;
+	padding: 20px;
+}
+
+#modal-recipe > h4 {
+	padding-left: 60px;
+	text-align: center;
 }
