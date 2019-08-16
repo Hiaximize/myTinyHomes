@@ -26,6 +26,7 @@ this.getID = (_id) => {
 
 this.includePath = 'partials/cards.html'
 	this.changeInclude = (path) => {
+		console.log(path);
 		this.includePath = 'partials/' + path + '.html'
 	}
 
@@ -115,7 +116,7 @@ this.cancelEdit = () => {
    this.deleteHome = (_id) => {
       $http({
          method: 'DELETE',
-         url: '/home/' + _id
+         url: '/homes/' + _id
       }).then(
          (response) => {
             controller.getHomes();
