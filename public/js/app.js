@@ -8,8 +8,8 @@ this.indexOfEditFormToShow = null;
 //======================
 // GET ID
 //======================
-this.getID = function(house) {
-	console.log(house._id);
+this.getID = function(home) {
+	console.log(home._id);
 }
 
 //======================
@@ -24,13 +24,13 @@ this.includePath = 'partials/cards.html'
 //======================
 // INDEX/GET ROUTE
 //======================
-this.getHouses = () => {
+this.getHomes = () => {
   	$http({
 		method: 'GET',
-		url: '/houses'
+		url: '/homes'
 	}).then((response) => {
-		this.houses = response.data
-		console.log(this.houses)
+		this.homes = response.data
+		console.log(this.homes)
 	}, (error) => {
 		console.log(error);
 	})
@@ -39,10 +39,10 @@ this.getHouses = () => {
 //======================
 // CREATE ROUTE
 //======================
- this.addHouse = () => {
+ this.addHome = () => {
     $http({
        method: 'POST',
-       url: '/houses',
+       url: '/homes',
        data: {
           name: this.name,
 		  type: this.type,
@@ -59,7 +59,7 @@ this.getHouses = () => {
     }).then(
        (response) => {
           this.resetForm();
-          this.getHouses();
+          this.getHomes();
        }, (error) => {
           console.log(error);
        })
@@ -68,10 +68,10 @@ this.getHouses = () => {
 //======================
 // EDIT ROUTE
 //======================
-this.editHouse = function(house) {
+this.editHome = function(home) {
    $http({
       method: 'PUT',
-      url: '/houses/' + house._id,
+      url: '/homes/' + home._id,
       data: {
 		 name: controller.updatedName,
  		 type:  controller.updatedType,
@@ -87,7 +87,7 @@ this.editHouse = function(house) {
       }
    }).then(
       (response) => {
-         controller.getHouses();
+         controller.getHomes();
          controller.indexOfEditFormToShow = null;
       }
    )
@@ -103,13 +103,13 @@ this.cancelEdit = () => {
 //======================
 // DELETE ROUTE
 //======================
-   this.deleteHouse = function(house) {
+   this.deleteHome = function(home) {
       $http({
          method: 'DELETE',
-         url: '/house/' + house._id
+         url: '/home/' + home._id
       }).then(
          (response) => {
-            controller.getHouses();
+            controller.getHomes();
          }
       )
    };
@@ -188,7 +188,7 @@ this.cancelEdit = () => {
  //   )
  // }
 
-this.houses = [
+this.homes = [
 	{
 		name: "Coastal Tiny House",
 	    type: "Tiny House",
@@ -270,6 +270,6 @@ this.houses = [
 
 	  ]
 // Call on page load:
-this.getHouses()
+this.getHomes()
 
 }]);

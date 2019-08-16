@@ -11,7 +11,7 @@ router.get('/seed', (req, res) => {
 	})
 })
 
-router.get('/houses', (req, res) => {
+router.get('/', (req, res) => {
   // res.send('index');
   Homes.find({}, (err, foundHomes) => {
     res.json(foundHomes);
@@ -30,7 +30,7 @@ router.put('/:id', (req, res) => {
   });
 });
 
-router.post('/houses', (req, res) => {
+router.post('/', (req, res) => {
   Homes.create(req.body, (err, createdHome) => {
     res.json(createdHome);
   });
