@@ -2,15 +2,8 @@ const app = angular.module('myTinyHomes', []);
 
 app.controller('MyController', ['$http', function($http){
 
-   const controller = this;
-   this.indexOfEditFormToShow = null;
-
-//======================
-// CANCEL EDIT
-//======================
-this.cancelEdit = () => {
-	this.indexOfEditFormToShow = null;
-}
+const controller = this;
+this.indexOfEditFormToShow = null;
 
 //======================
 // INDEX/GET ROUTE
@@ -55,6 +48,53 @@ this.getHouses = () => {
        })
  };
 
+//======================
+// EDIT ROUTE
+//======================
+this.editHouse = function(house) {
+   $http({
+      method: 'PUT',
+      url: '/houses/' + house._id,
+      data: {
+		  name: controller.updatedName,
+ 		 type:  controller.updatedType,
+ 		 builder:  controller.updatedBuilder,
+ 		 description:  controller.updatedDescription,
+ 		 price:  controller.updatedPrice,
+ 		 image:  controller.updatedImage,
+ 		 mobile:  controller.updatedMobile,
+ 		 beds:  controller.updatedBeds,
+ 		 baths:  controller.updatedBaths,
+ 		 lofts:  controller.updatedLofts,
+      }
+   }).then(
+      (response) => {
+         controller.getHouses();
+         controller.indexOfEditFormToShow = null;
+      }
+   )
+};
+
+//======================
+// CANCEL EDIT
+//======================
+this.cancelEdit = () => {
+	this.indexOfEditFormToShow = null;
+}
+
+//======================
+// DELETE ROUTE
+//======================
+   this.deleteHouse = function(house) {
+      $http({
+         method: 'DELETE',
+         url: '/house/' + house._id
+      }).then(
+         (response) => {
+            controller.getHouses();
+         }
+      )
+   };
 
  //======================
  // AUTHENTIFICATION
