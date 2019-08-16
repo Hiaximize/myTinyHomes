@@ -3,13 +3,13 @@
       <div class="card">
         <div class="card-image">
           <img src="{{ house.image }}">
-          <span class="card-title">{{house.price}}</span>
+          <span class="card-title">{{house.price | currency}}</span>
         </div>
         <div class="card-content">
           <p>{{house.name}}</p>
         </div>
         <div class="card-action light-green-text text-darken-4">
-          <a href="#">View More Details</a>
+          <a ng-click="ctrl.getID(house._id); ctrl.changeInclude('detailedpg')"href="#" class="light-green-text text-darken-4">View More Details</a>
         </div>
       </div>
     </div>

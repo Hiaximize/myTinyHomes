@@ -6,8 +6,8 @@ const seed = require('../models/seed.js')
 
 // Uses Seed Data to populate the site with homes
 router.get('/seed', (req, res) => {
-	Homes.create(seed, (err, data) => {
-		res.redirect('/')
+	Homes.find({}, (err, data) => {
+		res.json(data)
 	})
 })
 

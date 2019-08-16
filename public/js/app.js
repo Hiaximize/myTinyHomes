@@ -6,13 +6,20 @@ const controller = this;
 this.indexOfEditFormToShow = null;
 
 //======================
+// GET ID
+//======================
+this.getID = function(house) {
+	console.log(house._id);
+}
+
+//======================
 // INCLUDES
 //======================
 
-// this.includePath = 'partials/cards.html'
-// 	this.changeInclude = (path) => {
-// 		this.includePath = 'partials/' + path + '.html'
-// 	}
+this.includePath = 'partials/cards.html'
+	this.changeInclude = (path) => {
+		this.includePath = 'partials/' + path + '.html'
+	}
 
 //======================
 // INDEX/GET ROUTE
