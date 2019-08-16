@@ -13,7 +13,6 @@
 		<script src="/js/app.js" charset="utf-8"></script>
 	</head>
 	<body ng-controller="MainController as ctrl">
-
 		<div id="header">
 			<img src="#" id="logo">
 			<div id="welcomeMessage"> Welcome Guest </div>
@@ -24,6 +23,7 @@
 					<input id="searchButton" type="submit" value="Search">
 				</form>
 			</div>
+
 			<form ng-submit="ctrl.login">
 				<input type="text" id="loginUsername" placeholder="Username"{% comment %} add angular {% endcomment %}>
 				<input type="password" id="loginPassword" placeholder="Password">
@@ -33,14 +33,14 @@
 
 		<div id="leftSideBar">
 		</div>
-
-		<div id="tinyHomeTileContainer">
-				telkdjfskla
-
-
-		</div>
+		<main>
+			<div id="tinyHomeTileContainer">
+					telkdjfskla
 
 
+			</div>
+		</main>
 
+ <footer></footer>
 	</body>
 </html>
