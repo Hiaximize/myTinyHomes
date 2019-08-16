@@ -8,19 +8,17 @@ this.indexOfEditFormToShow = null;
 //======================
 // GET ID
 //======================
-this.getID = function() {
-	// $http({
-	// 	method: 'GET',
-	// 	url: '/homes'
-	// }).then((response) => {
-	// this.homes = response.data
-	// console.log(this.homes);
-	// }, (error) => {
-	// 	console.log(error);
-	// })
-	// return this.homes
-	console.log("hi");
-	}
+this.getID = (_id) => {
+	$http({
+		method: 'GET',
+		url: '/homes/' + _id
+	}).then((response) => {
+	this.homes = response.data
+	console.log(this.homes);
+	}, (error) => {
+		console.log(error);
+	})
+}
 
 //======================
 // INCLUDES
