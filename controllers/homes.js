@@ -25,8 +25,8 @@ homes.get('/:id', (req, res) => {
 })
 
 homes.delete('/:id', (req, res) => {
-  Homes.findByIdAndRemove(req.params.id, (err, deletedHomes) => {
-    res.json(deletedHomes);
+  Homes.findByIdAndRemove(req.params.id, (err, deletedHome) => {
+    res.json(deletedHome);
   });
 });
 
