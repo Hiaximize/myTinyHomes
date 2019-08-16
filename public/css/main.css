@@ -40,53 +40,70 @@ h1:after {
   display: block;
 }
 
-*{
+/* *{
     border: 1px solid gold;
-}
+} */
 
+
+/* ==================
+      IDs
+================== */
 #header{
-    height: 100px;
+    z-index: 0;
+    height: 500px;
     width: 100%;
     top: 0;
     left:0;
-    position: absolute;
-    background-color: var(--black);
+    position: fixed;
+    background-image: url("../images/catskills-700.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #logo{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     margin-top: 20px;
     margin-left: 20px;
 }
 
 #welcomeMessage{
-    margin-bottom: 20px;
-    margin-left: 15px;
+    position: absolute;
     font-size: 40px;
     color: var(--dark-tan);
+    top: 0;
+    margin-left: 200px;
 }
 #searchBar{
-    left: 0;
-    bottom: 0;
-    position: absolute;
-    margin-left: 8px;
-    margin-bottom: 5px;
-
+    position: fixed;
+    font-size: 30px;
+    border-radius: 4px;
+    left: 500px;
+    padding: 2px;
+}
+#searchButton{
+    font-size: 30px;
+    border-radius: 4px;
+    position: sticky;
+    margin: 0 auto;
 }
 #loginUsername{
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     right: 0;
     top: 0;
     position: absolute;
     margin-right: 8px;
+    font-size: 20px;
 }
 #loginPassword{
     margin-right: 8px;
     right: 0;
     top: 0;
     margin-top: 35px;
+    font-size: 20px;
     position: absolute;
 }
 #loginButton{
@@ -94,4 +111,12 @@ h1:after {
     bottom: 0;
     right: 0;
     margin-bottom: 5px;
+}
+
+#tinyHomeTileContainer{
+    width: 50%;
+    height: 400px;
+    background-color: red;
+    margin: 1000px auto;
+    z-index: 0;
 }
