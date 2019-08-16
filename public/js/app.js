@@ -6,6 +6,15 @@ const controller = this;
 this.indexOfEditFormToShow = null;
 
 //======================
+// INCLUDES
+//======================
+
+this.includePath = 'partials/menu.html'
+	this.changeInclude = (path) => {
+		this.includePath = 'partials/' + path + '.html'
+	}
+
+//======================
 // INDEX/GET ROUTE
 //======================
 this.getHouses = () => {
