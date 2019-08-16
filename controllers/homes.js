@@ -18,9 +18,15 @@ homes.get('/', (req, res) => {
   });
 });
 
+homes.get('/:id', (req, res) => {
+	Homes.findById(req.params.id, (err, foundHome) => {
+		res.json(foundHome)
+	})
+})
+
 homes.delete('/:id', (req, res) => {
-  Homes.findByIdAndRemove(req.params.id, (err, deletedHomes) => {
-    res.json(deletedHomes);
+  Homes.findByIdAndRemove(req.params.id, (err, deletedHome) => {
+    res.json(deletedHome);
   });
 });
 

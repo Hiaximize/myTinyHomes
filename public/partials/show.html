@@ -1,0 +1,65 @@
+ <div clas="row">
+    <div class="image-text col s8">
+      <img src="{{ ctrl.homes.image }}">
+      <div class="text">
+        <h3>{{ ctrl.homes.name }}</h3>
+        <h5>{{ ctrl.homes.type }}</h5>
+        <h5>{{ ctrl.homes.builder }}</h5>
+        <p>{{ ctrl.homes.description }}</p>
+      </div>
+    </div>
+    <div class="features-buybtn col s4">
+      <div class="features">
+        {{ ctrl.homes.mobile }}
+        {{ ctrl.homes.price }}
+        {{ ctrl.homes.sqft }}
+        {{ ctrl.homes.beds }}
+        {{ ctrl.homes.baths }}
+        {{ ctrl.homes.lofts }}
+      </div>
+    </div>
+  </div>
+  <form>
+	<button
+		ng-if="$index !== ctrl.indexOfEditFormToShow"
+		ng-click="ctrl.indexOfEditFormToShow = $index">
+		Edit
+	</button>
+</form>
+<div ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editHome(ctrl.homes._id); ctrl.changeInclude('cards')">
+	<form class="" action="index.html" method="post">
+			<input type="text" ng-model="ctrl.updatedName" ng-value="ctrl.homes.name"><br>
+			<input type="text" ng-model="ctrl.updatedType" ng-value="ctrl.homes.type"><br>
+			<input type="text"
+				ng-model="ctrl.updatedDescription"
+				ng-value="ctrl.homes.description"><br>
+			<input type="text"
+				ng-model="ctrl.updatedPrice"
+				ng-value="ctrl.homes.price"><br>
+			<input type="text"
+				ng-model="ctrl.updatedImage"
+				ng-value="ctrl.homes.image"><br>
+			Mobile: <input type="checkbox"
+					ng-model="ctrl.updatedMobile"
+					ng-value="ctrl.homes.mobile"><br>
+			<input type="number"
+				ng-model="ctrl.updatedSqft"
+				ng-value="homes.sqft"><br>
+			<input type="number"
+				ng-model="ctrl.updatedBeds"
+				ng-value="homes.beds"><br>
+			<input type="number"
+				ng-model="ctrl.updatedBaths"
+				ng-value="homes.baths"><br>
+			<input type="number"
+				ng-model="ctrl.updatedLofts"
+				ng-value="homes.lofts"><br>
+			<input type="submit" value="Update">
+		</form>
+		<button ng-click="ctrl.cancelEdit()">Cancel</button>
+		</div>
+
+		<button
+				ng-click="ctrl.deleteHome(ctrl.homes._id); ctrl.changeInclude('cards')">
+				DELETE
+		</button>
