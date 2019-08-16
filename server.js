@@ -42,7 +42,7 @@ app.use(express.json());
 // 	resave: false,
 // 	saveUninitialized: false
 // }))
-app.use(methodOverride('_method'));
+// app.use(methodOverride('_method'));
 app.use(morgan('tiny'));
 
 //====================
@@ -55,21 +55,20 @@ app.use(morgan('tiny'));
 // })
 
 app.get('/', (req, res) => {
-  // res.redirect('/homes')
   res.render("index.html")
 })
 
 //==================
 // CONTROLLERS
 //==================
-// const userController = require('./controllers/users.js')
-// app.use('/users', userController)
-//
-// const sessionsController = require('./controllers/sessions.js')
-// app.use('/sessions', sessionsController)
-//
-// const homesController = require('./controllers/homes.js')
-// app.use('/homes', homesController)
+const userController = require('./controllers/users.js')
+app.use('/users', userController)
+
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
+
+const homesController = require('./controllers/homes.js')
+app.use('/homes', homesController)
 
 //==================
 // LISTENER

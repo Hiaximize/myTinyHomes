@@ -2,10 +2,11 @@
       VARIABLES
 ================== */
 :root {
---hunter-green: #4C5958;
+--hunter-green: rgb(76, 89, 88);
 --black: #0A0D0C;
---dark-tan: #A6A59C;
+--dark-tan: #a6a59c;
 --light-tan: #BFBDB4;
+--forest-green: rgba(100, 131, 104, .7);
 --brown: #735840;
 --body-font: 'Montserrat', sans-serif;
 --title-font: 'Lora', serif;
@@ -15,13 +16,17 @@
 ================== */
 body {
 	font-family: var(--body-font);
-	background-color: var(--light-tan);
+    background-color: white;
 }
 
 p {
 	font-family: var(--body-font);
 	color: var(--black);
 	font-size: 25px;
+}
+
+a {
+	color: var(--forest-green)
 }
 
 h1 {
@@ -40,21 +45,35 @@ h1:after {
   display: block;
 }
 
-/* *{
-    border: 1px solid gold;
+footer{
+    margin-top: 25px;
+    text-align: center;
+    bottom: 0;
+    background-color: var(--dark-tan);
+}
+
+#container{
+    margin: 0 auto;
+}
+/* footer{
+    display: flex;
+    margin-top: 35px;
+    height: 150px;
+    background-color: var(--dark-tan);
 } */
 
 
 /* ==================
-      IDs
+      HEADER
 ================== */
 #header{
+
     z-index: 0;
     height: 500px;
     width: 100%;
     top: 0;
     left:0;
-    position: fixed;
+    position: absolute;
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -63,60 +82,153 @@ h1:after {
 }
 
 #logo{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     margin-top: 20px;
     margin-left: 20px;
 }
-
-#welcomeMessage{
-    position: absolute;
-    font-size: 40px;
-    color: var(--dark-tan);
-    top: 0;
-    margin-left: 200px;
+#pageContainer{
+    margin-top: 600px;
+    display: flex;
+    justify-content: space-between;
 }
 #searchBar{
-    position: fixed;
+    all: unset;
     font-size: 30px;
-    border-radius: 4px;
-    left: 500px;
+    border-radius: 10px;
     padding: 2px;
+    color: white;
+    position: absolute;
+    left: 10px;
+    bottom: 2px;
+    margin-bottom: 5px;
+    background-color: rgba(255,255,255,.5);
+    border: 1px solid white;
 }
 #searchButton{
     font-size: 30px;
     border-radius: 4px;
-    position: sticky;
-    margin: 0 auto;
+    position: absolute;
+    bottom: 2px;
+    left: 360px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+    background-color: var(--forest-green);
+    border-color: white;
+    color: white;
 }
 #loginUsername{
+    all: unset;
     margin-top: 10px;
-    margin-bottom: 10px;
-    right: 0;
+    right: 250px;
     top: 0;
     position: absolute;
-    margin-right: 8px;
-    font-size: 20px;
+    margin-right: 4px;
+    background-color: white;
+    color: white;
+    padding: 2px;
 }
 #loginPassword{
+    all: unset;
     margin-right: 8px;
-    right: 0;
+    right: 65px;
     top: 0;
-    margin-top: 35px;
-    font-size: 20px;
+    margin-top: 10px;
     position: absolute;
+    background-color: white;
+    color: white;
+    padding: 2px;
 }
-#loginButton{
+#signUp{
+    background-color: rgba(0,0,0,.5);
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
-    margin-bottom: 5px;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+    outline: none;
 }
 
+#loginButton{
+    all: unset;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    margin-right: 7px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+/* #contactForm{
+    margin: 0 auto;
+} */
+
 #tinyHomeTileContainer{
-    width: 50%;
-    height: 400px;
-    background-color: red;
-    margin: 1000px auto;
-    z-index: 0;
+    padding: 5px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 1200px;
+    z-index: -1;
+}
+
+/* ==================
+     MODAL
+================== */
+#modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+	display: none;
+}
+
+#modal-textbox {
+	background-color: white;
+	height: auto;
+	width: 100%;
+	max-width: 400px;
+	border-radius: 2px;
+	line-height: 12px;
+	padding: 2px;
+	margin: 15px auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#modal-text > h3{
+		color: #000;
+	}
+
+#modal-footer {
+	text-align: center;
+}
+
+#drinkImage < img {
+	width: 250px;
+	height:250px;
+}
+
+#modal-recipe {
+	font-size: 25px;
+	line-height: 35px;
+	width: 80%;
+	padding: 20px;
+}
+
+#modal-recipe > h4 {
+	padding-left: 60px;
+	text-align: center;
 }

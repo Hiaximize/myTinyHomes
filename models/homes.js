@@ -8,11 +8,12 @@ const homesSchema = new mongoose.Schema({
   price: String,
   image: String,
   mobile: Boolean,
+  sqft: Number,
   beds: Number,
   baths: Number,
   lofts: Number,
 });
 
-const Homes = mongoose.model('Homes', travelHomes);
+const Homes = mongoose.model('Homes', homesSchema);
 
 module.exports = Homes;
