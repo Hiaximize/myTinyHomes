@@ -40,22 +40,27 @@
                 <input id="signUp" type="submit" value="SignUp">
 		</div><!--sticky Header closing-->
 	</div><!--Header closing-->
+	<main>
+
 
 	<div id="pageContainer">
 
 		<div id="tinyHomeTileContainer">
-				<div>test words</div>
+				<!-- <div>test words</div>
 				<div>to see spacing</div>
 				<div>Ensuring it looks good</div>
-				<div>Do you like? </div>
+				<div>Do you like? </div> -->
+				<div ng-include="'partials/cards.html'">
 
+				</div>
 
 		</div>
 
 
+
 	</div>
 
-
+	</main>
 
  		<!--<footer>
 			<div id="contactForm">
@@ -70,16 +75,11 @@
 		  <footer class="page-footer brown lighten-4">
           <div class="container">
             <div class="row">
-			<h5> Development Team</h3>
               <div class="col l12 s12">
-			  	<div class="col l4"><a target="_blank" href="https://www.linkedin.com/in/dbarkerit">Derek Barker</a>
-				  </div>
-				  <div class="col l4"><a target="_blank" href="https://www.linkedin.com/in/danielle-walraven"> Danielle Walraven </a>
-				  </div>
-				  <div class="col l4"><a target="_blank" href="https://www.linkedin.com/jiha-hwang"> Jiha Hwang </a>
-				  </div>
-                
-                
+                <h5 class="white-text">Like the design?</h5>
+				<input type="text" placeholder="Email">
+				<input type="submit" value="Lets Talk">
+                <p class="grey-text text-lighten-4"></p>
               </div>
 
             </div>
@@ -89,6 +89,7 @@
             © 2019 Copyright
             </div>
           </div>
+
         </footer>
 	</body>
 </html>

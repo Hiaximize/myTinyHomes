@@ -14,6 +14,6 @@ const homesSchema = new mongoose.Schema({
   lofts: Number,
 });
 
-const Homes = mongoose.model('Homes', travelHomes);
+const Homes = mongoose.model('Homes', homesSchema);
 
 module.exports = Homes;

@@ -1,9 +1,6 @@
-console.log("hello");
-
-
 const app = angular.module('myTinyHomes', []);
 
-app.controller('MyController', ['$http', function($http){
+app.controller('MainController', ['$http', function($http){
 
 const controller = this;
 this.indexOfEditFormToShow = null;
@@ -12,10 +9,10 @@ this.indexOfEditFormToShow = null;
 // INCLUDES
 //======================
 
-this.includePath = 'partials/menu.html'
-	this.changeInclude = (path) => {
-		this.includePath = 'partials/' + path + '.html'
-	}
+// this.includePath = 'partials/cards.html'
+// 	this.changeInclude = (path) => {
+// 		this.includePath = 'partials/' + path + '.html'
+// 	}
 
 //======================
 // INDEX/GET ROUTE

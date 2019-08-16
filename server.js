@@ -42,7 +42,7 @@ app.use(express.json());
 // 	resave: false,
 // 	saveUninitialized: false
 // }))
-app.use(methodOverride('_method'));
+// app.use(methodOverride('_method'));
 app.use(morgan('tiny'));
 
 //====================
@@ -67,9 +67,9 @@ app.get('/', (req, res) => {
 //
 // const sessionsController = require('./controllers/sessions.js')
 // app.use('/sessions', sessionsController)
-//
-// const homesController = require('./controllers/homes.js')
-// app.use('/homes', homesController)
+
+const homesController = require('./controllers/homes.js')
+app.use('/homes', homesController)
 
 //==================
 // LISTENER
