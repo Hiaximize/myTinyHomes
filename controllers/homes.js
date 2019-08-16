@@ -6,12 +6,12 @@ const seed = require('../models/seed.js')
 
 // Uses Seed Data to populate the site with homes
 router.get('/seed', (req, res) => {
-	Homes.find({}, (err, data) => {
-		res.json(data)
+	Homes.create(seed, (err, data) => {
+		res.redirect('/')
 	})
 })
 
-router.get('/', (req, res) => {
+router.get('/houses', (req, res) => {
   // res.send('index');
   Homes.find({}, (err, foundHomes) => {
     res.json(foundHomes);
@@ -30,7 +30,7 @@ router.put('/:id', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/houses', (req, res) => {
   Homes.create(req.body, (err, createdHome) => {
     res.json(createdHome);
   });
