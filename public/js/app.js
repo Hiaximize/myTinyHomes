@@ -183,7 +183,7 @@ this.cancelEdit = () => {
 
 this.houses = [
 	{
-		name: "Coastal Tiny House With Steel Frame",
+		name: "Coastal Tiny House",
 	    type: "Tiny House",
 	    builder: "dwalraven21",
 	    description: "This tiny house can be custom build to order for you. Please inquire if you have questions and are interested in purchasing one for yourself!",

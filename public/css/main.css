@@ -25,6 +25,10 @@ p {
 	font-size: 25px;
 }
 
+a {
+	color: var(--forest-green)
+}
+
 h1 {
  font-family: var(--title-font);
   font-size: 60px;
@@ -63,7 +67,7 @@ footer{
       IDs
 ================== */
 #header{
-    
+
     z-index: 0;
     height: 500px;
     width: 100%;
@@ -144,7 +148,7 @@ footer{
     margin-top: 12px;
     padding: 8px;
     font-size: 20px;
-    color: white;  
+    color: white;
     border-radius: 4px;
     outline: none;
 }
@@ -176,5 +180,3 @@ footer{
     height: 1200px;
     z-index: -1;
 }
-
-
