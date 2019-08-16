@@ -1,6 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const Homes = require('../models/homes.js');
+const User = require('../models/users.js')
+const seed = require('../models/seed.js')
+
+// Uses Seed Data to populate the site with homes
+router.get('/seed', (req, res) => {
+	Homes.create(seed, (err, data) => {
+		res.redirect('/')
+	})
+})
 
 router.get('/', (req, res) => {
   // res.send('index');
