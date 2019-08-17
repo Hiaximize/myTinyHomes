@@ -59,13 +59,13 @@ h1:after {
   display: block;
 }
 
-<<<<<<< HEAD
+
 header {
 	z-index: 2;
-=======
+}
 .shadowEffect {
      box-shadow: 10px 10px 5px grey;
->>>>>>> 61160b35748b2602e44ccf917cc8dc126b8527f5
+
 }
 
 footer{
@@ -240,7 +240,7 @@ z-index: -1;
     margin-top: 100px;
 }
 #searchBar{
-    all: unset; 
+    all: unset;
     font-size: 30px;
     border-radius: 10px;
     padding: 2px;
