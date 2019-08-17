@@ -9,7 +9,7 @@ sessions.delete('/', (req, res) => {
       status:200,
       message:'logout complete'
     });
-  })
+  });
 });
 
 sessions.post('/', (req, res) => {
