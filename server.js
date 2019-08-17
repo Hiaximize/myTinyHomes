@@ -4,11 +4,12 @@
 const morgan = require('morgan');
 const express = require('express');
 const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 const session = require('express-session')
 require('dotenv').config()
 const app = express();
 const db = mongoose.connection;
+const modals = require('angular-modal-service')
 
 //====================
 //PORT
