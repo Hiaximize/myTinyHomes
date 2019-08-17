@@ -1,7 +1,7 @@
 const express = require('express');
 const homes = express.Router();
 const Homes = require('../models/homes.js');
-// const User = require('../models/users.js')
+const User = require('../models/users.js')
 const seed = require('../models/seed.js')
 
 // Uses Seed Data to populate the site with homes

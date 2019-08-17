@@ -30,6 +30,13 @@ this.includePath = 'partials/cards.html'
 
 	}
 
+this.includeHeaderPath = 'partials/auth-buttons.html'
+	this.changeHeaderPath = (path) => {
+		this.includeHeaderPath = 'partials/' + path + '.html'
+		console.log();
+	}
+
+
 //======================
 // INDEX/GET ROUTE
 //======================
@@ -97,8 +104,8 @@ this.editHome = (_id) => {
       }
    }).then(
       (response) => {
-         controller.getHomes();
-         controller.indexOfEditFormToShow = null;
+		  console.log(this.updatedMobile)
+			this.getID(_id);
       }
    )
 };
@@ -128,75 +135,78 @@ this.editHome = (_id) => {
  // AUTHENTIFICATION
  //======================
 
- // this.createUser = function(){
- //   $http({
- //     method:'POST',
- //     url:'/users',
- //     data:{
- //       username:this.username,
- //       password:this.password
- //     }
- //   }).then(
- //     function(response){
- //       controller.username = null;
- //       controller.password = null;
- //       console.log(response);
- //     },
- //     function(error){
- //       console.log(error);
- //     }
- //   )
- // }
- //
- // this.logIn = function(){
- //   $http({
- //     method:'POST',
- //     url:'/sessions',
- //     data: {
- //       username:this.username,
- //       password:this.password
- //     }
- //   }).then(
- //     function(response){
- //       console.log(response);
- //       controller.username = null;
- //       controller.password = null;
- //       controller.goApp();
- //     },
- //     function(error){
- //       console.log(error);
- //     }
- //   )
- // }
- //
- // this.logOut = function(){
- //   $http({
- //     method:'DELETE',
- //     url:'/sessions'
- //   }).then(
- //     function(response){
- //       console.log(response);
- //       controller.loggedInUsername = null;
- //     },
- //     function(error){
- //       console.log(error);
- //     }
- //   )
- // }
- //
- // this.goApp = function(){
- //   $http({
- //     method:'GET',
- //     url:'/app'
- //   }).then(
- //     function(response){
- //       controller.loggedInUsername = response.data.username;
- //     },
- //     function(error){
- //       console.log(error);
- //     }
- //   )
- // }
+ this.createUser = function(){
+   $http({
+     method:'POST',
+     url:'/users',
+     data:{
+		firstName:this.firstName,
+		lastName:this.lastName,
+	    username:this.username,
+	    password:this.password,
+		email:this.email,
+		profileImage:this.profileImage
+     }
+ }).then((response) => {
+	   controller.firstName = null
+  	   controller.lastName = null
+  	   controller.username = null
+  	   controller.password = null
+  	   controller.email = null
+  	   controller.profileImage = null
+       console.log(response);
+   })
+ }
+
+ this.logIn = function(){
+   $http({
+     method:'POST',
+     url:'/sessions',
+     data: {
+       username:this.username,
+       password:this.password
+     }
+   }).then(
+     function(response){
+       console.log(response);
+       controller.username = null;
+       controller.password = null;
+       controller.goApp();
+     },
+     function(error){
+       console.log(error);
+     }
+   )
+ }
+
+ this.logOut = function(){
+   $http({
+     method:'DELETE',
+     url:'/sessions'
+   }).then(
+     function(response){
+       console.log(response);
+       controller.loggedInUsername = null;
+     },
+     function(error){
+       console.log(error);
+     }
+   )
+ }
+
+ this.goApp = function(){
+   $http({
+     method:'GET',
+     url:'/app'
+   }).then(
+     function(response){
+       controller.loggedInUsername = response.data.username;
+     },
+     function(error){
+       console.log(error);
+     }
+   )
+ }
 
 
 // Call on page load:
