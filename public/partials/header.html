@@ -4,7 +4,8 @@
 		<div id="logoImage">
 			<img src="#" id="logo">
 		</div>
-		<div id="profile">
+		<!-- may need to change this variable name to match the sessions variable -->
+		<div ng-if="{{ctrl.userLoggedIn}}" id="profile">
 			<img src="/images/profileTestImage.jpeg" id="userImage">
 			<input id="logOut" type="submit" value="LogOut">
 		</div>
@@ -16,10 +17,10 @@
 			</form>
 		</div>
 
-		<!-- <div id="loginButtons">
+		<div id="loginButtons">
 			<input id="loginButton" type="submit" value="Login">
 			<input id="signUp" type="submit" value="Sign Up">
-		</div> -->
+		</div>
 
 	</div><!--sticky Header closing-->
 
