@@ -62,7 +62,6 @@ h1:after {
 footer{
     margin-top: 25px;
     text-align: center;
-    bottom: 0;
     background-color: var(--dark-tan);
 }
 
@@ -198,8 +197,6 @@ footer{
     justify-content: space-around;
     flex-wrap: wrap;
     width: 90%;
-    height: 1200px;
-    z-index: -1;
 }
 
 /* ==================
@@ -239,6 +236,12 @@ footer{
 	width: 50px;
 	padding-top: 7px;
 	margin-bottom: 10px;
+}
+
+.icon4 {
+	width: 50px;
+	padding-top: 10px;
+	margin-bottom: 2px;
 }
 
 .tool {

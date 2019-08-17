@@ -24,15 +24,18 @@
     </div>
     <div class="icon-card">
       <img class="icon2" src="../icons/bedroom.png"><br>
-      <h9>{{ ctrl.homes.beds }} bedroom</h9>
+      <h9 ng-if="ctrl.homes.beds <= 1">{{ ctrl.homes.beds }} bedroom</h9>
+      <h9 ng-if="ctrl.homes.beds > 1">{{ ctrl.homes.beds }} bedrooms</h9>
     </div>
     <div class="icon-card">
       <img class="icon3" src="../icons/bathroom.png"><br>
-      <h9>{{ ctrl.homes.baths }} bathroom</h9>
+      <h9 ng-if="ctrl.homes.baths <= 1">{{ ctrl.homes.baths }} bathroom</h9>
+      <h9 ng-if="ctrl.homes.baths > 1">{{ ctrl.homes.baths }} bathrooms</h9>
     </div>
     <div class="icon-card">
-      <img class="icon" src="../icons/furniture.png"><br>
-      <h9>{{ ctrl.homes.lofts }} lofts</h9>
+      <img class="icon4" src="../icons/furniture.png"><br>
+      <h9 ng-if="ctrl.homes.lofts <= 1">{{ ctrl.homes.lofts }} loft</h9>
+      <h9 ng-if="ctrl.homes.lofts > 1">{{ ctrl.homes.lofts }} lofts</h9>
     </div>
   </div><br />
   <form>
