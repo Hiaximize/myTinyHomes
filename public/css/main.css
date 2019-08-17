@@ -76,6 +76,13 @@ footer{
     background-color: var(--dark-tan);
 } */
 
+/* ==================
+      CARDS
+================== */
+
+.card-content {
+	height: 100px;
+}
 
 /* ==================
       HEADER
