@@ -140,19 +140,22 @@ this.editHome = (_id) => {
      method:'POST',
      url:'/users',
      data:{
-       username:this.username,
-       password:this.password
+		firstName:this.firstName,
+		lastName:this.lastName,
+	    username:this.username,
+	    password:this.password,
+		email:this.email,
+		profileImage:this.profileImage
      }
-   }).then(
-     function(response){
-       controller.username = null;
-       controller.password = null;
+ }).then((response) => {
+	   controller.firstName = null
+  	   controller.lastName = null
+  	   controller.username = null
+  	   controller.password = null
+  	   controller.email = null
+  	   controller.profileImage = null
        console.log(response);
-     },
-     function(error){
-       console.log(error);
-     }
-   )
+   })
  }
 
  this.logIn = function(){
