@@ -5,7 +5,7 @@ const homesSchema = new mongoose.Schema({
   type: String,
   builder: String,
   description: String,
-  price: String,
+  price: Number,
   image: String,
   mobile: Boolean,
   sqft: Number,
