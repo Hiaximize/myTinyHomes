@@ -222,6 +222,7 @@ footer{
 
 }
 .icon-card {
+	margin: 5px;
 	padding-top: 21px;
 	background-color: var(--hunter-green);
 	width: 130px;
