@@ -26,7 +26,7 @@ this.getID = (_id) => {
 
 this.includePath = 'partials/cards.html'
 	this.changeInclude = (path) => {
-		console.log(path);
+		this.getHomes()
 		this.includePath = 'partials/' + path + '.html'
 	}
 

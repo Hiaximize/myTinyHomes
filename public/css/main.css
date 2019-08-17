@@ -24,7 +24,7 @@ body {
 
 main {
   flex: 1 0 auto;
-  margin-top: 600px;
+
 }
 
 p {
@@ -83,17 +83,26 @@ footer{
 	height: 100px;
 }
 
+/* .card-images {
+	background-color: rgba(0,0,0,0.82);
+} */
+
+.card-title {
+	background-color: rgba(0,0,0,0.5);
+}
+
+
 /* ==================
       HEADER
 ================== */
 #header{
 
-    z-index: 0;
+    /* z-index: 0; */
     height: 500px;
     width: 100%;
-    top: 0;
+    /* top: 0;
     left:0;
-    position: absolute;
+    position: absolute; */
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -107,11 +116,11 @@ footer{
     margin-top: 20px;
     margin-left: 20px;
 }
-#pageContainer{
+/* #pageContainer{
     margin-top: 600px;
     display: flex;
     justify-content: space-between;
-}
+} */
 #searchBar{
     all: unset;
     font-size: 30px;
@@ -192,7 +201,7 @@ footer{
 
 #tinyHomeTileContainer{
     padding: 5px;
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
