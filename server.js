@@ -9,7 +9,6 @@ const session = require('express-session')
 require('dotenv').config()
 const app = express();
 const db = mongoose.connection;
-const modals = require('angular-modal-service')
 
 //====================
 //PORT

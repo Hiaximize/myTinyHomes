@@ -1,25 +1,43 @@
- <div clas="row">
-    <div class="image-text col s8">
-      <img src="{{ ctrl.homes.image }}">
-      <div class="text">
-        <h3>{{ ctrl.homes.name }}</h3>
-        <h5>{{ ctrl.homes.type }}</h5>
-        <h5>{{ ctrl.homes.builder }}</h5>
-        <p>{{ ctrl.homes.description }}</p>
-      </div>
+<div clas="row">
+   <div class="image-text col s8">
+     <img src="{{ ctrl.homes.image }}">
+     <div class="text">
+       <h3>{{ ctrl.homes.name }}</h3>
+       <h5>Builder: {{ ctrl.homes.builder }}</h5>
+       <h4>{{ ctrl.homes.price | currency}}</h4>
+       <p>{{ ctrl.homes.description }}</p>
+     </div>
+   </div>
+     <div class="cards">
+       <div class="icon-card">
+         <img class="icon" src="../icons/house.png"><br>
+         <h9>{{ ctrl.homes.type }}</h9>
+       </div>
+       <div class="icon-card">
+         <img class="icon" src="../icons/wheel.png"><br>
+         <h9 ng-if="ctrl.homes.mobile">Mobile</h9>
+		 <h9 ng-if="!ctrl.homes.mobile">Not Mobile</h9>
+       </div>
+       <div class="icon-card">
+         <img class="tool" src="../icons/tool.png"><br>
+         <h9>{{ ctrl.homes.sqft }} sq.ft.</h9>
+       </div>
+       <div class="icon-card">
+         <img class="icon2" src="../icons/bedroom.png"><br>
+         <h9>{{ ctrl.homes.beds }} bedroom</h9>
+       </div>
+       <div class="icon-card">
+         <img class="icon3" src="../icons/bathroom.png"><br>
+         <h9>{{ ctrl.homes.baths }} bathroom</h9>
+       </div>
+       <div class="icon-card">
+         <img class="icon" src="../icons/furniture.png"><br>
+         <h9>{{ ctrl.homes.lofts }} lofts</h9>
+       </div>
     </div>
-    <div class="features-buybtn col s4">
-      <div class="features">
-        {{ ctrl.homes.mobile }}
-        {{ ctrl.homes.price }}
-        {{ ctrl.homes.sqft }}
-        {{ ctrl.homes.beds }}
-        {{ ctrl.homes.baths }}
-        {{ ctrl.homes.lofts }}
-      </div>
-    </div>
-  </div>
-  <form>
+</div>
+
+ <form>
 	<button
 		ng-if="$index !== ctrl.indexOfEditFormToShow"
 		ng-click="ctrl.indexOfEditFormToShow = $index">

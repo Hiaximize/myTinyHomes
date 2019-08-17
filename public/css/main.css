@@ -84,6 +84,14 @@ footer{
 	height: 100px;
 }
 
+/* .card-images {
+	background-color: rgba(0,0,0,0.82);
+} */
+
+.card-title {
+	background-color: rgba(0,0,0,0.5);
+}
+
 /* ==================
       HEADER
 ================== */
@@ -199,4 +207,47 @@ footer{
     width: 90%;
     /* height: 1200px; */
     /* z-index: -1; */
+}
+
+/* ==================
+      SHOWPAGE
+================== */
+.cards {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+}
+.icon-card {
+	padding-top: 21px;
+	background-color: var(--hunter-green);
+	width: 130px;
+	height: 130px;
+	text-align: center;
+	color: white;
+}
+
+.icon {
+	width: 50px;
+	padding-top: 10px;
+}
+
+.icon2 {
+	width: 50px;
+	padding-top: 12px;
+	margin-bottom: 17px;
+}
+
+.icon3 {
+	width: 50px;
+	padding-top: 7px;
+	margin-bottom: 10px;
+}
+
+.tool {
+	width: 30px;
+	transform: rotate(90deg);
+}
+h4 {
+	color: var(--hunter-green);
 }
