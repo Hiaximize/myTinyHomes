@@ -80,7 +80,7 @@ footer{
 ================== */
 
 .card-content {
-	height: 100px;
+	height: 150px;
 }
 
 /* .card-images {
@@ -202,7 +202,7 @@ footer{
 #tinyHomeTileContainer{
     padding: 5px;
     margin: 50px auto;
-    display: flex;
+    /* display: flex; */
     justify-content: space-around;
     flex-wrap: wrap;
     width: 90%;
@@ -222,7 +222,7 @@ footer{
 
 }
 .icon-card {
-	marign: 15px;
+	margin: 5px;
 	padding-top: 21px;
 	background-color: var(--hunter-green);
 	width: 130px;
