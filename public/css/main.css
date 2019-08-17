@@ -24,7 +24,7 @@ body {
 
 main {
   flex: 1 0 auto;
-  margin-top: 600px;
+
 }
 
 p {
@@ -92,9 +92,9 @@ footer{
     z-index: 0;
     height: 500px;
     width: 100%;
-    top: 0;
+    /* top: 0;
     left:0;
-    position: absolute;
+    position: absolute; */
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -109,7 +109,6 @@ footer{
     margin-left: 20px;
 }
 #pageContainer{
-    margin-top: 600px;
     display: flex;
     justify-content: space-between;
 }
@@ -193,11 +192,11 @@ footer{
 
 #tinyHomeTileContainer{
     padding: 5px;
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 90%;
-    height: 1200px;
-    z-index: -1;
+    /* height: 1200px; */
+    /* z-index: -1; */
 }
