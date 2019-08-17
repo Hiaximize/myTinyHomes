@@ -1,38 +1,39 @@
-<div ng-submit="ctrl.editHome(ctrl.homes._id); ctrl.getID(ctrl.homes._id); ctrl.changeInclude('show')">
+<div ng-submit="ctrl.editHome(ctrl.homes._id); ctrl.changeInclude('show')">
 	<form>
-			<input type="text" ng-model="ctrl.updatedName" ng-value="ctrl.homes.name"><br>
-			<input type="text" ng-model="ctrl.updatedType" ng-value="ctrl.homes.type"><br>
-			<input type="text"
-				ng-model="ctrl.updatedDescription"
-				ng-value="ctrl.homes.description"><br>
-			<input type="text"
-				ng-model="ctrl.updatedPrice"
-				ng-value="ctrl.homes.price"><br>
-			<input type="text"
-				ng-model="ctrl.updatedImage"
-				ng-value="ctrl.homes.image"><br>
-			Mobile: <input type="checkbox"
-					ng-model="ctrl.updatedMobile"
-					ng-value="ctrl.homes.mobile"><br>
-			<input type="text"
-				ng-model="ctrl.updatedSqft"
-				ng-value="homes.sqft"><br>
-			<input type="text"
-				ng-model="ctrl.updatedBeds"
-				ng-value="homes.beds"><br>
-			<input type="text"
-				ng-model="ctrl.updatedBaths"
-				ng-value="homes.baths"><br>
-			<input type="text"
-				ng-model="ctrl.updatedLofts"
-				ng-value="homes.lofts"><br>
-				<div class="row">
-					<div class="col">
-						<input class="waves-effect waves-light btn light-green darken-4" type="submit" value="Update">
-					</div>
-					<div class="col">
-						<button class="waves-effect waves-light btn light-green darken-4" ng-click="ctrl.getID(ctrl.homes._id); ctrl.changeInclude('show')">Cancel</button>
-					</div>
+		Name:<input type="text" ng-model="ctrl.updatedName" ng-value="ctrl.homes.name"><br>
+		Type:<input type="text" ng-model="ctrl.updatedType" ng-value="ctrl.homes.type"><br>
+		Description:<input type="text"
+			ng-model="ctrl.updatedDescription"
+			ng-value="ctrl.homes.description"><br>
+		Price:<input type="text"
+			ng-model="ctrl.updatedPrice"
+			ng-value="ctrl.homes.price"><br>
+		Image:<input type="text"
+			ng-model="ctrl.updatedImage"
+			ng-value="ctrl.homes.image"><br>
+		Mobile:<label><div ng-if="ctrl.homes.mobile == true">
+			<input type="checkbox" ng-checked="true" ng-model="ctrl.updatedMobile" ng-value="ctrl.homes.mobile"><span></span></div></label>
+			<label><div ng-if="ctrl.homes.mobile == false">
+			<input type="checkbox" ng-checked="false" ng-model="ctrl.updatedMobile" ng-value="ctrl.homes.mobile"><span></span></div></label><br>
+		sqft:<input type="text"
+			ng-model="ctrl.updatedSqft"
+			ng-value="ctrl.homes.sqft"><br>
+		Bedrooms:<input type="text"
+			ng-model="ctrl.updatedBeds"
+			ng-value="ctrl.homes.beds"><br>
+		Bathrooms:<input type="text"
+			ng-model="ctrl.updatedBaths"
+			ng-value="ctrl.homes.baths"><br>
+		Lofts:<input type="text"
+			ng-model="ctrl.updatedLofts"
+			ng-value="ctrl.homes.lofts"><br>
+			<div class="row">
+				<div class="col">
+					<input class="waves-effect waves-light btn light-green darken-4" type="submit" value="Update">
+				</div>
+				<div class="col">
+					<button class="waves-effect waves-light btn light-green darken-4" ng-click="ctrl.getID(ctrl.homes._id); ctrl.changeInclude('show')">Cancel</button>
+				</div>
 			</div>
 	</form>
 </div>

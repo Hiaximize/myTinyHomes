@@ -97,8 +97,8 @@ this.editHome = (_id) => {
       }
    }).then(
       (response) => {
-         controller.getHomes();
-         controller.indexOfEditFormToShow = null;
+		  console.log(this.updatedMobile)
+			this.getID(_id);
       }
    )
 };
