@@ -96,13 +96,9 @@ footer{
       HEADER
 ================== */
 #header{
-
-    /* z-index: 0; */
+    z-index: 0;
     height: 500px;
     width: 100%;
-    /* top: 0;
-    left:0;
-    position: absolute; */
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -116,20 +112,38 @@ footer{
     margin-top: 20px;
     margin-left: 20px;
 }
-/* #pageContainer{
-    margin-top: 600px;
+#userImage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 75px;
+    width: 75px;
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+#logOut{
+    position: absolute;
+    top: 90px;
+    right: 0;
+    margin-right: 25px;
+    border-radius: 4px;
+}
+#searchForm{
     display: flex;
-    justify-content: space-between;
-} */
+    justify-content: center;
+    flex-flow: row nowrap;
+    margin-top: 100px;
+}
 #searchBar{
-    all: unset;
+    all: unset; 
     font-size: 30px;
     border-radius: 10px;
     padding: 2px;
     color: white;
-    position: absolute;
-    left: 10px;
-    bottom: 2px;
+    /* position: absolute; */
+    /* left: 10px; */
+    /* bottom: 2px; */
     margin-bottom: 5px;
     background-color: rgba(255,255,255,.5);
     border: 1px solid white;
@@ -137,9 +151,9 @@ footer{
 #searchButton{
     font-size: 30px;
     border-radius: 4px;
-    position: absolute;
-    bottom: 2px;
-    left: 360px;
+    /* position: absolute; */
+    /* bottom: 2px; */
+    /* left: 360px; */
     margin-bottom: 10px;
     margin-left: 4px;
     background-color: var(--forest-green);
