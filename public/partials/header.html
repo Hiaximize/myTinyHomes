@@ -1,7 +1,7 @@
 <div id="header">
 	<div id="stickyHeader">
 		<img src="#" id="logo">
-
+		
 		<!-- <div id="searchForm">
 			<form>
 				<input type="text" ng-model="searchbox" placeholder="search" id="searchBar">
@@ -14,5 +14,9 @@
 			<input type="password" id="loginPassword" placeholder="Password">-->
 			<input id="loginButton" type="submit" value="Login">
 			<input id="signUp" type="submit" value="Sign Up">
+			<div ng-include="ctrl.includeHeaderPath">
+
+			</div>
+
 	</div><!--sticky Header closing-->
 </div><!--Header closing-->
