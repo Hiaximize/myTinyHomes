@@ -220,6 +220,28 @@ footer{
 	color: white;
 }
 
-.icon-card  img {
+.icon {
 	width: 50px;
+	padding-top: 10px;
+}
+
+.icon2 {
+	width: 50px;
+	padding-top: 12px;
+	margin-bottom: 17px;
+}
+
+.icon3 {
+	width: 50px;
+	padding-top: 7px;
+	margin-bottom: 10px;
+}
+
+.tool {
+	width: 30px;
+	transform: rotate(90deg);
+}
+
+h9 {
+	bottom: 10;
 }
