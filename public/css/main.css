@@ -241,6 +241,12 @@ footer{
 	margin-bottom: 10px;
 }
 
+.icon4 {
+	width: 50px;
+	padding-top: 10px;
+	margin-bottom: 2px;
+}
+
 .tool {
 	width: 30px;
 	transform: rotate(90deg);
