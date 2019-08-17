@@ -1,0 +1,19 @@
+
+	<!-- may need to change this variable name to match the sessions variable -->
+	<!-- <div ng-if="{{ctrl.userLoggedIn}}" id="profile">
+		<img src="/images/profileTestImage.jpeg" id="userImage">
+		<input id="logOut" type="submit" value="LogOut">
+	</div> -->
+
+	<div id="searchForm">
+		<form>
+			<input type="text" ng-model="searchbox" placeholder="search" id="searchBar">
+			<input id="searchButton" type="submit" value="Search">
+		</form>
+	</div>
+
+	<div id="loginButtons">
+			<button ng-click="ctrl.changeHeaderPath('signup')" id="loginButton" type="submit" value="Login">Login</button>
+			<button ng-click="ctrl.changeHeaderPath('signup')" id="signUp" type="submit" value="Sign Up">Sign Up</button>
+
+	</div>

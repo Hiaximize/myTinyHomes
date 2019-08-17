@@ -30,6 +30,13 @@ this.includePath = 'partials/cards.html'
 
 	}
 
+this.includeHeaderPath = 'partials/auth-buttons.html'
+	this.changeHeaderPath = (path) => {
+		this.includeHeaderPath = 'partials/' + path + '.html'
+		console.log();
+	}
+
+
 //======================
 // INDEX/GET ROUTE
 //======================
@@ -147,7 +154,7 @@ this.editHome = (_id) => {
      }
    )
  }
- 
+
  this.logIn = function(){
    $http({
      method:'POST',
@@ -168,7 +175,7 @@ this.editHome = (_id) => {
      }
    )
  }
- 
+
  this.logOut = function(){
    $http({
      method:'DELETE',
@@ -183,7 +190,7 @@ this.editHome = (_id) => {
      }
    )
  }
- 
+
  this.goApp = function(){
    $http({
      method:'GET',

@@ -1,32 +1,9 @@
 <div id="header">
-	<div id="smallHeader">
-
-	</div>
-
 	<div id="stickyHeader">
 		<div id="logoImage">
 			<img src="#" id="logo">
 		</div>
-		<!-- may need to change this variable name to match the sessions variable -->
-		<div ng-if="{{ctrl.userLoggedIn}}" id="profile">
-			<img src="/images/profileTestImage.jpeg" id="userImage">
-			<input id="logOut" type="submit" value="LogOut">
+		<div ng-include="ctrl.includeHeaderPath">
 		</div>
-
-		<div id="searchForm">
-			<form>
-				<input type="text" ng-model="searchbox" placeholder="search" id="searchBar">
-				<input id="searchButton" type="submit" value="Search">
-			</form>
-		</div>
-
-		<div id="loginButtons">
-			<input id="loginButton" type="submit" value="Login">
-			<input id="signUp" type="submit" value="Sign Up">
-			<!-- <div ng-include="ctrl.includeHeaderPath">
-
-			</div> -->
-
 	</div><!--sticky Header closing-->
-
 </div><!--Header closing-->
