@@ -24,7 +24,7 @@ body {
 
 main {
   flex: 1 0 auto;
-
+  margin-top: 600px;
 }
 
 p {
@@ -84,14 +84,6 @@ footer{
 	height: 100px;
 }
 
-/* .card-images {
-	background-color: rgba(0,0,0,0.82);
-} */
-
-.card-title {
-	background-color: rgba(0,0,0,0.5);
-}
-
 /* ==================
       HEADER
 ================== */
@@ -100,9 +92,9 @@ footer{
     z-index: 0;
     height: 500px;
     width: 100%;
-    /* top: 0;
+    top: 0;
     left:0;
-    position: absolute; */
+    position: absolute;
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -117,6 +109,7 @@ footer{
     margin-left: 20px;
 }
 #pageContainer{
+    margin-top: 600px;
     display: flex;
     justify-content: space-between;
 }
@@ -200,13 +193,13 @@ footer{
 
 #tinyHomeTileContainer{
     padding: 5px;
-    margin: 50px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 90%;
-    /* height: 1200px; */
-    /* z-index: -1; */
+    height: 1200px;
+    z-index: -1;
 }
 
 /* ==================
@@ -252,10 +245,7 @@ footer{
 	width: 30px;
 	transform: rotate(90deg);
 }
+
 h4 {
 	color: var(--hunter-green);
-}
-
-.btn-collection {
-	display: flex;
 }
