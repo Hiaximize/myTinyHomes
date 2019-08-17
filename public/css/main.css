@@ -34,7 +34,7 @@ p {
 }
 
 a {
-	color: var(--forest-green)
+	color: var(--forest-green);
 	cursor: pointer;
 }
 
