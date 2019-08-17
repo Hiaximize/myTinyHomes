@@ -1,26 +1,4 @@
-const app = angular.module('myTinyHomes', [angularModalService]);
-
-app.controller('OpenController', function($scope, ModalService) {
-
-  ModalService.showModal({
-    templateUrl: "template.html",
-    controller: "ModalController"
-  }).then(function(modal) {
-
-    //it's a bootstrap element, use 'modal' to show it
-    modal.element.modal();
-    modal.close.then(function(result) {
-      console.log(result);
-    });
-  });
-
-});
-
-app.controller('ModalController', function($scope, close) {
-
-  // when you need to close the modal, call close
-  close("Success!");
-});
+const app = angular.module('myTinyHomes', []);
 
 app.controller('MainController', ['$http', function($http){
 
