@@ -14,7 +14,8 @@
        </div>
        <div class="icon-card">
          <img class="icon" src="../icons/wheel.png"><br>
-         <h9>{{ ctrl.homes.mobile }}</h9>
+         <h9 ng-if="ctrl.homes.mobile">Mobile</h9>
+		 <h9 ng-if="!ctrl.homes.mobile">Not Mobile</h9>
        </div>
        <div class="icon-card">
          <img class="tool" src="../icons/tool.png"><br>
