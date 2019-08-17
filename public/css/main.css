@@ -14,6 +14,11 @@
 /* ==================
       GENERAL
 ================== */
+/* *{
+  border: 1px solid gold;
+} */
+
+
 body {
 	font-family: var(--body-font);
     background-color: white;
@@ -73,6 +78,7 @@ footer{
     text-align: center;
     background-color: var(--dark-tan);
 }
+
 
 #container{
     margin: 0 auto;
@@ -171,9 +177,9 @@ input[type="submit"]:hover {
       CARDS
 ================== */
 
-/* .card {
-z-index: -1;
-} */
+.card {
+  margin: 20px 10px;
+}
 
 .card-content {
 	height: 150px;
@@ -191,12 +197,12 @@ z-index: -1;
 /* ==================
       HEADER
 ================== */
-#smallHeader{
+/* #smallHeader{
     z-index: 5;
     height: 80px;
     width: 100%;
     position: fixed;
-}
+} */
 
 #header{
     z-index: 0;
@@ -212,7 +218,7 @@ z-index: -1;
 
 #logo{
     height: 100px;
-    width: 100px;
+    width: auto;
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -307,25 +313,18 @@ z-index: -1;
     color: white;
 }
 
-/* #contactForm{
-    margin: 0 auto;
-} */
-
 #tinyHomeTileContainer{
-    padding: 5px;
+    padding: 25px;
     margin: 50px auto;
-    /* display: flex; */
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 90%;
-	z-index: 1;
+	  z-index: 1;
 }
 
 /* ==================
       SHOWPAGE
 ================== */
 .home-container {
-	width: 90%;
 	margin: 0 auto;
 }
 .cards {
