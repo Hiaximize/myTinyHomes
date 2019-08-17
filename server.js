@@ -3,7 +3,6 @@
 //===================
 const morgan = require('morgan');
 const express = require('express');
-const methodOverride  = require('method-override');
 const mongoose = require('mongoose');
 const session = require('express-session')
 require('dotenv').config()
@@ -37,22 +36,22 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use(session({
-// 	secret: process.env.SECRET,
-// 	resave: false,
-// 	saveUninitialized: false
-// }))
-// app.use(methodOverride('_method'));
+app.use(session({
+	secret: process.env.SECRET,
+	resave: false,
+	saveUninitialized: false
+}))
+
 app.use(morgan('tiny'));
 
 //====================
 // ROUTES
 //====================
-// app.get('/login', (req, res) => {
-//   res.render('login.ejs', {
-// 	  currentUser: req.session.currentUser
-//   })
-// })
+app.get('/login', (req, res) => {
+  res.render('login.ejs', {
+	  currentUser: req.session.currentUser
+  })
+})
 
 app.get('/', (req, res) => {
   res.render("index.html")
