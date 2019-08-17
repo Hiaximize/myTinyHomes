@@ -76,6 +76,13 @@ footer{
     background-color: var(--dark-tan);
 } */
 
+/* ==================
+      CARDS
+================== */
+
+.card-content {
+	height: 100px;
+}
 
 /* ==================
       HEADER
@@ -193,4 +200,26 @@ footer{
     width: 90%;
     height: 1200px;
     z-index: -1;
+}
+
+/* ==================
+      SHOWPAGE
+================== */
+.cards {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+}
+.icon-card {
+	padding-top: 21px;
+	background-color: var(--hunter-green);
+	width: 130px;
+	height: 130px;
+	text-align: center;
+	color: white;
+}
+
+.icon-card  img {
+	width: 50px;
 }
