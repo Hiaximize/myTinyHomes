@@ -59,6 +59,10 @@ h1:after {
   display: block;
 }
 
+header {
+	z-index: 2;
+}
+
 footer{
     margin-top: 25px;
     text-align: center;
@@ -76,11 +80,103 @@ footer{
 } */
 
 /* ==================
+      FORMS
+================== */
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+}
+legend {
+  font-family: var(--body-font);
+  font-weight: 500;
+  color: var(--hunter-green);
+  padding: 0 10px;
+}
+label {
+  font-family: var(--body-font);;
+  font-weight: 200;
+  color: vcolor: var(--forest-green);;
+  display: block;
+}
+
+#signup-button {
+	width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--brown);
+}
+
+input:focus {
+  outline: 0;
+  border: 1px solid var(--hunter-green);
+}
+
+input[type="submit"] {
+  height: 50px;
+  background: var(--hunter-green);
+  border: 0px;
+  font-family: var(--body-font);
+  font-size: 1.3em;
+  color: whitesmoke;
+  border-radius: 4px;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: var(--forest-green);
+  border: 1px solid whitesmoke;
+}
+
+
+.registration {
+  width: 50%;
+  background: #f9f9f9;
+  border-radius: 0 10px 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.registration > h1 {
+  font-family: var(--body-font);
+  font-weight: 500;
+  color: var(--forest-green);
+  border-bottom: 2px solid var(--brown);
+}
+
+/* CONTAINERS */
+.registration-container {
+  z-index: 99;
+  width: 80vw;
+  height: 800px;
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #bbb,
+              -1px -1px 10px #bbb,
+              1px -1px 10px #bbb,
+              -1px 1px 10px #bbb;
+}
+.sidebar {
+  width: 50%;
+  background: url('/images/cozy.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+
+/* ==================
       CARDS
 ================== */
 
+/* .card {
+z-index: -1;
+} */
+
 .card-content {
-	height: 100px;
+	height: 150px;
 }
 
 /* .card-images {
@@ -108,6 +204,7 @@ footer{
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
+	/* z-index: 2; */
 }
 
 #logo{
@@ -202,10 +299,11 @@ footer{
 #tinyHomeTileContainer{
     padding: 5px;
     margin: 50px auto;
-    display: flex;
+    /* display: flex; */
     justify-content: space-around;
     flex-wrap: wrap;
     width: 90%;
+	z-index: 1;
 }
 
 /* ==================
