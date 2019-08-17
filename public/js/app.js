@@ -3,7 +3,7 @@ const app = angular.module('myTinyHomes', []);
 app.controller('MainController', ['$http', function($http){
 
 const controller = this;
-this.indexOfEditFormToShow = null;
+// this.indexOfEditFormToShow = null;
 
 //======================
 // GET ID
@@ -106,9 +106,9 @@ this.editHome = (_id) => {
 //======================
 // CANCEL EDIT
 //======================
-this.cancelEdit = () => {
-	this.indexOfEditFormToShow = null;
-}
+// this.cancelEdit = () => {
+// 	this.indexOfEditFormToShow = null;
+// }
 
 //======================
 // DELETE ROUTE
