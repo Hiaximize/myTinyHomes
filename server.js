@@ -47,6 +47,7 @@ app.use(morgan('tiny'));
 //====================
 // ROUTES
 //====================
+//ASK ABOUT THIS
 app.get('/login', (req, res) => {
   res.render('login.ejs', {
 	  currentUser: req.session.currentUser
