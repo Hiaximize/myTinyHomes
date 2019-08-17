@@ -18,6 +18,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		<link rel="stylesheet" href="css/main.css">
 		<!-- JS -->
+		<!-- Compiled and minified JavaScript -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 		<script src="/js/app.js" charset="utf-8"></script>
 	</head>
@@ -26,6 +28,11 @@
 		<!-- HEADER -->
 		<header ng-include="'partials/header.html'">
 		</header>
+		<!-- LOGIN / SIGN UP MODALS -->
+		<div ng-include="'partials/login.html'">
+		</div>
+		<div ng-include="'partials/signup.html'">
+		</div>
 		<!-- MAIN -->
 		<main ng-include="'partials/main.html'">
 		</main>
