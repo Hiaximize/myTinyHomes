@@ -205,6 +205,10 @@ footer{
 /* ==================
       SHOWPAGE
 ================== */
+.home-container {
+	width: 90%;
+	margin: 0 auto;
+}
 .cards {
 	display: flex;
 	flex-flow: row wrap;
@@ -243,4 +247,8 @@ footer{
 }
 h4 {
 	color: var(--hunter-green);
+}
+
+.btn-collection {
+	display: flex;
 }
