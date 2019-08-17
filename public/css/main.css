@@ -59,6 +59,10 @@ h1:after {
   display: block;
 }
 
+.shadowEffect {
+     box-shadow: 10px 10px 5px grey;
+}
+
 footer{
     margin-top: 25px;
     text-align: center;
@@ -88,7 +92,7 @@ footer{
 } */
 
 .card-title {
-	background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5);
 }
 
 
