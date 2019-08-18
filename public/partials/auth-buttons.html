@@ -1,6 +1,6 @@
 
 	<div id="loginButtons">
-			<button ng-click="ctrl.changeHeaderPath('login')" id="loginButton" type="submit" value="Login">Login</button>
-			<button ng-click="ctrl.changeHeaderPath('signup')" id="signUp" type="submit" value="Sign Up">Sign Up</button>
+			<button ng-click="ctrl.changeHeaderPath('login'); ctrl.changeInclude('blank.html')" id="loginButton" type="submit" value="Login">Login</button>
+			<button ng-click="ctrl.changeHeaderPath('signup'); ctrl.changeInclude('blank.html')" id="signUp" type="submit" value="Sign Up">Sign Up</button>
 
 	</div>

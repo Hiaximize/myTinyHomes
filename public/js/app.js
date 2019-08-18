@@ -182,6 +182,8 @@ this.editHome = (_id) => {
      },
      function(error){
        console.log(error);
+	   controller.changeInclude('blank')
+	   controller.changeHeaderPath('page404');
      }
    )
  }
@@ -194,7 +196,7 @@ this.editHome = (_id) => {
      function(response){
        console.log(response);
        controller.changeHeaderPath('auth-buttons');
-	   controller.changeInclude('cards')
+	   controller.changeInclude('cards');
        controller.loggedInUsername = null;
      },
      function(error){

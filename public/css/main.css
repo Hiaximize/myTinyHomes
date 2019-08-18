@@ -173,6 +173,22 @@ input[type="submit"]:hover {
   border-radius: 10px 0 0 10px;
 }
 
+.sidebar2 {
+  width: 50%;
+  background: url('/images/tropical.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+
+.sidebar3 {
+  width: 50%;
+  background: url('/images/crooked-house.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+
 /* ==================
       CARDS
 ================== */

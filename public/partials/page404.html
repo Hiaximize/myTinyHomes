@@ -1,0 +1,32 @@
+<!-- ============= CONTAINER ============== -->
+    <div class="registration-container">
+      <!-- sidebar -->
+      <div class="sidebar3"></div>
+      <!-- registration container -->
+      <div class="registration">
+		<p>Oops! Something's not quite right...</p>
+        <h1>LOG IN</h1>
+        <!-- START FORM -->
+        <form ng-submit="ctrl.logIn();">
+          <!-- fieldset for account info -->
+          <fieldset class="account-info">
+            <!-- legend for account info -->
+            <legend>ACCOUNT INFORMATION</legend>
+			  <!-- username -->
+              <label for="username">USERNAME</label>
+              <input type="text" id="username" ng-model="ctrl.username"/>
+              <!-- password -->
+              <label for="password">PASSWORD</label>
+              <input type="password" id="password" ng-model="ctrl.password">
+          </fieldset>
+          <!-- submit button -->
+          <input type="submit" id="login-button" value="Log In">
+			  <form ng-submit="ctrl.changeHeaderPath('signup')">
+	  			<input type="submit" value="Sign Up">
+	  		</form>
+        </form>
+
+      </div>
+    </div>
+  </body>
+</html>
