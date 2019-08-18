@@ -65,9 +65,9 @@ h1:after {
 }
 
 
-header {
+/* header {
 	z-index: 2;
-}
+} */
 .shadowEffect {
      box-shadow: 10px 10px 5px grey;
 
@@ -79,136 +79,13 @@ footer{
     background-color: var(--dark-tan);
 }
 
-
 #container{
     margin: 0 auto;
 }
 
-
-/* ==================
-      FORMS
-================== */
-
-fieldset {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px 0;
+::placeholder {
+	color: var(--black);
 }
-legend {
-  font-family: var(--body-font);
-  font-weight: 500;
-  color: var(--hunter-green);
-  padding: 0 10px;
-}
-label {
-  font-family: var(--body-font);;
-  font-weight: 200;
-  color: vcolor: var(--forest-green);;
-  display: block;
-}
-
-#signup-button {
-	width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid var(--brown);
-}
-
-input:focus {
-  outline: 0;
-  border: 1px solid var(--hunter-green);
-}
-
-input[type="submit"] {
-  height: 50px;
-  background: var(--hunter-green);
-  border: 0px;
-  font-family: var(--body-font);
-  font-size: 1.3em;
-  color: whitesmoke;
-  border-radius: 4px;
-}
-input[type="submit"]:hover {
-  cursor: pointer;
-  background-color: var(--forest-green);
-  border: 1px solid whitesmoke;
-}
-
-
-.registration {
-  width: 50%;
-  background: #f9f9f9;
-  border-radius: 0 10px 10px 0;
-  padding: 15px;
-  box-sizing: border-box;
-  overflow: auto;
-}
-
-.registration > h1 {
-  font-family: var(--body-font);
-  font-weight: 500;
-  color: var(--forest-green);
-  border-bottom: 2px solid var(--brown);
-}
-
-/* CONTAINERS */
-.registration-container {
-  z-index: 99;
-  width: 80vw;
-  height: 800px;
-  margin: 50px auto;
-  display: flex;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px #bbb,
-              -1px -1px 10px #bbb,
-              1px -1px 10px #bbb,
-              -1px 1px 10px #bbb;
-}
-.sidebar {
-  width: 50%;
-  background: url('/images/cozy.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px 0 0 10px;
-}
-
-.sidebar2 {
-  width: 50%;
-  background: url('/images/tropical.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px 0 0 10px;
-}
-
-.sidebar3 {
-  width: 50%;
-  background: url('/images/crooked-house.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px 0 0 10px;
-}
-
-/* ==================
-      CARDS
-================== */
-
-.card {
-  margin: 20px 10px;
-}
-
-.card-content {
-	height: 150px;
-}
-
-/* .card-images {
-	background-color: rgba(0,0,0,0.82);
-} */
-
-.card-title {
-    background-color: rgba(0,0,0,0.5);
-}
-
 
 /* ==================
       HEADER
@@ -220,7 +97,7 @@ input[type="submit"]:hover {
     position: fixed;
 } */
 
-#header{
+#headerImage{
     z-index: 0;
     height: 500px;
     width: 100%;
@@ -240,38 +117,66 @@ input[type="submit"]:hover {
 }
 #userImage{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 100px;
     height: 75px;
     width: 75px;
     margin-top: 5px;
     margin-right: 20px;
     border-radius: 50%;
 }
+
+#userWelcome {
+	position: absolute;
+    top: 5px;
+    right: 120px;
+}
+
 #logOut{
-    position: absolute;
+    /* position: absolute;
     top: 90px;
     right: 0;
     margin-right: 25px;
+    border-radius: 4px; */
+	background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: white;
     border-radius: 4px;
+    outline: none;
 }
 #searchForm{
+	top: 90px;
+	right: 5px;
+    position: absolute;
     display: flex;
     justify-content: center;
+	align-items: center;
     flex-flow: row nowrap;
-    margin-top: 100px;
+    /* margin-top: 100px; */
+	/* background-color: var(--forest-green); */
 }
 #searchBar{
-    all: unset;
+	/* top: 0;
+	right: 300px;
+	position: absolute; */
     font-size: 30px;
     border-radius: 10px;
     padding: 2px;
-    color: white;
+    color: var(--black);
     margin-bottom: 5px;
     background-color: rgba(255,255,255,.5);
     border: 1px solid white;
 }
 #searchButton{
+	top: 90px;
+	right: 105px;
+    position: absolute;
     font-size: 30px;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -353,6 +258,175 @@ input[type="submit"]:hover {
     flex-wrap: wrap;
 	  z-index: 1;
 }
+
+/* ==================
+      STICKY HEADER
+================== */
+.header {
+  padding: 10px 16px;
+  background: var(--forest-green);
+  color: #f1f1f1;
+  z-index: 5;
+}
+
+#header-button {
+	all: unset;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    margin-right: 7px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+/* ==================
+      FORMS
+================== */
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+}
+legend {
+  font-family: var(--body-font);
+  font-weight: 500;
+  color: var(--hunter-green);
+  padding: 0 10px;
+}
+label {
+  font-family: var(--body-font);;
+  font-weight: 200;
+  color: vcolor: var(--forest-green);;
+  display: block;
+}
+
+#signup-button {
+	width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--brown);
+}
+
+input:focus {
+  outline: 0;
+  border: 1px solid var(--hunter-green);
+}
+
+input[type="submit"] {
+  height: 50px;
+  background: var(--hunter-green);
+  border: 0px;
+  font-family: var(--body-font);
+  font-size: 1.3em;
+  color: whitesmoke;
+  border-radius: 4px;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: var(--forest-green);
+  border: 1px solid whitesmoke;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+}
+.registration {
+  width: 50%;
+  background: #f9f9f9;
+  border-radius: 0 10px 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.registration > h1 {
+  font-family: var(--body-font);
+  font-weight: 500;
+  color: var(--forest-green);
+  border-bottom: 2px solid var(--brown);
+}
+
+/* CONTAINERS */
+.registration-container {
+  z-index: 99;
+  width: 80vw;
+  height: 500px;
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #bbb,
+              -1px -1px 10px #bbb,
+              1px -1px 10px #bbb,
+              -1px 1px 10px #bbb;
+}
+.sidebar {
+  width: 50%;
+  background: url('/images/cozy.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+
+.sidebar2 {
+  width: 50%;
+  background: url('/images/tropical.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+
+.sidebar3 {
+  width: 50%;
+  background: url('/images/crooked-house.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+
+/* ==================
+      CARDS
+================== */
+
+.card {
+  margin: 20px 10px;
+}
+
+.card-content {
+	height: 150px;
+}
+
+/* .card-images {
+	background-color: rgba(0,0,0,0.82);
+} */
+
+.card-title {
+    background-color: rgba(0,0,0,0.5);
+}
+
+
 
 /* ==================
       SHOWPAGE

@@ -11,36 +11,36 @@
             <!-- legend for account info -->
             <legend>ADD NEW HOME</legend>
 			<!-- home name -->
-			<label>HOME NAME</label>
-			<input type="text" ng-model="ctrl.name"/>
+			<label for="home-name">HOME NAME</label>
+			<input id="home-name" type="text" ng-model="ctrl.name"/>
 			<!-- home type -->
-			<label>TYPE</label>
-			<input type="text" ng-model="ctrl.type">
+			<label for="type">TYPE</label>
+			<input id="type" type="text" ng-model="ctrl.type">
 			<!-- hidden input for user email -->
-			<input type="hidden" name="ctrl.builder" value="{{ctrl.currentUser.email}}">
+			<input type="hidden" ng-model="ctrl.builder" value="ctrl.currentUser.email">
 			<!-- home description -->
-			<label>SHORT DESCRIPTION</label>
-			<textarea ng-model="ctrl.description"></textarea>
+			<label for="sd">SHORT DESCRIPTION</label>
+			<textarea id="sd" ng-model="ctrl.description"></textarea>
 			<!-- home price -->
-			<label>PRICE</label>
-			<input type="text" ng-model="ctrl.price">
+			<label for="price">PRICE</label>
+			<input id="price" type="text" ng-model="ctrl.price">
 			<!-- image url -->
-			<label>IMAGE URL</label>
-			<input type="text" ng-model="ctrl.image">
+			<label for="imageURL">IMAGE URL</label>
+			<input id="imageURL" type="text" ng-model="ctrl.image">
 			<!-- mobile: yes or no? -->
-			<label>IS IT MOBILE?
-	        <input type="checkbox" ng-model="ctrl.mobile"><span></span></label>
+			<label for="mobile">IS IT MOBILE?
+	        <input id="mobile" type="checkbox" ng-model="ctrl.mobile"><span></span></label><br><br>
 			<!-- number of sqare feet -->
-			<label for="name">SQUARE FOOTAGE</label>
-	        <input type="text" ng-model="ctrl.sqft">
+			<label for="sqft">SQUARE FOOTAGE</label>
+	        <input id="sqft" type="text" ng-model="ctrl.sqft">
 			<!-- number of beds -->
-			<label for="name"># OF BEDROOMS</label>
-	        <input type="text" ng-model="ctrl.beds">
+			<label for="beds"># OF BEDROOMS</label>
+	        <input id="beds" type="text" ng-model="ctrl.beds">
 			<!-- number of beds -->
-			<label for="name"># OF BATHROOMS</label>
-	        <input type="text" ng-model="ctrl.baths">
-			<label for="name"># OF LOFTS</label>
-	        <input type="text" ng-model="ctrl.lofts">
+			<label for="baths"># OF BATHROOMS</label>
+	        <input id="baths" type="text" ng-model="ctrl.baths">
+			<label for="lofts"># OF LOFTS</label>
+	        <input id="lofts" type="text" ng-model="ctrl.lofts">
           </fieldset>
           <!-- submit button -->
           <input type="submit" id="signup-button" value="Add a New Tiny Home">

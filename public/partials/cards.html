@@ -1,9 +1,6 @@
+
 <div class="row">
-    <div ng-show="ctrl.currentUser">
-        <button class="waves-effect waves-light btn blue-grey darken-1"
-        ng-click="ctrl.changeHeaderPath('new')">Add a New Tiny Home</button>
-    </div>
-    <div ng-repeat="home in ctrl.homes" class="col s12 m6 l4 xl3">
+    <div ng-repeat="home in ctrl.homes | filter: searchbox" class="col s12 m6 l4 xl3">
       <div class="card shadow-pop-br">
         <div class="card-image">
           <img src="{{ home.image }}">

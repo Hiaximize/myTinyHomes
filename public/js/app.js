@@ -90,8 +90,10 @@ this.getHomes = () => {
        }
     }).then(
        (response) => {
+		   console.log(response.data.builder);
           this.resetForm();
           this.getHomes();
+
        }, (error) => {
           console.log(error);
        })

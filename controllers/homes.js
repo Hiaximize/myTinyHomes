@@ -11,6 +11,14 @@ homes.get('/seed', (req, res) => {
 	})
 })
 
+homes.get('/delete', (req, res) => {
+	Homes.remove({}, (err, data) => {
+		if (err) {
+			console.log(err);
+		}
+	})
+})
+
 homes.get('/', (req, res) => {
   // res.send('index');
   Homes.find({}, (err, foundHomes) => {

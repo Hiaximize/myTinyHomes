@@ -26,13 +26,44 @@
 	<!-- BODY -->
 	<body ng-controller="MainController as ctrl">
 		<!-- HEADER -->
-		<header ng-include="'partials/header.html'">
-		</header>
+	<div class="header" id="stickyHeader">
+		<div ng-include="ctrl.includeHeaderPath">
+
+		</div>
+		<a ng-click="ctrl.returnHome()"> <img src="/images/logo.png" id="logo"> </a>
+		<!-- ADD HOME BUTTON -->
+		<div ng-show="ctrl.currentUser">
+			<button class="waves-effect waves-light btn-large grey darken-4"
+			ng-click="ctrl.changeHeaderPath('new'); ctrl.changeInclude('blank') ">Add a New Tiny Home</button>
+		</div>
+
+
+	</div><!--sticky Header closing-->
+		<div id="headerImage">
+			<div id="logoImage">
+			</div>
+		</div>
+
 		<!-- MAIN -->
-		<main ng-include="'partials/main.html'">
+		<main class="content" ng-include="'partials/main.html'">
 		</main>
 		<!-- FOOTER -->
 		<footer class="page-footer brown lighten-4" ng-include="'partials/footer.html'">
         </footer>
+		<!-- STICKY HEADER -->
+		<script>
+			window.onscroll = function() {myFunction()};
+
+			var header = document.getElementById("stickyHeader");
+			var sticky = header.offsetTop;
+
+			function myFunction() {
+			  if (window.pageYOffset > sticky) {
+			    header.classList.add("sticky");
+			  } else {
+			    header.classList.remove("sticky");
+			  }
+			}
+		</script>
 	</body>
 </html>

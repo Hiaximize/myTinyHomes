@@ -1,13 +1,7 @@
 <div id="header">
-	<div id="stickyHeader">
+	<div class="header" id="stickyHeader">
 		<div id="logoImage">
 			<a ng-click="ctrl.returnHome()"> <img src="/images/logo.png" id="logo"> </a>
-		</div>
-		<div id="searchForm">
-			<form>
-				<input type="text" ng-model="searchbox" placeholder="search" id="searchBar">
-				<input id="searchButton" type="submit" value="Search">
-			</form>
 		</div>
 		<div ng-include="ctrl.includeHeaderPath">
 		</div>

@@ -7,10 +7,10 @@
         <div class="text">
             <h3>{{ ctrl.homes.name }}</h3>
 			<div ng-show="ctrl.currentUser">
-				<button class="waves-effect waves-light btn-large light-green darken-4"><a href="mailto:{{ctrl.homes.builder}}?subject=Tiny Home Blueprints">Contact Builder For Blueprints</a></button>
+				<button class="waves-effect waves-light btn-large blue-grey darken-1"><a class="white-text" href="mailto:{{ctrl.homes.builder}}?subject=Tiny Home Blueprints">Contact Lister</a></button>
 			</div>
 			<div ng-show="!ctrl.currentUser">
-				<p>Log In To View Blueprints</p>
+				<button ng-click="ctrl.changeInclude('blank'); ctrl.changeHeaderPath('login')"class="waves-effect waves-light btn-large blue-grey darken-1"><a class="white-text">Log In To View Blueprints</a></button>
 			</div>
             <h4>{{ ctrl.homes.price | currency}}</h4>
             <p>{{ ctrl.homes.description }}</p>
@@ -65,7 +65,7 @@
 			</div>
 			</div>
 			<div class="col">
-				<button class="waves-effect waves-light btn light-green darken-4" ng-click="ctrl.changeInclude('cards'); ctrl.getHomes()">Back</button>
+				<button class="waves-effect waves-light btn blue-grey darken-1" ng-click="ctrl.changeInclude('cards'); ctrl.getHomes()">Back</button>
 			</div>
 		</div>
     </div>
