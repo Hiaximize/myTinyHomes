@@ -18,8 +18,8 @@
             </div>
             <div class="icon-card">
                 <img class="icon" src="../icons/wheel.png"><br>
-                <h9 ng-if="ctrl.homes.mobile == true">Mobile</h9>
-                <h9 ng-if="ctrl.homes.mobile == false">Not Mobile</h9>
+                <h9 ng-if="ctrl.homes.mobile">Mobile</h9>
+                <h9 ng-if="!ctrl.homes.mobile">Not Mobile</h9>
             </div>
             <div class="icon-card">
                 <img class="tool" src="../icons/tool.png"><br>
@@ -43,19 +43,21 @@
         </div><br/>
         <!-- buttons -->
 		<div class="row">
-			<div class="col">
-				<button
-					class="waves-effect waves-light btn light-green darken-4"
-					ng-click="ctrl.getID(ctrl.homes._id); ctrl.changeInclude('edit')">
-					Edit
-				</button>
-			</div>
-			<div class="col">
-				<button
-				class="waves-effect waves-light btn red darken-4"
-				ng-click="ctrl.deleteHome(ctrl.homes._id); ctrl.changeInclude('cards')">
-				DELETE
-				</button>
+			<div ng-show="{{ctrl.currUser.email ==== ctrl.homes.builder}}">
+				<div class="col">
+					<button
+						class="waves-effect waves-light btn light-green darken-4"
+						ng-click="ctrl.getID(ctrl.homes._id); ctrl.changeInclude('edit')">
+						Edit
+					</button>
+				</div>
+				<div class="col">
+					<button
+					class="waves-effect waves-light btn red darken-4"
+					ng-click="ctrl.deleteHome(ctrl.homes._id); ctrl.changeInclude('cards')">
+					DELETE
+					</button>
+				</div>
 			</div>
 			<div class="col">
 				<button class="waves-effect waves-light btn light-green darken-4" ng-click="ctrl.changeInclude('cards'); ctrl.getHomes()">Back</button>
