@@ -212,7 +212,7 @@ z-index: -1;
 
 #logo{
     height: 100px;
-    width: 100px;
+    width: auto;
     margin-top: 20px;
     margin-left: 20px;
 }
