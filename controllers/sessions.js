@@ -12,8 +12,18 @@ sessions.delete('/', (req, res) => {
   });
 });
 
+sessions.get('/', (req, resp)=>{
+    resp.status(200).json({
+      status: 200,
+      message: "Session GOT IT!"
+    });
+});
+
+
 sessions.post('/', (req, res) => {
   User.findOne({username:req.body.username}, (error, foundUser) => {
+    console.log(foundUser);
+    
     if(bcrypt.compareSync(req.body.password,foundUser.password)){
       req.session.currentUser = foundUser;
       res.status(201).json({
