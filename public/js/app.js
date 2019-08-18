@@ -208,10 +208,19 @@ this.editHome = (_id) => {
  this.goApp = function(){
    $http({
      method:'GET',
-     url:'/app'
+     url:'/users'
    }).then(
      function(response){
-       controller.loggedInUsername = response.data.username;
+       if(response.data.currentUser){
+       
+      //  if(loggedInUsername){
+         controller.changeHeaderPath('auth-view')
+       }else{
+         controller.changeHeaderPath('auth-buttons');
+       }
+       console.log(response.data)
+       //here is where we will change values if we add ng-if
+      //  controller.loggedInUsername = response.data.username;
      },
      function(error){
        console.log(error);
@@ -221,7 +230,6 @@ this.editHome = (_id) => {
 
 
 // Call on page load:
-this.getHomes()
-// this.goApp(); //testing this out remove if necessary
-
+  this.getHomes();
+  this.goApp();
 }]);

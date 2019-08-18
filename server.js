@@ -47,16 +47,11 @@ app.use(morgan('tiny'));
 //====================
 // ROUTES
 //====================
-//ASK ABOUT THIS
-app.get('/login', (req, res) => {
-  res.render('login.ejs', {
-	  currentUser: req.session.currentUser
-  })
-})
-
-app.get('/', (req, res) => {
-  res.render("index.html")
-})
+// app.get('/users', (req, res) => {
+// 	//   res.render("index.html")
+// 	let currentUser = req.session.currentUser
+// 	res.json(currentUser);
+// })
 
 //==================
 // CONTROLLERS
