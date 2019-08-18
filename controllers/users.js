@@ -3,6 +3,19 @@ const users = express.Router();
 const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
+
+// users.get('/', (req, res) => {
+//   //   res.render("index.html")
+//   let currentUser = req.session.currentUser
+//   res.json(currentUser);
+// })
+
+
+users.get('/', (req, resp) => {
+    resp.json(req.session)
+});
+
+
 users.post('/', (req, res) => {
   req.body.password = bcrypt.hashSync(req.body.password,
   bcrypt.genSaltSync(10));

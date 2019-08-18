@@ -1,4 +1,5 @@
-<div id=container>
+<div class="container">
+<div id="container">
   <div class="image-text">
     <img src="{{ ctrl.homes.image }}">
     <div class="text">
@@ -39,23 +40,26 @@
     </div>
   </div><br/>
 		<div class="row">
-			<div class="col">
-				<button
-					class="waves-effect waves-light btn light-green darken-4"
-					ng-click="ctrl.getID(ctrl.homes._id); ctrl.changeInclude('edit')">
-					Edit
-				</button>
-			</div>
-			<div class="col">
-				<button
-				class="waves-effect waves-light btn red darken-4"
-				ng-click="ctrl.deleteHome(ctrl.homes._id); ctrl.changeInclude('cards')">
-				DELETE
-				</button>
+			<div ng-show="{{ctrl.currUser.email ==== ctrl.homes.builder}}">
+				<div class="col">
+					<button
+						class="waves-effect waves-light btn light-green darken-4"
+						ng-click="ctrl.getID(ctrl.homes._id); ctrl.changeInclude('edit')">
+						Edit
+					</button>
+				</div>
+				<div class="col">
+					<button
+					class="waves-effect waves-light btn red darken-4"
+					ng-click="ctrl.deleteHome(ctrl.homes._id); ctrl.changeInclude('cards')">
+					DELETE
+					</button>
+				</div>
 			</div>
 			<div class="col">
 				<button class="waves-effect waves-light btn light-green darken-4" ng-click="ctrl.changeInclude('cards'); ctrl.getHomes()">Back</button>
 			</div>
 		</div>
 	</div>
+</div>
 </div>

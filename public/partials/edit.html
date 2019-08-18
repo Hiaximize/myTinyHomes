@@ -11,10 +11,9 @@
 		Image:<input type="text"
 			ng-model="ctrl.updatedImage"
 			ng-value="ctrl.homes.image"><br>
-		Mobile:<label><div ng-if="ctrl.homes.mobile == true">
-			<input type="checkbox" ng-checked="true" ng-model="ctrl.updatedMobile" ng-value="ctrl.homes.mobile"><span></span></div></label>
-			<label><div ng-if="ctrl.homes.mobile == false">
-			<input type="checkbox" ng-checked="false" ng-model="ctrl.updatedMobile" ng-value="ctrl.homes.mobile"><span></span></div></label><br>
+		Mobile:<label>
+			<input type="checkbox" ng-checked="ctrl.homes.mobile" ng-model="ctrl.updatedMobile" ng-value="ctrl.homes.mobile"><span></span></label>
+			<!-- <input type="checkbox"ng-model="ctrl.updatedMobile" ng-value="ctrl.homes.mobile"><span></span></div></label><br> -->
 		sqft:<input type="text"
 			ng-model="ctrl.updatedSqft"
 			ng-value="ctrl.homes.sqft"><br>
