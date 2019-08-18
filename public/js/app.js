@@ -173,7 +173,7 @@ this.editHome = (_id) => {
      }
    }).then(
      function(response){
-       
+
        console.log(response);
        controller.username = null;
        controller.password = null;
@@ -199,7 +199,7 @@ this.editHome = (_id) => {
      function(error){
        console.log(error);
      });
-   
+
  }
 
  this.goApp = function(){
@@ -208,7 +208,7 @@ this.editHome = (_id) => {
      url:'/users'
    }).then(
      function(response){
-       
+
        if(response.data.currentUser){
 
           controller.currentUser = response.data.currentUser;
