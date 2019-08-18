@@ -7,7 +7,7 @@
       <div class="registration">
         <h1>LOG IN</h1>
         <!-- START FORM -->
-        <form ng-submit="ctrl.logIn();">
+        <form id="loginForm" ng-submit="ctrl.logIn();">
           <!-- fieldset for account info -->
           <fieldset class="account-info">
             <!-- legend for account info -->
@@ -20,9 +20,23 @@
               <input type="password" id="password" ng-model="ctrl.password">
           </fieldset>
           <!-- submit button -->
-          <input type="submit" id="login-button" value="Log In">
+          <!-- <input type="submit" id="login-button" value="Log In">
+          <button ng-click="ctrl.changeHeaderPath('signup')">Sign Up</button> -->
         </form>
-		<button ng-click="ctrl.changeHeaderPath('signup')">Sign Up</button>
+
+        <!-- form to change to the signup form -->
+        <form id="signUpForm" ng-submit="ctrl.changeHeaderPath('signup')"></form>
+
+        <!-- Submit buttons for the above forms -->
+        <div id="buttons">
+            <input id="modalLogin" type="submit" form="loginForm" value="Login">
+            <input id="modalSignup" type="submit" form="signUpForm" value="Sign Up">
+        </div>
+        
+        <form ng-submit="ctrl.changeHeaderPath('auth-buttons'); ctrl.changeHeaderPath('cards');">
+          <input type="submit" id="loginCancel" value="cancel">
+        </form>
+
       </div>
     </div>
   </body>

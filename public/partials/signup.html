@@ -33,6 +33,11 @@
           <!-- submit button -->
           <input type="submit" id="signup-button" value="submit the form">
         </form>
+
+        <!-- needs work, doesn't show the tiles after canceling -->
+        <form ng-submit="ctrl.changeHeaderPath('auth-buttons'); ctrl.changeHeaderPath('cards');">
+          <input type="submit" id="signUpCancel" value="cancel">
+        </form>
       </div>
     </div>
   </body>
