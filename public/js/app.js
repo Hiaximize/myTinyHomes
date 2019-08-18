@@ -66,17 +66,17 @@ this.getHomes = () => {
        method: 'POST',
        url: '/homes',
        data: {
-          name: this.name,
-		  type: this.type,
-          builder: this.builder,
-		  description: this.description,
-          price: this.price,
-		  image: this.image,
-          mobile: this.mobile,
-		  sqft: this.sqft,
-          beds: this.beds,
-		  baths: this.baths,
-		  lofts: this.lofts,
+          name: controller.name,
+		  type: controller.type,
+          builder: controller.builder,
+		  description: controller.description,
+          price: controller.price,
+		  image: controller.image,
+          mobile: controller.mobile,
+		  sqft: controller.sqft,
+          beds: controller.beds,
+		  baths: controller.baths,
+		  lofts: controller.lofts,
        }
     }).then(
        (response) => {

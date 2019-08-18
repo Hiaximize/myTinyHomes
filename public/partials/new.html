@@ -1,0 +1,16 @@
+<div ng-submit="ctrl.addHome(); ctrl.changeInclude('cards')">
+    <form>
+        <input type="text" ng-model="ctrl.name" placeholder="name">
+        <input type="text" ng-model="ctrl.type" placeholder="type">
+        <input type="text" ng-model="ctrl.builder" placeholder="builder">
+        <input type="text" ng-model="ctrl.description" placeholder="description">
+        <input type="text" ng-model="ctrl.price" placeholder="price">
+        <input type="text" ng-model="ctrl.image" placeholder="image">
+        Mobile: <label><input type="checkbox" ng-model="ctrl.mobile"><span></span></label>
+        <input type="text" ng-model="ctrl.sqft" placeholder="sqft">
+        <input type="text" ng-model="ctrl.beds" placeholder="bedrooms">
+        <input type="text" ng-model="ctrl.baths" placeholder="bathrooms">
+        <input type="text" ng-model="ctrl.lofts" placeholder="lofts">
+        <input type="submit" value="Add a New Tiny Home">
+    </form>
+</div>
