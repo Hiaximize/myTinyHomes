@@ -1,16 +1,54 @@
-<div ng-submit="ctrl.addHome(); ctrl.changeInclude('cards')">
-    <form>
-        <input type="text" ng-model="ctrl.name" placeholder="name">
-        <input type="text" ng-model="ctrl.type" placeholder="type">
-        <input type="text" ng-model="ctrl.builder" placeholder="builder">
-        <input type="text" ng-model="ctrl.description" placeholder="description">
-        <input type="text" ng-model="ctrl.price" placeholder="price">
-        <input type="text" ng-model="ctrl.image" placeholder="image">
-        Mobile: <label><input type="checkbox" ng-model="ctrl.mobile"><span></span></label>
-        <input type="text" ng-model="ctrl.sqft" placeholder="sqft">
-        <input type="text" ng-model="ctrl.beds" placeholder="bedrooms">
-        <input type="text" ng-model="ctrl.baths" placeholder="bathrooms">
-        <input type="text" ng-model="ctrl.lofts" placeholder="lofts">
-        <input type="submit" value="Add a New Tiny Home">
-    </form>
-</div>
+<!-- ============= CONTAINER ============== -->
+    <div class="registration-container">
+      <!-- sidebar -->
+      <div class="sidebar"></div>
+      <!-- registration container -->
+      <div class="registration">
+        <!-- START FORM -->
+        <form ng-submit="ctrl.addHome(); ctrl.returnHome()">
+          <!-- fieldset for account info -->
+          <fieldset class="account-info">
+            <!-- legend for account info -->
+            <legend>ADD NEW HOME</legend>
+			<!-- home name -->
+			<label>HOME NAME</label>
+			<input type="text" ng-model="ctrl.name"/>
+			<!-- home type -->
+			<label>TYPE</label>
+			<input type="text" ng-model="ctrl.type">
+			<!-- hidden input for user email -->
+			<input type="hidden" ng-model="ctrl.builder" value="{{ctrl.currentUser.email}}">
+			<!-- home description -->
+			<label>SHORT DESCRIPTION</label>
+			<textarea ng-model="ctrl.description"></textarea>
+			<!-- home price -->
+			<label>PRICE</label>
+			<input type="text" ng-model="ctrl.price">
+			<!-- image url -->
+			<label>IMAGE URL</label>
+			<input type="text" ng-model="ctrl.image">
+			<!-- mobile: yes or no? -->
+			<label>IS IT MOBILE?
+	        <input type="checkbox" ng-model="ctrl.mobile"><span></span></label>
+			<!-- number of sqare feet -->
+			<label for="name">SQUARE FOOTAGE</label>
+	        <input type="text" ng-model="ctrl.sqft">
+			<!-- number of beds -->
+			<label for="name"># OF BEDROOMS</label>
+	        <input type="text" ng-model="ctrl.beds">
+			<!-- number of beds -->
+			<label for="name"># OF BATHROOMS</label>
+	        <input type="text" ng-model="ctrl.baths">
+			<label for="name"># OF LOFTS</label>
+	        <input type="text" ng-model="ctrl.lofts">
+          </fieldset>
+          <!-- submit button -->
+          <input type="submit" id="signup-button" value="Add a New Tiny Home">
+        </form>
+        <form ng-submit="ctrl.returnHome();">
+          <input type="submit" id="signUpCancel" value="cancel">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

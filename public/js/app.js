@@ -42,6 +42,16 @@ this.includeHeaderPath = 'partials/auth-view.html'
 	}
 
 
+this.returnHome = () => {
+	controller.getHomes();
+	controller.changeInclude('cards')
+	if (controller.currentUser) {
+	controller.goApp();
+	controller.changeHeaderPath('auth-view')
+} else {
+	controller.changeHeaderPath('auth-buttons')
+}
+}
 //======================
 // INDEX/GET ROUTE
 //======================
@@ -163,7 +173,7 @@ this.editHome = (_id) => {
    })
  }
 
- this.logIn = function(){
+ this.logIn = () => {
    $http({
      method:'POST',
      url:'/sessions',
@@ -171,16 +181,16 @@ this.editHome = (_id) => {
        username:controller.username,
        password:controller.password
      }
-   }).then(
-     function(response){
+ 	}).then((response) => {
 
        console.log(response);
        controller.username = null;
        controller.password = null;
-       controller.changeHeaderPath('auth-view');
        controller.goApp();
-     },
-     function(error){
+	   controller.changeHeaderPath('auth-view');
+	   controller.changeInclude('cards')
+	   controller.getHomes();
+   },(error) => {
        console.log(error);
 	   controller.changeInclude('blank')
 	   controller.changeHeaderPath('page404');

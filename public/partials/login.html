@@ -1,4 +1,3 @@
-
 <!-- ============= CONTAINER ============== -->
     <div class="registration-container">
       <!-- sidebar -->
@@ -32,8 +31,8 @@
             <input id="modalLogin" type="submit" form="loginForm" value="Login">
             <input id="modalSignup" type="submit" form="signUpForm" value="Sign Up">
         </div>
-        
-        <form ng-submit="ctrl.changeHeaderPath('auth-buttons'); ctrl.changeHeaderPath('cards');">
+
+        <form ng-submit="ctrl.returnHome()">
           <input type="submit" id="loginCancel" value="cancel">
         </form>
 
