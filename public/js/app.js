@@ -197,7 +197,7 @@ this.editHome = (_id) => {
  this.goApp = function(){
    $http({
      method:'GET',
-     url:'/app'
+     url:'/'
    }).then(
      function(response){
        controller.loggedInUsername = response.data.username;
