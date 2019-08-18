@@ -30,7 +30,12 @@ this.includePath = 'partials/cards.html'
 
 	}
 
-this.includeHeaderPath = 'partials/auth-buttons.html'
+if (this.loggedInUsername == null){
+  this.includeHeaderPath = 'partials/auth-buttons.html'
+} else {
+this.includeHeaderPath = 'partials/auth-view.html'
+}
+
 	this.changeHeaderPath = (path) => {
 		this.includeHeaderPath = 'partials/' + path + '.html'
 		console.log();
@@ -135,15 +140,15 @@ this.editHome = (_id) => {
  // AUTHENTIFICATION
  //======================
 
- this.createUser = function(){
+ this.createUser = () => {
    $http({
      method:'POST',
      url:'/users',
      data:{
 		firstName:this.firstName,
 		lastName:this.lastName,
-	    username:this.username,
-	    password:this.password,
+	  username:this.username,
+	  password:this.password,
 		email:this.email,
 		profileImage:this.profileImage
      }
@@ -163,14 +168,19 @@ this.editHome = (_id) => {
      method:'POST',
      url:'/sessions',
      data: {
-       username:this.username,
-       password:this.password
+       username:controller.username,
+       password:controller.password
      }
    }).then(
      function(response){
+       
        console.log(response);
        controller.username = null;
        controller.password = null;
+
+       console.log(controller.password,
+       controller.username);
+       controller.changeHeaderPath('auth-view');
        controller.goApp();
      },
      function(error){
@@ -186,21 +196,31 @@ this.editHome = (_id) => {
    }).then(
      function(response){
        console.log(response);
+       controller.changeHeaderPath('auth-buttons');
        controller.loggedInUsername = null;
      },
      function(error){
        console.log(error);
-     }
-   )
+     });
+   
  }
 
  this.goApp = function(){
    $http({
      method:'GET',
-     url:'/app'
+     url:'/users'
    }).then(
      function(response){
-       controller.loggedInUsername = response.data.username;
+       if(response.data.currentUser){
+       
+      //  if(loggedInUsername){
+         controller.changeHeaderPath('auth-view')
+       }else{
+         controller.changeHeaderPath('auth-buttons');
+       }
+       console.log(response.data)
+       //here is where we will change values if we add ng-if
+      //  controller.loggedInUsername = response.data.username;
      },
      function(error){
        console.log(error);
@@ -210,6 +230,6 @@ this.editHome = (_id) => {
 
 
 // Call on page load:
-this.getHomes()
-
+  this.getHomes();
+  this.goApp();
 }]);
