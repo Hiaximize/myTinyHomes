@@ -3,6 +3,12 @@
 		<div id="logoImage">
 			<img src="/images/logo.png" id="logo">
 		</div>
+		<div id="searchForm">
+			<form>
+				<input type="text" ng-model="searchbox" placeholder="search" id="searchBar">
+				<input id="searchButton" type="submit" value="Search">
+			</form>
+		</div>
 		<div ng-include="ctrl.includeHeaderPath">
 		</div>
 	</div><!--sticky Header closing-->
