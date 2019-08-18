@@ -43,10 +43,10 @@ this.includeHeaderPath = 'partials/auth-view.html'
 
 
 this.returnHome = () => {
+	controller.goApp();
 	controller.getHomes();
 	controller.changeInclude('cards')
 	if (controller.currentUser) {
-	controller.goApp();
 	controller.changeHeaderPath('auth-view')
 } else {
 	controller.changeHeaderPath('auth-buttons')
@@ -208,6 +208,7 @@ this.editHome = (_id) => {
        controller.changeHeaderPath('auth-buttons');
 	   controller.changeInclude('cards');
        controller.loggedInUsername = null;
+	   location.reload()
      },
      function(error){
        console.log(error);
