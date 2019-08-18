@@ -177,9 +177,6 @@ this.editHome = (_id) => {
        console.log(response);
        controller.username = null;
        controller.password = null;
-
-       console.log(controller.password,
-       controller.username);
        controller.changeHeaderPath('auth-view');
        controller.goApp();
      },
@@ -211,22 +208,24 @@ this.editHome = (_id) => {
      url:'/users'
    }).then(
      function(response){
+
        if(response.data.currentUser){
 
-      //  if(loggedInUsername){
-         controller.changeHeaderPath('auth-view')
-       }else{
+          controller.currentUser = response.data.currentUser;
+          controller.profileImage = String(response.data.currentUser.profileImage);
+         controller.changeHeaderPath('auth-view');
+
+       } else {
+
          controller.changeHeaderPath('auth-buttons');
+
        }
-       console.log(response.data)
-       //here is where we will change values if we add ng-if
-      //  controller.loggedInUsername = response.data.username;
      },
      function(error){
        console.log(error);
      }
-   )
- }
+   );
+ };
 
 
 // Call on page load:
