@@ -27,6 +27,29 @@ this.updateUserFavorites = (userID, home) => {
     )
 }
 
+this.removeFavorite = (userID, favorite) => {
+	let newFavoritesArr = controller.currentUser.favorites
+	newFavoritesArr.pop(favorite)
+	$http({
+       method: 'PUT',
+       url: '/users/' + userID,
+       data: {
+		   favorites: newFavoritesArr
+	   }
+	}).then(
+       (response) => {
+
+       }
+    )
+}
+
+this.showFavorites = () => {
+	if (controller.currentUser.favorites.length > 0){
+		return true
+	} else {
+		return false
+	}
+}
 //=======================
 // TOGGLE SORT HOMES
 //=======================
