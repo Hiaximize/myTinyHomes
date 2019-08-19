@@ -1,0 +1,55 @@
+<!-- ============= CONTAINER ============== -->
+    <div class="registration-container">
+      <!-- sidebar -->
+      <div class="sidebar"></div>
+      <!-- registration container -->
+      <div class="registration">
+        <!-- START FORM -->
+        <form ng-submit="ctrl.addHome(); ctrl.returnHome()">
+          <!-- fieldset for account info -->
+          <fieldset class="account-info">
+            <!-- legend for account info -->
+            <legend>ADD NEW HOME</legend>
+			<!-- home name -->
+			<label for="home-name">HOME NAME
+			<input id="home-name" type="text" ng-model="ctrl.name"/></label>
+			<!-- home type -->
+			<label for="type">TYPE
+			<input id="type" type="text" ng-model="ctrl.type"></label>
+			<!-- hidden input for user email -->
+			<input type="hidden" ng-model="ctrl.builder" value="ctrl.currentUser.email">
+			<!-- home description -->
+			<label for="sd">SHORT DESCRIPTION
+			<textarea id="sd" ng-model="ctrl.description"></textarea></label>
+			<!-- home price -->
+			<label for="price">PRICE
+			<input id="price" type="text" ng-model="ctrl.price"></label>
+			<!-- image url -->
+			<label for="imageURL">IMAGE URL
+			<input id="imageURL" type="text" ng-model="ctrl.image"></label>
+			<!-- mobile: yes or no? -->
+			<label for="mobile">IS IT MOBILE?
+	        <input id="mobile" type="checkbox" ng-model="ctrl.mobile" ><span></span></label><br><br>
+			<!-- number of sqare feet -->
+			<label for="sqft">SQUARE FOOTAGE
+	        <input id="sqft" type="text" ng-model="ctrl.sqft"></label>
+			<!-- number of beds -->
+			<label for="beds"># OF BEDROOMS
+	        <input id="beds" type="text" ng-model="ctrl.beds"></label>
+			<!-- number of baths -->
+			<label for="baths"># OF BATHROOMS
+	        <input id="baths" type="text" ng-model="ctrl.baths"></label>
+			<!-- number of loft -->
+			<label for="lofts"># OF LOFTS
+	        <input id="lofts" type="text" ng-model="ctrl.lofts"></label>
+          </fieldset>
+          <!-- submit button -->
+          <input type="submit" id="signup-button" value="Add a New Tiny Home">
+        </form>
+        <form ng-submit="ctrl.returnHome();">
+          <input type="submit" id="signUpCancel" value="cancel">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

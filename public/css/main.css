@@ -65,9 +65,9 @@ h1:after {
 }
 
 
-header {
+/* header {
 	z-index: 2;
-}
+} */
 .shadowEffect {
      box-shadow: 10px 10px 5px grey;
 
@@ -79,12 +79,226 @@ footer{
     background-color: var(--dark-tan);
 }
 
-
 #container{
     margin: 0 auto;
 }
 
+::placeholder {
+	color: var(--black);
+}
 
+/* ==================
+      HEADER
+================== */
+/* #smallHeader{
+    z-index: 5;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+} */
+
+#headerImage{
+    z-index: 0;
+    height: 500px;
+    width: 100%;
+    background-image: url("../images/catskills-700.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+	/* z-index: 2; */
+}
+
+#logo{
+    height: 100px;
+    width: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#userImage{
+    position: absolute;
+    top: 15px;
+    right: 115px;
+    height: 75px;
+    width: 75px;
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* #userWelcome {
+	position: absolute;
+    top: 5px;
+    right: 120px;
+} */
+
+#logOut{
+    /* position: absolute;
+    top: 90px;
+    right: 0;
+    margin-right: 25px;
+    border-radius: 4px; */
+	background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+#searchForm{
+	top: 130px;
+	right: 15px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+    flex-flow: row nowrap;
+    /* margin-top: 100px; */
+	/* background-color: var(--forest-green); */
+}
+#searchBar{
+	/* top: 0;
+	right: 300px;
+	position: absolute; */
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 2px;
+    color: var(--black);
+    margin-bottom: 5px;
+    background-color: rgb(255,255,255);
+    border: 1px solid white;
+	width: 200px;
+}
+/* #searchButton{
+	top: 90px;
+	right: 105px;
+    position: absolute;
+    font-size: 30px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+    background-color: var(--forest-green);
+    border-color: white;
+    color: white;
+} */
+#loginUsername{
+    all: unset;
+    margin-top: 10px;
+    right: 250px;
+    top: 0;
+    position: absolute;
+    margin-right: 4px;
+    background-color: white;
+    color: white;
+    padding: 2px;
+}
+#loginPassword{
+    all: unset;
+    margin-right: 8px;
+    right: 65px;
+    top: 0;
+    margin-top: 10px;
+    position: absolute;
+    background-color: white;
+    color: white;
+    padding: 2px;
+}
+#loginSignup{
+  position: static;
+  right: 200px;
+}
+#signUp{
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+#modalLogin{
+  width: 50%;
+  background-color: rgb(2, 98, 157);
+  margin-right: 15px;
+}
+
+#signUpCancel{
+  width: 100%;
+  background-color: rgb(151, 15, 15);
+}
+#loginCancel{
+  width: 100%;
+  background-color: rgb(151, 15, 15);
+}
+#loginButton{
+    all: unset;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    margin-right: 7px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+#tinyHomeTileContainer{
+    padding: 25px;
+    margin: 50px auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+	  z-index: 1;
+}
+
+/* ==================
+      STICKY HEADER
+================== */
+.header {
+  padding: 10px 16px;
+  background: rgba(100, 131, 104, .8);
+  color: #f1f1f1;
+  z-index: 5;
+}
+
+#header-button {
+	all: unset;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    margin-right: 7px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
 /* ==================
       FORMS
 ================== */
@@ -101,9 +315,9 @@ legend {
   padding: 0 10px;
 }
 label {
-  font-family: var(--body-font);;
+  font-family: var(--body-font);
   font-weight: 200;
-  color: vcolor: var(--forest-green);;
+  color: var(--forest-green);
   display: block;
 }
 
@@ -135,7 +349,11 @@ input[type="submit"]:hover {
   border: 1px solid whitesmoke;
 }
 
-
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+}
 .registration {
   width: 50%;
   background: #f9f9f9;
@@ -156,7 +374,7 @@ input[type="submit"]:hover {
 .registration-container {
   z-index: 99;
   width: 80vw;
-  height: 800px;
+  height: 500px;
   margin: 50px auto;
   display: flex;
   border-radius: 10px;
@@ -210,132 +428,6 @@ input[type="submit"]:hover {
 }
 
 
-/* ==================
-      HEADER
-================== */
-/* #smallHeader{
-    z-index: 5;
-    height: 80px;
-    width: 100%;
-    position: fixed;
-} */
-
-#header{
-    z-index: 0;
-    height: 500px;
-    width: 100%;
-    background-image: url("../images/catskills-700.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-	/* z-index: 2; */
-}
-
-#logo{
-    height: 100px;
-    width: auto;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-#userImage{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 75px;
-    width: 75px;
-    margin-top: 5px;
-    margin-right: 20px;
-    border-radius: 50%;
-}
-#logOut{
-    position: absolute;
-    top: 90px;
-    right: 0;
-    margin-right: 25px;
-    border-radius: 4px;
-}
-#searchForm{
-    display: flex;
-    justify-content: center;
-    flex-flow: row nowrap;
-    margin-top: 100px;
-}
-#searchBar{
-    all: unset;
-    font-size: 30px;
-    border-radius: 10px;
-    padding: 2px;
-    color: white;
-    margin-bottom: 5px;
-    background-color: rgba(255,255,255,.5);
-    border: 1px solid white;
-}
-#searchButton{
-    font-size: 30px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    margin-left: 4px;
-    background-color: var(--forest-green);
-    border-color: white;
-    color: white;
-}
-#loginUsername{
-    all: unset;
-    margin-top: 10px;
-    right: 250px;
-    top: 0;
-    position: absolute;
-    margin-right: 4px;
-    background-color: white;
-    color: white;
-    padding: 2px;
-}
-#loginPassword{
-    all: unset;
-    margin-right: 8px;
-    right: 65px;
-    top: 0;
-    margin-top: 10px;
-    position: absolute;
-    background-color: white;
-    color: white;
-    padding: 2px;
-}
-#signUp{
-    background-color: rgba(0,0,0,.5);
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 7px;
-    margin-top: 12px;
-    padding: 8px;
-    font-size: 20px;
-    color: white;
-    border-radius: 4px;
-    outline: none;
-}
-
-#loginButton{
-    all: unset;
-    padding: 8px;
-    position: absolute;
-    top: 0;
-    right: 100px;
-    margin-right: 7px;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: white;
-}
-
-#tinyHomeTileContainer{
-    padding: 25px;
-    margin: 50px auto;
-    justify-content: space-around;
-    flex-wrap: wrap;
-	  z-index: 1;
-}
 
 /* ==================
       SHOWPAGE
@@ -400,4 +492,50 @@ h4 {
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
+}
+
+
+/* Animations */
+
+.shadow-pop-br {
+  -webkit-animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) 1s both;
+  animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) 1s both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-8-18 13:48:31
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shadow-pop-br
+ * ----------------------------------------
+ */
+@-webkit-keyframes shadow-pop-br {
+  0% {
+    box-shadow: 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+
+  100% {
+    box-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey, 4px 4px grey, 5px 5px grey, 6px 6px grey, 7px 7px grey, 8px 8px grey;
+    -webkit-transform: translateX(-8px) translateY(-8px);
+    transform: translateX(-8px) translateY(-8px);
+  }
+}
+
+@keyframes shadow-pop-br {
+  0% {
+    box-shadow: 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey, 0 0 grey;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+
+  100% {
+    box-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey, 4px 4px grey, 5px 5px grey, 6px 6px grey, 7px 7px grey, 8px 8px grey;
+    -webkit-transform: translateX(-8px) translateY(-8px);
+    transform: translateX(-8px) translateY(-8px);
+  }
 }

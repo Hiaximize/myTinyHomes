@@ -42,6 +42,16 @@ this.includeHeaderPath = 'partials/auth-view.html'
 	}
 
 
+this.returnHome = () => {
+	controller.goApp();
+	controller.getHomes();
+	controller.changeInclude('cards')
+	if (controller.currentUser) {
+	controller.changeHeaderPath('auth-view')
+} else {
+	controller.changeHeaderPath('auth-buttons')
+}
+}
 //======================
 // INDEX/GET ROUTE
 //======================
@@ -66,22 +76,24 @@ this.getHomes = () => {
        method: 'POST',
        url: '/homes',
        data: {
-          name: this.name,
-		  type: this.type,
-          builder: this.builder,
-		  description: this.description,
-          price: this.price,
-		  image: this.image,
-          mobile: this.mobile,
-		  sqft: this.sqft,
-          beds: this.beds,
-		  baths: this.baths,
-		  lofts: this.lofts,
+          name: controller.name,
+		  type: controller.type,
+          builder: controller.builder,
+		  description: controller.description,
+          price: controller.price,
+		  image: controller.image,
+          mobile: controller.mobile,
+		  sqft: controller.sqft,
+          beds: controller.beds,
+		  baths: controller.baths,
+		  lofts: controller.lofts,
        }
     }).then(
        (response) => {
+		   console.log(response.data.builder);
           this.resetForm();
           this.getHomes();
+
        }, (error) => {
           console.log(error);
        })
@@ -163,7 +175,7 @@ this.editHome = (_id) => {
    })
  }
 
- this.logIn = function(){
+ this.logIn = () => {
    $http({
      method:'POST',
      url:'/sessions',
@@ -171,16 +183,16 @@ this.editHome = (_id) => {
        username:controller.username,
        password:controller.password
      }
-   }).then(
-     function(response){
+ 	}).then((response) => {
 
        console.log(response);
        controller.username = null;
        controller.password = null;
-       controller.changeHeaderPath('auth-view');
        controller.goApp();
-     },
-     function(error){
+	   controller.changeHeaderPath('auth-view');
+	   controller.changeInclude('cards')
+	   controller.getHomes();
+   },(error) => {
        console.log(error);
 	   controller.changeInclude('blank')
 	   controller.changeHeaderPath('page404');
@@ -198,6 +210,7 @@ this.editHome = (_id) => {
        controller.changeHeaderPath('auth-buttons');
 	   controller.changeInclude('cards');
        controller.loggedInUsername = null;
+	   location.reload()
      },
      function(error){
        console.log(error);

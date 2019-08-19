@@ -1,6 +1,7 @@
+
 <div class="row">
-    <div ng-repeat="home in ctrl.homes" class="col s12 m6 l4 xl3">
-      <div class="card shadowEffect">
+    <div ng-repeat="home in ctrl.homes | filter: searchbox" class="col s12 m6 l4 xl3">
+      <div class="card shadow-pop-br">
         <div class="card-image">
           <img src="{{ home.image }}">
           <span class="card-title">{{home.price | currency}}</span>
