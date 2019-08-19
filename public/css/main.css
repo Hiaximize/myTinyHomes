@@ -99,7 +99,7 @@ footer{
 
 #headerImage{
     z-index: 0;
-    height: 500px;
+    height: 400px;
     width: 100%;
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
@@ -113,7 +113,7 @@ footer{
     height: 100px;
     width: auto;
     margin-top: 20px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 #userImage{
     position: absolute;
@@ -130,6 +130,17 @@ footer{
 	position: absolute;
     top: 15px;
     right: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+	#userWelcome {
+		display:none
+	}
+	#userImage{
+		position: absolute;
+	    top: 15px;
+	    right: 15px;
+	}
 }
 
 #logOut{
