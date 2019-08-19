@@ -117,8 +117,8 @@ footer{
 }
 #userImage{
     position: absolute;
-    top: 5px;
-    right: 100px;
+    top: 15px;
+    right: 115px;
     height: 75px;
     width: 75px;
     margin-top: 5px;
@@ -126,11 +126,11 @@ footer{
     border-radius: 50%;
 }
 
-#userWelcome {
+/* #userWelcome {
 	position: absolute;
     top: 5px;
     right: 120px;
-}
+} */
 
 #logOut{
     /* position: absolute;
@@ -140,8 +140,8 @@ footer{
     border-radius: 4px; */
 	background-color: rgba(0,0,0,.5);
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 15px;
+    right: 15px;
     margin-right: 7px;
     margin-top: 12px;
     padding: 8px;
@@ -151,8 +151,8 @@ footer{
     outline: none;
 }
 #searchForm{
-	top: 90px;
-	right: 5px;
+	top: 130px;
+	right: 15px;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -170,10 +170,11 @@ footer{
     padding: 2px;
     color: var(--black);
     margin-bottom: 5px;
-    background-color: rgba(255,255,255,.5);
+    background-color: rgb(255,255,255);
     border: 1px solid white;
+	width: 200px;
 }
-#searchButton{
+/* #searchButton{
 	top: 90px;
 	right: 105px;
     position: absolute;
@@ -184,7 +185,7 @@ footer{
     background-color: var(--forest-green);
     border-color: white;
     color: white;
-}
+} */
 #loginUsername{
     all: unset;
     margin-top: 10px;
@@ -264,7 +265,7 @@ footer{
 ================== */
 .header {
   padding: 10px 16px;
-  background: var(--forest-green);
+  background: rgba(100, 131, 104, .8);
   color: #f1f1f1;
   z-index: 5;
 }
@@ -314,9 +315,9 @@ legend {
   padding: 0 10px;
 }
 label {
-  font-family: var(--body-font);;
+  font-family: var(--body-font);
   font-weight: 200;
-  color: vcolor: var(--forest-green);;
+  color: var(--forest-green);
   display: block;
 }
 
