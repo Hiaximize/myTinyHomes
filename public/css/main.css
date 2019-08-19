@@ -73,6 +73,11 @@ h1 {
   text-align: center;
   margin: 0;
 }
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 40px;
+	}
+}
 
 h1:after {
   content: '';
@@ -195,6 +200,7 @@ footer{
     border-radius: 4px;
     outline: none;
 }
+
 #searchForm{
 	/* top: 130px;
 	right: 15px;
@@ -292,10 +298,12 @@ footer{
 
 #signUpCancel{
   width: 100%;
+  margin: 10px 0;
   background-color: rgb(151, 15, 15);
 }
 #loginCancel{
   width: 100%;
+  margin: 10px 0;
   background-color: rgb(151, 15, 15);
 }
 #loginButton{
@@ -309,6 +317,14 @@ footer{
     margin-bottom: 5px;
     font-size: 20px;
     color: white;
+}
+
+@media only screen and (max-width: 600px) {
+	#loginButton {
+		position: absolute;
+		top: 35px;
+	    right: 5px;
+	}
 }
 
 #tinyHomeTileContainer{
@@ -381,6 +397,12 @@ fieldset {
   padding: 20px;
   margin: 20px 0;
 }
+
+@media only screen and (max-width: 600px) {
+	fieldset {
+	margin: 8px 0;
+	}
+}
 legend {
   font-family: var(--body-font);
   font-weight: 500;
@@ -401,6 +423,7 @@ label {
     box-sizing: border-box;
     border: 1px solid var(--brown);
 }
+
 
 input:focus {
   outline: 0;
@@ -436,6 +459,13 @@ textarea {
   overflow: auto;
 }
 
+@media only screen and (max-width: 600px) {
+	.registration {
+		width: 100%;
+		padding:5px;
+	}
+}
+
 .registration > h1 {
   font-family: var(--body-font);
   font-weight: 500;
@@ -443,8 +473,15 @@ textarea {
   border-bottom: 2px solid var(--brown);
 }
 
+@media only screen and (max-width: 600px) {
+	.registration {
+		height: 100%;
+	}
+}
+
 /* CONTAINERS */
 .registration-container {
+  /* position: absolute; */
   z-index: 99;
   width: 80vw;
   height: 500px;
@@ -455,6 +492,13 @@ textarea {
               -1px -1px 10px #bbb,
               1px -1px 10px #bbb,
               -1px 1px 10px #bbb;
+}
+
+@media only screen and (max-width: 600px) {
+	.registration-container {
+		height: 100%;
+		  margin: 0 auto;
+		}
 }
 .sidebar {
   width: 40%;
@@ -486,6 +530,12 @@ textarea {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px 0 0 10px;
+}
+
+@media only screen and (max-width: 600px) {
+	.sidebar, .sidebar2, .sidebar3, .sidebar4  {
+		width: 0%;
+	}
 }
 
 /* ==================
