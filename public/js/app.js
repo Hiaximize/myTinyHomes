@@ -84,13 +84,15 @@ this.getHomes = () => {
 // CREATE ROUTE
 //======================
  this.addHome = () => {
+	let currentUserEmail = controller.currentUser.email
+
     $http({
        method: 'POST',
        url: '/homes',
        data: {
           name: controller.name,
 		  type: controller.type,
-          builder: controller.builder,
+          builder: currentUserEmail,
 		  description: controller.description,
           price: controller.price,
 		  image: controller.image,
@@ -102,9 +104,8 @@ this.getHomes = () => {
        }
     }).then(
        (response) => {
-		   console.log(response.data.builder);
-          this.resetForm();
-          this.getHomes();
+		  console.log(response.data.builder);
+          controller.getHomes();
 
        }, (error) => {
           console.log(error);

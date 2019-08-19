@@ -40,7 +40,7 @@
     <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:reverse" class="col s12 m6 l4 xl3">
       <div class="card shadow-pop-br">
         <div class="card-image">
-          <img src="{{ home.image }}">
+          <img ng-src="{{home.image}}">
           <span class="card-title">{{home.price | currency}}</span>
         </div>
         <div class="card-content">
