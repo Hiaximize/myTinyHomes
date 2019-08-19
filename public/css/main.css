@@ -290,12 +290,18 @@ footer{
     border-radius: 4px;
     outline: none;
 }
+#modalSignup{
+	width:50%;
+}
 #modalLogin{
   width: 50%;
   background-color: rgb(2, 98, 157);
   margin-right: 15px;
 }
-
+#buttons{
+	display: flex;
+	flex-direction: row;
+}
 #signUpCancel{
   width: 100%;
   margin: 10px 0;
@@ -484,7 +490,7 @@ textarea {
   /* position: absolute; */
   z-index: 99;
   width: 80vw;
-  height: 500px;
+  height: 80vh;
   margin: 50px auto;
   display: flex;
   border-radius: 10px;
@@ -494,12 +500,12 @@ textarea {
               -1px 1px 10px #bbb;
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
 	.registration-container {
 		height: 100%;
 		  margin: 0 auto;
 		}
-}
+} */
 .sidebar {
   width: 40%;
   background: url('/images/cozy.jpg');
