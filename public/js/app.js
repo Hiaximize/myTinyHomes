@@ -53,7 +53,7 @@ this.showFavorites = () => {
 //=======================
 // TOGGLE SORT HOMES
 //=======================
-this.propertyName = 'name'
+this.propertyName = ''
 this.reverse = true;
 
 this.sortBy = (newName) => {
