@@ -8,11 +8,12 @@ const controller = this;
 //=======================
 // TOGGLE SORT HOMES BY (price)
 //=======================
+this.propertyName = 'name'
 this.reverse = true;
 
-this.sortBy = (propertyName) => {
-	controller.reverse = (controller.propertyName === propertyName) ? !controller.reverse : false;
-	controller.propertyName = propertyName;
+this.sortBy = (newName) => {
+	controller.reverse = (controller.newName === newName) ? !controller.reverse : false;
+	controller.propertyName = newName;
 }
 
 

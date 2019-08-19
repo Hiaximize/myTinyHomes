@@ -10,6 +10,9 @@
 			<div class="col">
 			<button id="sortButton" ng-click="sortBy('price')">Sort By Price</button>
 			</div>
+			<div class="col">
+			<button id="sortButton" ng-click="sortBy('sqft')">Sort By Square Footage</button>
+			</div>
 		</div>
 
 		<!-- <input id="searchButton" type="submit" value="Search"> -->
@@ -34,7 +37,7 @@
 </div> -->
 <!-- This is the general card view for all users -->
 <div class="row">
-    <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy:propertyName:reverse" class="col s12 m6 l4 xl3">
+    <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:reverse" class="col s12 m6 l4 xl3">
       <div class="card shadow-pop-br">
         <div class="card-image">
           <img src="{{ home.image }}">
