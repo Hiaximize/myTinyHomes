@@ -22,9 +22,10 @@ const userSchema = Schema({
 	  type:String,
 	  required:true
   },
-  profileImage: String
+  profileImage: String,
+  favorites: []
 
-  // let's add a favorites: {} here to store all the users favorite listings
+  // let's add a favorites: [] here to store all the users favorite listings
 })
 
 const User = mongoose.model('User', userSchema);

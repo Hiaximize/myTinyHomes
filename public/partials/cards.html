@@ -19,29 +19,34 @@
 	</form>
 </div>
 <!-- This is the favorites card view for authenticated users -->
-<!-- <div ng-show="ctrl.currentUser">
-	<div class="favorite in ctrl.currentUser.favorites" class="col s12 m6 l4 xl3">
+<div class="row">
+<div ng-show="ctrl.currentUser">
+	<h3>My Favorite Homes</h3>
+	<div ng-repeat="favorite in ctrl.currentUser.favorites" class="col s12 m6 l4 xl3">
 		<div class="card shadow-pop-br">
 		    <div class="card-image">
-			   	<img src="{{ home.image }}">
-			   	<span class="card-title">{{home.price | currency}}</span>
+			   	<img src="{{ favorite.image }}">
+			   	<span class="card-title">{{favorite.price | currency}}</span>
 		    </div>
 		    <div class="card-content">
-			   	<p>{{home.name}}</p>
+			   	<p>{{favorite.name}}</p>
 		    </div>
 		    <div class="card-action light-green-text text-darken-4">
-			   	<a class="light-green-text text-darken-4" ng-click="ctrl.getID(home._id); ctrl.changeInclude('show')">View More Details</a>
+			   	<a class="light-green-text text-darken-4" ng-click="ctrl.getID(favorite._id); ctrl.changeInclude('show')">View More Details</a>
 		    </div>
 	    </div>
 	</div>
-</div> -->
+</div>
+</div>
 <!-- This is the general card view for all users -->
 <div class="row">
+	<h3>Available Homes</h3>
     <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:reverse" class="col s12 m6 l4 xl3">
       <div class="card shadow-pop-br">
         <div class="card-image">
           <img ng-src="{{home.image}}">
           <span class="card-title">{{home.price | currency}}</span>
+		  <a ng-show="ctrl.currentUser" ng-click="ctrl.updateUserFavorites(ctrl.currentUser._id, home)" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
         </div>
         <div class="card-content">
           <p>{{home.name}}</p>

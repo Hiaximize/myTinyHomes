@@ -6,16 +6,42 @@ const controller = this;
 // this.indexOfEditFormToShow = null;
 
 //=======================
-// TOGGLE SORT HOMES BY (price)
+// UPDATE USER FAVORITES
+//=======================
+this.updateUserFavorites = (userID, home) => {
+	let newFavoritesArr = controller.currentUser.favorites
+	newFavoritesArr.push(home)
+	$http({
+       method: 'PUT',
+       url: '/users/' + userID,
+       data: {
+		   favorites: newFavoritesArr
+	   }
+	}).then(
+       (response) => {
+		 // console.log(controller.currentUser.favorites);
+		 // console.log(home);
+ 		 // console.log(newFavoritesArr)
+
+       }
+    )
+}
+
+//=======================
+// TOGGLE SORT HOMES
 //=======================
 this.propertyName = 'name'
 this.reverse = true;
 
 this.sortBy = (newName) => {
-	controller.reverse = (controller.newName === newName) ? !controller.reverse : false;
+	if (controller.propertyName === newName) {
+		controller.reverse = false
+	} else {
+		controller.reverse = true
+	}
 	controller.propertyName = newName;
 }
-
+// Help us Dan!!! You're our only hope.
 
 //======================
 // GET ID
@@ -134,7 +160,7 @@ this.editHome = (_id) => {
       }
    }).then(
       (response) => {
-		  console.log(this.updatedMobile)
+		  // console.log(this.updatedMobile)
 			this.getID(_id);
       }
    )
@@ -184,7 +210,7 @@ this.editHome = (_id) => {
   	   controller.password = null
   	   controller.email = null
   	   controller.profileImage = null
-       console.log(response);
+       // console.log(response);
    })
  }
 
@@ -198,7 +224,7 @@ this.editHome = (_id) => {
      }
  	}).then((response) => {
 
-       console.log(response);
+       // console.log(response);
        controller.username = null;
        controller.password = null;
        controller.goApp();
@@ -219,7 +245,7 @@ this.editHome = (_id) => {
      url:'/sessions'
    }).then(
      function(response){
-       console.log(response);
+       // console.log(response);
        controller.changeHeaderPath('auth-buttons');
 	   controller.changeInclude('cards');
        controller.loggedInUsername = null;
@@ -242,7 +268,7 @@ this.editHome = (_id) => {
 
           controller.currentUser = response.data.currentUser;
           controller.profileImage = String(response.data.currentUser.profileImage);
-         controller.changeHeaderPath('auth-view');
+          controller.changeHeaderPath('auth-view');
 
        } else {
 
