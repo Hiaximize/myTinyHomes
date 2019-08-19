@@ -19,9 +19,9 @@
 	</form>
 </div>
 <!-- This is the favorites card view for authenticated users -->
-<div class="row">
-<div ng-show="ctrl.currentUser">
-	<h3 ng-show="ctrl.showFavorites()">My Favorite Homes</h3>
+<div ng-show="ctrl.currentUser" class="row">
+<div ng-show="ctrl.showFavorites()">
+	<h3>My Favorite Homes</h3>
 	<div ng-repeat="favorite in ctrl.currentUser.favorites" class="col s12 m6 l4 xl3">
 		<div class="card shadow-pop-br">
 		    <div class="card-image">

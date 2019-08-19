@@ -227,13 +227,17 @@ this.editHome = (_id) => {
 		profileImage:this.profileImage
      }
  }).then((response) => {
-	   controller.firstName = null
-  	   controller.lastName = null
-  	   controller.username = null
-  	   controller.password = null
-  	   controller.email = null
-  	   controller.profileImage = null
-       // console.log(response);
+	controller.logIn()
+	controller.goApp();
+	controller.returnHome()
+	controller.getHomes();
+	controller.firstName = null
+  	controller.lastName = null
+  	controller.username = null
+  	controller.password = null
+  	controller.email = null
+  	controller.profileImage = null
+
    })
  }
 
