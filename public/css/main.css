@@ -44,8 +44,26 @@ a {
 }
 
 button {
-	color: var(--forest-green);
+	background-color: rgba(0,0,0,.7);
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
 	cursor: pointer;
+}
+
+button: hover {
+	font-size: 23px;
+}
+
+h2 {
+	font-family: var(--title-font);
+	color: white;
+	text-align: center;
+	align-self: center;
+	margin: 150px auto;
+
 }
 
 h1 {
@@ -197,6 +215,20 @@ footer{
     border-color: white;
     color: white;
 } */
+
+#sortButton {
+	background-color: rgba(0,0,0,.7);
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+}
+
+#sortButton:hover {
+	font-size: 23px;
+}
+
 #loginUsername{
     all: unset;
     margin-top: 10px;
@@ -271,6 +303,20 @@ footer{
 	  z-index: 1;
 }
 
+
+/* #addNewHome {
+	background-color: rgba(0,0,0,.7);
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+	cursor: pointer;
+}
+#addNewHome:hover {
+	font-size: 23px
+	background-color: rgba(0,0,0, 1)
+} */
 /* ==================
       STICKY HEADER
 ================== */

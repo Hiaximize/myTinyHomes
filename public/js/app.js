@@ -5,6 +5,17 @@ app.controller('MainController', ['$http', function($http){
 const controller = this;
 // this.indexOfEditFormToShow = null;
 
+//=======================
+// TOGGLE SORT HOMES BY (price)
+//=======================
+this.reverse = true;
+
+this.sortBy = (propertyName) => {
+	controller.reverse = (controller.propertyName === propertyName) ? !controller.reverse : false;
+	controller.propertyName = propertyName;
+}
+
+
 //======================
 // GET ID
 //======================
