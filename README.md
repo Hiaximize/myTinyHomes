@@ -176,12 +176,11 @@ if (controller.currentUser.favorites.length > 0){
 }
 }
 ```
-There is still more functionality to be desired here. One problem that we still need to fix is that when a buyer updates the home, it updates in the available homes section but not the favorites section. This is because that user favorites are stored in a separate array within the user data. 
+There is still more functionality to be desired here. One problem that we still need to fix is that when a buyer updates the home, it updates in the available homes section but not the favorites section. This is because that user favorites are stored in a separate array within the user data.
 
 ## Future Improvements
 
 Our original plan with this app was to allow users to actually use PayPal to buy and sell blueprints for properties. To do this, we would implement PayPal Sandbox which required OAuth 2.0. Unfortunately, we haven't learned to use OAuth 2.0 yet, so it would have required some extensive research and since we only had a few days to put this project together, that wasn't realistic for the timeframe we had been given. However, all of us have the goal of learning OAuth and still see the potential for implementing it in this project.
-
 
 Another possible feature we could add, would be an embedded google map that shows the location of each home. Again, in this case we simply ran out of time, but hope to implement this in the future.
 
