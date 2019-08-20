@@ -14,6 +14,7 @@ We're millennials. We just love tiny homes!
 
 ## Wireframes
 
+![Authenicated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/images/Authenticated_view.png)
 
 ## User Stories
 
