@@ -16,6 +16,9 @@ We're millennials. We just love tiny homes!
 
 ![Authenicated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/images/Authenticated_view.png)
 
+
+![Unauthenticated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/images/Unauthenticated_view.png)
+
 ## User Stories
 
 * Users should be able to view available tiny houses and prices before signing up or logging in the site
