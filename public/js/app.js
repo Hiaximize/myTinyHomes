@@ -8,6 +8,16 @@ const controller = this;
 //=======================
 // UPDATE USER FAVORITES
 //=======================
+this.getFavorites = () => {
+  $http({
+    method: "GET",
+    url: "/users/" + controller.currentUser._id,
+  }).then((response)=>{
+    console.log(response.data);
+
+  })
+}
+
 this.updateUserFavorites = (userID, home) => {
 	let newFavoritesArr = controller.currentUser.favorites
 	newFavoritesArr.push(home)
@@ -24,8 +34,9 @@ this.updateUserFavorites = (userID, home) => {
 }
 
 this.removeFavorite = (userID, favorite) => {
-	let newFavoritesArr = controller.currentUser.favorites
-	newFavoritesArr.pop(favorite)
+  let newFavoritesArr = controller.currentUser.favorites
+  let index = newFavoritesArr.indexOf(favorite);
+  newFavoritesArr.splice(index, 1);
 	$http({
        method: 'PUT',
        url: '/users/' + userID,
