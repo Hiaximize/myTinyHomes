@@ -649,8 +649,8 @@ h4 {
 /* Animations */
 
 .shadow-pop-br {
-  -webkit-animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) 1s both;
-  animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) 1s both;
+  -webkit-animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) .5s both;
+  animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) .5s both;
 }
 
 .shadow-pop-br:hover {
