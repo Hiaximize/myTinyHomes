@@ -2,8 +2,8 @@
 link to live site: https://my-tiny-home.herokuapp.com/
 
 ## Collaborators
-* Derek Martin Barker
-* Jiha Hwang
+* **Derek Martin Barker** - (https://github.com/Hiaximize)
+* **Jiha Hwang** - (https://github.com/jhwangit128)
 * **Danielle Walraven** - (https://github.com/dwalraven21)
 
 ## About
@@ -46,6 +46,12 @@ Our original plan with this app was to allow users to actually use PayPal to buy
 Another possible feature we could add, would be an embedded google map that shows the location of each home. Again, in this case we simply ran out of time, but hope to implement this in the future.
 
 ## Just For Fun
+
+### Derek's Favorite feature
+
+### Jiha's Favorite feature
+
+### Danielle's Favorite feature
 
 
 ## Deployment
