@@ -37,6 +37,51 @@ We're millennials. We just love tiny homes!
 
 ## Challenges / Example Code
 
+One challenge we faced was implementing a sort feature to sort the homes by price from low-high and high to low.
+
+We accomplished this inside our ng-repeat that displays all of the available houses:
+
+```html
+<div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:ctrl.reverse" class="col s12 m6 l4 xl3">
+```
+You'll notice that after orderBy: there is a variable called "propertyName". Let's look at our JS file to see what propertyName refers to.
+
+```JavaScript
+//=======================
+// TOGGLE SORT HOMES
+//=======================
+this.propertyName = 'name'
+this.reverse = false;
+this.message = ""
+
+this.sortBy = (newName) => {
+	if (controller.propertyName === newName) {
+		controller.reverse = !controller.reverse
+	}
+	controller.propertyName = newName;
+	if (!controller.reverse){
+		controller.message = "Low to High"
+	} else {
+		controller.message = "High to Low"
+	}
+}
+```
+
+propertyName is initially set to the value "name". This means that on page load, the properties will sort by 'name', but when we call the function sortBy(), that value can be changed to something else, in our case "price". The sort can also be reversed if the same function is called with the same parameter again.
+
+Now let's look at the button that sorts the price. For better user expereince, it also inlcudes a message which changes to indicate if we are sorting high-to-low or low-to-high.
+
+```html
+
+			<button id="sortButton" ng-click="ctrl.sortBy('price')">Sort By Price: {{ctrl.message}}</button>
+
+			<!-- <button id="sortButton" ng-click="ctrl.sortBy('sqft')">Sort By Sqft {{ctrl.message}}</button> -->
+
+```
+
+
+
+
 
 ## Future Improvements
 

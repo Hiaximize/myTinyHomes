@@ -19,15 +19,15 @@
 	</form>
 </div>
 <!-- This is the favorites card view for authenticated users -->
-<div ng-show="ctrl.currentUser" class="row">
+<div ng-if="ctrl.currentUser" class="row">
 <div>
-	<h3 ng-show="ctrl.showFavorites()">My Favorite Homes</h3>
-	<div ng-repeat="favorite in ctrl.currentUser.favorites" class="col s12 m6 l4 xl3">
+	<h3 ng-if="ctrl.showFavorites()">My Favorite Homes</h3>
+	<div ng-repeat="favorite in ctrl.currentUser.favorites | orderBy: ctrl.propertyName:ctrl.reverse" class="col s12 m6 l4 xl3">
 		<div class="card shadow-pop-br">
 		    <div class="card-image">
 			   	<img src="{{ favorite.image }}">
 			   	<span class="card-title">{{favorite.price | currency}}</span>
-				<a ng-click="ctrl.removeFavorite(ctrl.currentUser._id, favorite)" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
+				<a ng-click="ctrl.removeFavorite(ctrl.currentUser._id, favorite); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
 		    </div>
 		    <div class="card-content">
 			   	<p>{{favorite.name}}</p>
@@ -43,14 +43,12 @@
 <div class="row">
 	<h3>Available Homes</h3>
     <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:ctrl.reverse" class="col s12 m6 l4 xl3">
-
-<div ng-if="!ctrl.currentUser.favorites.includes(home)">
-
       <div class="card shadow-pop-br">
         <div class="card-image">
           <img ng-src="{{home.image}}">
           <span class="card-title">{{home.price | currency}}</span>
-		  <a ng-show="ctrl.currentUser" ng-click="ctrl.updateUserFavorites(ctrl.currentUser._id, home); ctrl.getHomes()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+		  <a ng-if="!ctrl.currentUser.favorites.indexOf(home)" ng-show="ctrl.currentUser" ng-click="ctrl.updateUserFavorites(ctrl.currentUser._id, home); ctrl.getHomes(); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+		  <a ng-if="ctrl.currentUser.favorites.includes(home)" ng-click="ctrl.removeFavorite(ctrl.currentUser._id, home); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
         </div>
         <div class="card-content">
           <p>{{home.name}}</p>
@@ -59,6 +57,5 @@
 			<a class="light-green-text text-darken-4" ng-click="ctrl.getID(home._id); ctrl.changeInclude('show')">View More Details</a>
         </div>
       </div>
-    </div>
   </div>
 </div>
