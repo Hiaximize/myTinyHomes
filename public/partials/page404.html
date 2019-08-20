@@ -7,7 +7,7 @@
 		<p>Oops! Something's not quite right...</p>
         <h1>LOG IN</h1>
         <!-- START FORM -->
-        <form ng-submit="ctrl.logIn();">
+        <form id="oopsLoginForm" ng-submit="ctrl.logIn();">
           <!-- fieldset for account info -->
           <fieldset class="account-info">
             <!-- legend for account info -->
@@ -19,12 +19,15 @@
               <label for="password">PASSWORD</label>
               <input type="password" id="password" ng-model="ctrl.password">
           </fieldset>
-          <!-- submit button -->
-          <input type="submit" id="login-button" value="Log In">
+        
         </form>
-		<form ng-submit="ctrl.changeHeaderPath('signup')">
-		  <input type="submit" value="Sign Up">
-	  	</form>
+		<form id="oopsSignUpForm" ng-submit="ctrl.changeHeaderPath('signup')">
+	  </form>
+
+    <div id="formButtons">
+      <input type='submit' id="login-button" form="oopsLoginForm" value="Log In">
+      <input type="submit" id="oopsSign-up" form="oopsSignUpForm" value="Sign Up">
+    </div>
 
       </div>
     </div>
