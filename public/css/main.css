@@ -690,7 +690,7 @@ h4 {
   }
 
   100% {
-    box-shadow: 1px 1px 5px grey, 2px 2px 5px grey, 3px 3px 5px grey, 4px 4px 5px grey, 5px 5px 5px grey, 6px 6px grey, 7px 7px 5px grey, 8px 8px 5px grey;
+    box-shadow: 1px 1px 5px grey, 2px 2px 5px grey, 3px 3px 5px grey, 4px 4px 5px grey, 5px 5px 5px grey, 6px 6px 5px grey, 7px 7px 5px grey, 8px 8px 5px grey;
     -webkit-transform: translateX(-8px) translateY(-8px);
     transform: translateX(-8px) translateY(-8px);
   }

@@ -14,12 +14,21 @@ We're millennials. We just love tiny homes!
 
 ## Wireframes
 
-![Authenicated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/images/Authenticated_view.png)
+![Authenticated Wireframe](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/Authenticated_view.png)
 
+![Authenticated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/auth-view.png)
 
-![Unauthenticated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/images/Unauthenticated_view.png)
+![Unauthenticated Wireframe](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/Unauthenticated_view.png)
 
-![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/images/Unauthenticated_signinUp.png)
+![Unauthenticated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/unauth-view.png)
+
+![Unauthenticated SignIn/Up Wireframes](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/Unauthenticated_signinUp.png)
+
+![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/signup.png)
+
+![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/login.png)
+
+![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/oops.png)
 
 ## User Stories
 
