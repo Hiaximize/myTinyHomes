@@ -63,9 +63,6 @@ We accomplished this inside our ng-repeat that displays all of the available hou
 You'll notice that after orderBy: there is a variable called "propertyName". Let's look at our JS file to see what propertyName refers to.
 
 ```JavaScript
-//=======================
-// TOGGLE SORT HOMES
-//=======================
 this.propertyName = 'name'
 this.reverse = false;
 this.message = ""
@@ -88,11 +85,9 @@ propertyName is initially set to the value "name". This means that on page load 
 Now let's look at the button that sorts the price. For better user experience, it also includes a message which changes to indicate if we are sorting high-to-low or low-to-high.
 
 ```HTML
+<button id="sortButton" ng-click="ctrl.sortBy('price')">Sort By Price: {{ctrl.message}}</button>
 
-			<button id="sortButton" ng-click="ctrl.sortBy('price')">Sort By Price: {{ctrl.message}}</button>
-
-			<!-- <button id="sortButton" ng-click="ctrl.sortBy('sqft')">Sort By Sqft {{ctrl.message}}</button> -->
-
+<!-- <button id="sortButton" ng-click="ctrl.sortBy('sqft')">Sort By Sqft {{ctrl.message}}</button> -->
 ```
 You'll notice we commented out another button for sorting the sqft. This button worked exactly the same way, but we felt it was slightly redundant, as when you order by price, you tend to also order by sqft, because of the nature of home pricing.
 
@@ -178,11 +173,11 @@ In order to make the favorites section disappear when the user has no favorites,
 
 ```JavaScript
 this.showFavorites = () => {
-if (controller.currentUser.favorites.length > 0){
-	return true
-} else {
-	return false
-}
+	if (controller.currentUser.favorites.length > 0){
+		return true
+	} else {
+		return false
+	}
 }
 ```
 There is still more functionality to be desired here. One problem that we still need to fix is that when a buyer updates the home, it updates in the available homes section but not the favorites section. This is because that user favorites are stored in a separate array within the user data.
