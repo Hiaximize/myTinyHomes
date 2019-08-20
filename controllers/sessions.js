@@ -22,20 +22,25 @@ sessions.get('/', (req, resp)=>{
 
 sessions.post('/', (req, res) => {
   User.findOne({username:req.body.username}, (error, foundUser) => {
-    console.log(foundUser);
-    
-    if(bcrypt.compareSync(req.body.password,foundUser.password)){
-      req.session.currentUser = foundUser;
-      res.status(201).json({
-        status:201,
-        message:'session created'
-      });
-    } else {
-      res.status(401).json({
-        status:401,
-        message:'login failed'
-      });
-    }
+    if (foundUser) {
+		if(bcrypt.compareSync(req.body.password,foundUser.password)){
+	      req.session.currentUser = foundUser;
+	      res.status(201).json({
+	        status:201,
+	        message:'session created'
+	      });
+	  } else {
+	      res.status(401).json({
+	        status:401,
+	        message:'login failed'
+	      });
+	    }
+	} else {
+		res.status(401).json({
+		  status:401,
+		  message:'login failed'
+		});
+	  }
   })
 })
 
