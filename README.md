@@ -37,6 +37,7 @@ We're millennials. We just love tiny homes!
 
 ## Challenges / Example Code
 
+### Sorting
 One challenge we faced was implementing a sort feature to sort the homes by price from low-high and high to low.
 
 We accomplished this inside our ng-repeat that displays all of the available houses:
@@ -67,9 +68,9 @@ this.sortBy = (newName) => {
 }
 ```
 
-propertyName is initially set to the value "name". This means that on page load, the properties will sort by 'name', but when we call the function sortBy(), that value can be changed to something else, in our case "price". The sort can also be reversed if the same function is called with the same parameter again.
+propertyName is initially set to the value "name". This means that on page load the properties will sort by 'name', but when we call the function sortBy(), that value can be changed to something else, in our case "price". The sort can also be reversed if the same function is called with the same parameter again.
 
-Now let's look at the button that sorts the price. For better user expereince, it also inlcudes a message which changes to indicate if we are sorting high-to-low or low-to-high.
+Now let's look at the button that sorts the price. For better user experience, it also includes a message which changes to indicate if we are sorting high-to-low or low-to-high.
 
 ```html
 
@@ -78,10 +79,33 @@ Now let's look at the button that sorts the price. For better user expereince, i
 			<!-- <button id="sortButton" ng-click="ctrl.sortBy('sqft')">Sort By Sqft {{ctrl.message}}</button> -->
 
 ```
+You'll notice we commented out another button for sorting the sqft. This button worked exactly the same way, but we felt it was slightly redundant, as when you order by price, you tend to also order by sqft, because of the nature of home pricing.
 
+### Storing Favorites
 
+Another challenge was allowing the user to store favorite houses.
 
+We accomplished this by first adding a value to the user model that would contain an empty array.
 
+Then we used a PUT route to allow the user to update their own user model whenever they select a new favorite. We used the function updateUserFavorites which takes the parameters userID and home. If they have an existing favorites array, it first stores that data in the variable newFavoritesArr and then pushes the new object, the selected home, into the array. The nice thing about this is that the home object already contains all the information we need to access later (name, price, sqft, type, etc.)
+
+```JavaScript
+
+this.updateUserFavorites = (userID, home) => {
+	let newFavoritesArr = controller.currentUser.favorites
+	newFavoritesArr.push(home)
+	$http({
+       method: 'PUT',
+       url: '/users/' + userID,
+       data: {
+		   favorites: newFavoritesArr
+	   }
+	}).then(
+       (response) => {
+       }
+    )
+}
+```
 
 ## Future Improvements
 
