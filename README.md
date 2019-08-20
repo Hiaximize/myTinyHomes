@@ -42,7 +42,7 @@ One challenge we faced was implementing a sort feature to sort the homes by pric
 
 We accomplished this inside our ng-repeat that displays all of the available houses:
 
-```html
+```HTML
 <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:ctrl.reverse" class="col s12 m6 l4 xl3">
 ```
 You'll notice that after orderBy: there is a variable called "propertyName". Let's look at our JS file to see what propertyName refers to.
@@ -72,7 +72,7 @@ propertyName is initially set to the value "name". This means that on page load 
 
 Now let's look at the button that sorts the price. For better user experience, it also includes a message which changes to indicate if we are sorting high-to-low or low-to-high.
 
-```html
+```HTML
 
 			<button id="sortButton" ng-click="ctrl.sortBy('price')">Sort By Price: {{ctrl.message}}</button>
 
@@ -85,12 +85,11 @@ You'll notice we commented out another button for sorting the sqft. This button 
 
 Another challenge was allowing the user to store favorite houses.
 
-We accomplished this by first adding a value to the user model that would contain an empty array.
+We accomplished this by first adding a value to the user model called favorites that would contain an empty array.
 
 Then we used a PUT route to allow the user to update their own user model whenever they select a new favorite. We used the function updateUserFavorites which takes the parameters userID and home. If they have an existing favorites array, it first stores that data in the variable newFavoritesArr and then pushes the new object, the selected home, into the array. The nice thing about this is that the home object already contains all the information we need to access later (name, price, sqft, type, etc.)
 
 ```JavaScript
-
 this.updateUserFavorites = (userID, home) => {
 	let newFavoritesArr = controller.currentUser.favorites
 	newFavoritesArr.push(home)
@@ -105,6 +104,59 @@ this.updateUserFavorites = (userID, home) => {
        }
     )
 }
+```
+Here's the AngularJS syntax to add a home as a favorite on click
+
+```HTML
+<a ng-if="!ctrl.currentUser.favorites.indexOf(home)" ng-click="ctrl.updateUserFavorites(ctrl.currentUser._id, home); ctrl.getHomes(); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+```
+
+Then we used a GET Route to access those favorites
+
+```JavaScript
+this.getFavorites = () => {
+  $http({
+    method: "GET",
+    url: "/users/",
+  }).then((response)=>{
+    this.favorites = response.currentUser.favorites
+  })
+}
+
+```
+and an ng-repeat to make them appear in a favorites section about the other content.
+
+```HTML
+<div ng-if="ctrl.currentUser" class="row">
+<div ng-if="ctrl.showFavorites()">
+	<h3>My Favorite Homes</h3>
+	<div ng-repeat="favorite in ctrl.currentUser.favorites | orderBy: ctrl.propertyName:ctrl.reverse" class="col s12 m6 l4 xl3">
+```
+
+We also want the user to be able to remove or delete a favorite. For this we used splice instead of push, to remove the specific home from the array.
+
+```JavaScript
+this.removeFavorite = (userID, favorite) => {
+  let newFavoritesArr = controller.currentUser.favorites
+  let index = newFavoritesArr.indexOf(favorite);
+  newFavoritesArr.splice(index, 1);
+	$http({
+       method: 'PUT',
+       url: '/users/' + userID,
+       data: {
+		   favorites: newFavoritesArr
+	   }
+	}).then(
+       (response) => {
+		   this.getFavorites()
+       }
+    )
+}
+```
+
+Here's the AngularJS syntax to make this happen on click
+```HTML
+<a ng-click="ctrl.removeFavorite(ctrl.currentUser._id, favorite); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
 ```
 
 ## Future Improvements
