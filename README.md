@@ -7,7 +7,7 @@ link to live site: https://my-tiny-home.herokuapp.com/
 * **Danielle Walraven** - (https://github.com/dwalraven21)
 
 ## About
-My Tiny Home is Marketplace Web App that allows users to post tiny homes for sale and contact sellers to purchase tiny homes.
+My Tiny Home is a Marketplace Web App that allows users to post tiny homes for sale and contact sellers to purchase tiny homes.
 
 ## Motivation
 We're millennials. We just love tiny homes!
@@ -46,7 +46,7 @@ We're millennials. We just love tiny homes!
 
 * Authenticated Users should be able to remove houses as favorites.
 
-![Screencast](http://g.recordit.co/0OiC7c3hTD.gif)
+![Screencast](http://g.recordit.co/y5rh4IbeSO.gif)
 
 ## Challenges / Example Code
 
