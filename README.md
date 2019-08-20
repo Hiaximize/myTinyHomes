@@ -26,12 +26,6 @@ We're millennials. We just love tiny homes!
 
 ![Unauthenticated Details View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/unauth-show.png)
 
-![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/signup.png)
-
-![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/login.png)
-
-![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/oops.png)
-
 ## User Stories
 
 * Users should be able to view available tiny houses and prices before signing up or logging in the site
@@ -51,6 +45,8 @@ We're millennials. We just love tiny homes!
 * Authenticated Users should be able to save houses as favorites. Favorite houses should populate about the rest of the houses in a favorites section.
 
 * Authenticated Users should be able to remove houses as favorites.
+
+![Screencast](http://g.recordit.co/0OiC7c3hTD.gif)
 
 ## Challenges / Example Code
 
@@ -192,12 +188,15 @@ Another possible feature we could add, would be an embedded google map that show
 
 ## Just For Fun
 
-### Derek's Favorite feature
+We love the way our "modal" forms turned out! Hope you enjoy them too.
 
-### Jiha's Favorite feature
+![SignUp](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/signup.png)
 
-### Danielle's Favorite feature
+![SignIn](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/login.png)
 
+![401](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/oops.png)
+
+![New Home](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/new-home.png)
 
 ## Deployment
 
