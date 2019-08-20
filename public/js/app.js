@@ -5,6 +5,78 @@ app.controller('MainController', ['$http', function($http){
 const controller = this;
 // this.indexOfEditFormToShow = null;
 
+//=======================
+// UPDATE USER FAVORITES
+//=======================
+this.getFavorites = () => {
+  $http({
+    method: "GET",
+    url: "/users/" + controller.currentUser._id,
+  }).then((response)=>{
+    console.log(response.data);
+
+  })
+}
+
+this.updateUserFavorites = (userID, home) => {
+	let newFavoritesArr = controller.currentUser.favorites
+	newFavoritesArr.push(home)
+	$http({
+       method: 'PUT',
+       url: '/users/' + userID,
+       data: {
+		   favorites: newFavoritesArr
+	   }
+	}).then(
+       (response) => {
+       }
+    )
+}
+
+this.removeFavorite = (userID, favorite) => {
+  let newFavoritesArr = controller.currentUser.favorites
+  let index = newFavoritesArr.indexOf(favorite);
+  newFavoritesArr.splice(index, 1);
+	$http({
+       method: 'PUT',
+       url: '/users/' + userID,
+       data: {
+		   favorites: newFavoritesArr
+	   }
+	}).then(
+       (response) => {
+       }
+    )
+}
+
+this.showFavorites = () => {
+	if (controller.currentUser.favorites.length > 0){
+		return true
+	} else {
+		return false
+	}
+}
+//=======================
+// TOGGLE SORT HOMES
+//=======================
+this.propertyName = 'name'
+this.reverse = false;
+this.message = ""
+
+this.sortBy = (newName) => {
+	if (controller.propertyName === newName) {
+		controller.reverse = !controller.reverse
+	}
+	controller.propertyName = newName;
+	if (!controller.reverse){
+		controller.message = "Low to High"
+	} else {
+		controller.message = "High to Low"
+	}
+}
+
+
+
 //======================
 // GET ID
 //======================
@@ -72,13 +144,15 @@ this.getHomes = () => {
 // CREATE ROUTE
 //======================
  this.addHome = () => {
+	let currentUserEmail = controller.currentUser.email
+
     $http({
        method: 'POST',
        url: '/homes',
        data: {
           name: controller.name,
 		  type: controller.type,
-          builder: controller.builder,
+          builder: currentUserEmail,
 		  description: controller.description,
           price: controller.price,
 		  image: controller.image,
@@ -90,9 +164,8 @@ this.getHomes = () => {
        }
     }).then(
        (response) => {
-		   console.log(response.data.builder);
-          this.resetForm();
-          this.getHomes();
+		  console.log(response.data.builder);
+          controller.getHomes();
 
        }, (error) => {
           console.log(error);
@@ -121,7 +194,7 @@ this.editHome = (_id) => {
       }
    }).then(
       (response) => {
-		  console.log(this.updatedMobile)
+		  // console.log(this.updatedMobile)
 			this.getID(_id);
       }
    )
@@ -165,13 +238,17 @@ this.editHome = (_id) => {
 		profileImage:this.profileImage
      }
  }).then((response) => {
-	   controller.firstName = null
-  	   controller.lastName = null
-  	   controller.username = null
-  	   controller.password = null
-  	   controller.email = null
-  	   controller.profileImage = null
-       console.log(response);
+	controller.logIn()
+	controller.goApp();
+	controller.returnHome()
+	controller.getHomes();
+	controller.firstName = null
+  	controller.lastName = null
+  	controller.username = null
+  	controller.password = null
+  	controller.email = null
+  	controller.profileImage = null
+
    })
  }
 
@@ -185,7 +262,7 @@ this.editHome = (_id) => {
      }
  	}).then((response) => {
 
-       console.log(response);
+       // console.log(response);
        controller.username = null;
        controller.password = null;
        controller.goApp();
@@ -206,7 +283,7 @@ this.editHome = (_id) => {
      url:'/sessions'
    }).then(
      function(response){
-       console.log(response);
+       // console.log(response);
        controller.changeHeaderPath('auth-buttons');
 	   controller.changeInclude('cards');
        controller.loggedInUsername = null;
@@ -229,7 +306,7 @@ this.editHome = (_id) => {
 
           controller.currentUser = response.data.currentUser;
           controller.profileImage = String(response.data.currentUser.profileImage);
-         controller.changeHeaderPath('auth-view');
+          controller.changeHeaderPath('auth-view');
 
        } else {
 

@@ -44,8 +44,26 @@ a {
 }
 
 button {
-	color: var(--forest-green);
+	background-color: rgba(0,0,0,.7);
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
 	cursor: pointer;
+}
+
+button: hover {
+	font-size: 23px;
+}
+
+h2 {
+	font-family: var(--title-font);
+	color: white;
+	text-align: center;
+	align-self: center;
+	margin: 150px auto;
+
 }
 
 h1 {
@@ -55,6 +73,11 @@ h1 {
   text-align: center;
   margin: 0;
 }
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 40px;
+	}
+}
 
 h1:after {
   content: '';
@@ -62,6 +85,22 @@ h1:after {
   height: 5px;
   background: var(--hunter-green);
   display: block;
+}
+
+h3 {
+	font-family: var(--title-font);
+    font-size: 30px;
+    color: var(--hunter-green);
+    text-align: center;
+    margin: 0;
+}
+
+h3:after {
+	content: '';
+    width: 100%;
+    height: 5px;
+    background: var(--hunter-green);
+    display: block;
 }
 
 
@@ -99,7 +138,7 @@ footer{
 
 #headerImage{
     z-index: 0;
-    height: 500px;
+    height: 400px;
     width: 100%;
     background-image: url("../images/catskills-700.jpg");
     background-size: cover;
@@ -113,7 +152,7 @@ footer{
     height: 100px;
     width: auto;
     margin-top: 20px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 #userImage{
     position: absolute;
@@ -130,6 +169,17 @@ footer{
 	position: absolute;
     top: 15px;
     right: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+	#userWelcome {
+		display:none
+	}
+	#userImage{
+		position: absolute;
+	    top: 15px;
+	    right: 15px;
+	}
 }
 
 #logOut{
@@ -150,6 +200,7 @@ footer{
     border-radius: 4px;
     outline: none;
 }
+
 #searchForm{
 	/* top: 130px;
 	right: 15px;
@@ -187,6 +238,20 @@ footer{
     border-color: white;
     color: white;
 } */
+
+#sortButton {
+	background-color: rgba(0,0,0,.7);
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+}
+
+#sortButton:hover {
+	font-size: 23px;
+}
+
 #loginUsername{
     all: unset;
     margin-top: 10px;
@@ -226,18 +291,26 @@ footer{
     border-radius: 4px;
     outline: none;
 }
+#modalSignup{
+	width:50%;
+}
 #modalLogin{
   width: 50%;
   background-color: rgb(2, 98, 157);
   margin-right: 15px;
 }
-
+#buttons{
+	display: flex;
+	flex-direction: row;
+}
 #signUpCancel{
   width: 100%;
+  margin: 10px 0;
   background-color: rgb(151, 15, 15);
 }
 #loginCancel{
   width: 100%;
+  margin: 10px 0;
   background-color: rgb(151, 15, 15);
 }
 #loginButton{
@@ -253,6 +326,14 @@ footer{
     color: white;
 }
 
+@media only screen and (max-width: 600px) {
+	#loginButton {
+		position: absolute;
+		top: 35px;
+	    right: 5px;
+	}
+}
+
 #tinyHomeTileContainer{
     padding: 25px;
     margin: 0 auto;
@@ -261,6 +342,20 @@ footer{
 	  z-index: 1;
 }
 
+
+/* #addNewHome {
+	background-color: rgba(0,0,0,.7);
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+	cursor: pointer;
+}
+#addNewHome:hover {
+	font-size: 23px
+	background-color: rgba(0,0,0, 1)
+} */
 /* ==================
       STICKY HEADER
 ================== */
@@ -313,6 +408,12 @@ fieldset {
   padding: 20px;
   margin: 20px 0;
 }
+
+@media only screen and (max-width: 600px) {
+	fieldset {
+	margin: 8px 0;
+	}
+}
 legend {
   font-family: var(--body-font);
   font-weight: 500;
@@ -333,6 +434,7 @@ label {
     box-sizing: border-box;
     border: 1px solid var(--brown);
 }
+
 
 input:focus {
   outline: 0;
@@ -368,6 +470,13 @@ textarea {
   overflow: auto;
 }
 
+@media only screen and (max-width: 600px) {
+	.registration {
+		width: 100%;
+		padding:5px;
+	}
+}
+
 .registration > h1 {
   font-family: var(--body-font);
   font-weight: 500;
@@ -375,11 +484,18 @@ textarea {
   border-bottom: 2px solid var(--brown);
 }
 
+@media only screen and (max-width: 600px) {
+	.registration {
+		height: 100%;
+	}
+}
+
 /* CONTAINERS */
 .registration-container {
+  /* position: absolute; */
   z-index: 99;
   width: 80vw;
-  height: 500px;
+  height: 80vh;
   margin: 50px auto;
   display: flex;
   border-radius: 10px;
@@ -388,6 +504,13 @@ textarea {
               1px -1px 10px #bbb,
               -1px 1px 10px #bbb;
 }
+
+/* @media only screen and (max-width: 600px) {
+	.registration-container {
+		height: 100%;
+		  margin: 0 auto;
+		}
+} */
 .sidebar {
   width: 40%;
   background: url('/images/cozy.jpg');
@@ -420,13 +543,28 @@ textarea {
   border-radius: 10px 0 0 10px;
 }
 
+@media only screen and (max-width: 600px) {
+	.sidebar, .sidebar2, .sidebar3, .sidebar4  {
+		width: 0%;
+	}
+}
+
 /* ==================
       CARDS
 ================== */
 
 .card {
   margin: 20px 10px;
+  box-shadow: 10px 10px 5px grey;
 }
+
+.card:hover {
+  margin: 20px 10px;
+  box-shadow: 1px 1px 5px grey;
+  background-color: #edebeb;
+}
+
+
 
 .card-content {
 	height: 150px;
@@ -515,6 +653,11 @@ h4 {
   animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) 1s both;
 }
 
+.shadow-pop-br:hover {
+-webkit-animation: none;
+ animation: none;
+}
+
 /* ----------------------------------------------
  * Generated by Animista on 2019-8-18 13:48:31
  * w: http://animista.net, t: @cssanimista
@@ -533,7 +676,7 @@ h4 {
   }
 
   100% {
-    box-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey, 4px 4px grey, 5px 5px grey, 6px 6px grey, 7px 7px grey, 8px 8px grey;
+    box-shadow: 1px 1px 5px grey, 2px 2px 5px grey, 3px 3px 5px grey, 4px 4px 5px grey, 5px 5px 5px grey, 6px 6px 5px grey, 7px 7px 5px grey, 8px 8px 5px grey;
     -webkit-transform: translateX(-8px) translateY(-8px);
     transform: translateX(-8px) translateY(-8px);
   }
@@ -547,7 +690,7 @@ h4 {
   }
 
   100% {
-    box-shadow: 1px 1px grey, 2px 2px grey, 3px 3px grey, 4px 4px grey, 5px 5px grey, 6px 6px grey, 7px 7px grey, 8px 8px grey;
+    box-shadow: 1px 1px 5px grey, 2px 2px 5px grey, 3px 3px 5px grey, 4px 4px 5px grey, 5px 5px 5px grey, 6px 6px grey, 7px 7px 5px grey, 8px 8px 5px grey;
     -webkit-transform: translateX(-8px) translateY(-8px);
     transform: translateX(-8px) translateY(-8px);
   }

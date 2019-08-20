@@ -27,4 +27,12 @@ users.post('/', (req, res) => {
   });
 });
 
+// we can use this route to update the users favorite homes array
+users.put('/:id', (req, res) => {
+	User.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedUser) => {
+      res.json(updatedUser);
+	  console.log(updatedUser);
+	})
+})
+
 module.exports = users;

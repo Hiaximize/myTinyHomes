@@ -4,6 +4,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>My Tiny Home</title>
+		<!-- =========== TO GET MOBILE VIEW TO WORK ON IPHONE ======== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- FAVICON -->
 		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -25,6 +27,7 @@
 	</head>
 	<!-- BODY -->
 	<body ng-controller="MainController as ctrl">
+	<meta name=”viewport” content=”width=device-width, initial-scale=1″>
 		<!-- HEADER -->
 	<div class="header" id="stickyHeader">
 		<div ng-include="ctrl.includeHeaderPath">
@@ -33,14 +36,16 @@
 		<a ng-click="ctrl.returnHome()"> <img src="/images/logo.png" id="logo"> </a>
 		<!-- ADD HOME BUTTON -->
 		<div ng-show="ctrl.currentUser">
-			<button class="add-home-btn waves-effect waves-light btn-large blue-grey darken-4"
+			<button id="addNewHome"class="waves-effect waves-light btn-large grey darken-4"
 			ng-click="ctrl.changeHeaderPath('new'); ctrl.changeInclude('blank') ">Add a New Tiny Home</button>
 		</div>
 
 
 	</div><!--sticky Header closing-->
 		<div id="headerImage">
+			<h2>A Marketplace For Tiny Homes</h2>
 			<div id="logoImage">
+
 			</div>
 		</div>
 
