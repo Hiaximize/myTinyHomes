@@ -2,141 +2,126 @@
 link to live site: https://my-tiny-home.herokuapp.com/
 
 ## Collaborators
-* Derek Martin Barker
-* Jiha Hwang
-* Danielle Walraven
+* **Derek Martin Barker** - (https://github.com/Hiaximize)
+* **Jiha Hwang** - (https://github.com/jhwangit128)
+* **Danielle Walraven** - (https://github.com/dwalraven21)
 
 ## About
-My Tiny Home is Marketplace Web App that allows users to post tiny homes for sale and contact the seller to purchase tiny homes.
+My Tiny Home is Marketplace Web App that allows users to post tiny homes for sale and contact sellers to purchase tiny homes.
 
 ## Motivation
+We're millennials. We just love tiny homes!
+
+## Wireframes
 
 
-## User Story
+## User Stories
+
+* Users should be able to view available tiny houses and prices before signing up or logging in the site
+
+* Users should be able to click on any available house to view more details about the house and see an option to "sign in and contact lister" if they are not logged in or "contact lister" if they are logged in (authenticated).
+
+* Users should be able to search all homes for certain key phases or sort the homes by price (from high-low or low-high).
+
+* Users should be able to log in or sign up to have more site access.
+
+## Home Sellers
+* Authenticated Users should be able to list a house for sale and then edit or delete that house later. The user who posted the house should have their email automatically associated with the listing, so another user can contact them later.
+
+## Home Buyers
+* Authenticated Users should be able to contact the lister for any particular house.
+
+* Authenticated Users should be able to save houses as favorites. Favorite houses should populate about the rest of the houses in a favorites section.
+
+* Authenticated Users should be able to remove houses as favorites.
+
+## Challenges / Example Code
+
+### Sorting
+One challenge we faced was implementing a sort feature to sort the homes by price from low-high and high to low.
+
+We accomplished this inside our ng-repeat that displays all of the available houses:
+
+```html
+<div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:ctrl.reverse" class="col s12 m6 l4 xl3">
+```
+You'll notice that after orderBy: there is a variable called "propertyName". Let's look at our JS file to see what propertyName refers to.
+
+```JavaScript
+//=======================
+// TOGGLE SORT HOMES
+//=======================
+this.propertyName = 'name'
+this.reverse = false;
+this.message = ""
+
+this.sortBy = (newName) => {
+	if (controller.propertyName === newName) {
+		controller.reverse = !controller.reverse
+	}
+	controller.propertyName = newName;
+	if (!controller.reverse){
+		controller.message = "Low to High"
+	} else {
+		controller.message = "High to Low"
+	}
+}
+```
+
+propertyName is initially set to the value "name". This means that on page load the properties will sort by 'name', but when we call the function sortBy(), that value can be changed to something else, in our case "price". The sort can also be reversed if the same function is called with the same parameter again.
+
+Now let's look at the button that sorts the price. For better user experience, it also includes a message which changes to indicate if we are sorting high-to-low or low-to-high.
+
+```html
+
+			<button id="sortButton" ng-click="ctrl.sortBy('price')">Sort By Price: {{ctrl.message}}</button>
+
+			<!-- <button id="sortButton" ng-click="ctrl.sortBy('sqft')">Sort By Sqft {{ctrl.message}}</button> -->
+
+```
+You'll notice we commented out another button for sorting the sqft. This button worked exactly the same way, but we felt it was slightly redundant, as when you order by price, you tend to also order by sqft, because of the nature of home pricing.
+
+### Storing Favorites
+
+Another challenge was allowing the user to store favorite houses.
+
+We accomplished this by first adding a value to the user model that would contain an empty array.
+
+Then we used a PUT route to allow the user to update their own user model whenever they select a new favorite. We used the function updateUserFavorites which takes the parameters userID and home. If they have an existing favorites array, it first stores that data in the variable newFavoritesArr and then pushes the new object, the selected home, into the array. The nice thing about this is that the home object already contains all the information we need to access later (name, price, sqft, type, etc.)
+
+```JavaScript
+
+this.updateUserFavorites = (userID, home) => {
+	let newFavoritesArr = controller.currentUser.favorites
+	newFavoritesArr.push(home)
+	$http({
+       method: 'PUT',
+       url: '/users/' + userID,
+       data: {
+		   favorites: newFavoritesArr
+	   }
+	}).then(
+       (response) => {
+       }
+    )
+}
+```
+
+## Future Improvements
+
+Our original plan with this app was to allow users to actually use PayPal to buy and sell blueprints for properties. To do this, we would implement PayPal Sandbox which required OAuth 2.0. Unfortunately, we haven't learned to use OAuth 2.0 yet, so it would have required some extensive research and since we only had a few days to put this project together, that wasn't realistic for the timeframe we had been given. However, all of us have the goal of learning OAuth and still see the potential for implementing it in this project.
 
 
-
-### Designers
-
-Designers will be able to add new mockups, view all the mockups they have submitted on a separate page, and edit or delete their own mockups. (Designers can ONLY edit or delete their own projects.)
-
-![Screencast](http://g.recordit.co/iNuZRr2jKb.gif)
-
-### Developers
-
-Developers will be able to see which mockups are available for use and which have already been selected by another developer. They can click "Select" on available mockups to view more information and "Request Source Files" to message the designer through the app. They can also view projects on which they are already the developer on a separate page.
-
-![Screencast](http://g.recordit.co/HO9uA7QkwZ.gif)
-
-### Build Requests
-
-When the designer receives a developer's request, they can reject it or accept it (sending a message and link to source files to the developer). By clicking "accept", the status of the mockup will automatically be updated to "Selected". Other developers will now see that the mockup is no longer available to them. The developer who made the request will also now be given limited permission to edit the mockup. They can't edit the title, description or image as the designer can, but once they have finished with the build, they can edit the status to "built" and provide a live URL.
-
-Once this happens, the designer should receive a notification that the site is live! (Note: I still need to add this part) The live URL is also available to view by other members of the CreativeLogic community.
+Another possible feature we could add, would be an embedded google map that shows the location of each home. Again, in this case we simply ran out of time, but hope to implement this in the future.
 
 ## Just For Fun
 
-In the process of testing this app and creating numerous fake accounts with designer/developer attributes, I ran into a very annoying problem of continuously entering incorrect usernames and passwords. I decided to take this issue and make it more fun by adding some special pages for these login errors.
+### Derek's Favorite feature
 
-![Screencast](http://g.recordit.co/5JmtaMjZ0L.gif)
+### Jiha's Favorite feature
 
-## Challenges
+### Danielle's Favorite feature
 
-When I build this app I initially set it up so that when the developer clicked "Request Source Files", an email opened up with the designer's email in the "to" line and "CreativeLogic Request for Source Files" in the "subject" line. I was pretty proud of myself.
-
-But then I thought, "how cool would it be if instead of just sending an email, the requester could message the designer through the app itself, and I could create some functionality to update the status of the mockup automatically as this was happening?"
-
-Did I bite off more than I could chew?
-
-To that I answer, "mmmmell mmmammmbe".
-
-The messaging feature ended up being far more challenging to build than the rest of the app, simply because there were so many layers to it.
-
-Let's take the example of the designer seeing the request in their inbox and clicking "Accept".
-
-![Screencast](http://g.recordit.co/fug6ljMWex.gif)
-
-Well first, I want the designer to go to message form, so they can send a reply and add the source files link.
-
-```JavaScript
-// NEW - GET
-// When a user clicks to accept a developers request
-// They will be taken to form page to submit the message
-messages.get('/:id/accept', (req, res) => {
-	Message.findById(req.params.id, (err, foundMessage)=>{
-	// first we need some info about the mockup
-		Mockup.findById(foundMessage.mockup, (err, foundMockup)=>{
-			if (req.session.currentUser){
-				res.render('messages/accept.ejs', {
-					// we need to send the message back to the original message sender
-					message: foundMessage,
-					// we need to know what mockup this is in reference to
-					// so we can update the staus to "selected" and add the developer username
-					mockup: foundMockup,
-					// we need to know who the current sender is
-					currentUser: req.session.currentUser,
-				})
-			} else {
-				res.redirect('/sessions/new');
-			}
-		})
-	})
-})
-
-```
-I also added some hidden inputs on my form, so that the designer doesn't need to see or input this information, but it would still be collected.
-
-```ejs
-
-<input type="hidden" name="recipient" value="<%= message.sender %>">
-<input type="hidden" name="sender" value="<%= message.recipient %>">
-<input type="hidden" name="mockup" value="<%= message.mockup %>">
-<input type="hidden" name="messageType" value="accept">
-<input type="hidden" name="selected" value="true">
-<input type="hidden" name="developer" value="<%= message.sender %>">
-
-```
-message.mockup was yet another key that I created earlier which stored the mockup id that was being referenced in the message
-
-Finally, when the user clicks "Accept and Reply", three things need to happen:
-1. The developer needs to receive a new message letting them know they've been accepted and providing the source files link
-2. The status of the mockup needs to change to "selected", so that other developers know it is no longer available
-3. The developer needs to be added to the mockup so that they have permission to add updates to the project including a live URL when the site is completed.
-
-```JavaScript
-// UPDATE - PUT
-// When a user clicks Accept and Reply (submits the form)
-// Dev gets a reply message including source files
-// Note: this is the Message id, not the Mockup id
-messages.put('/:id/accept', (req, res) => {
-
-	Message.create(req.body, (error, newMessage) => {
-		console.log(newMessage);
-		console.log(error);
-		// We are updating the mockup with new info
-		Mockup.findByIdAndUpdate(newMessage.mockup, req.body, {new: true}, (err, updatedModel)=>{
-			if (req.session.currentUser){
-				// Send user back to messages
-				res.redirect('/messages')
-			} else {
-				res.redirect('/sessions/new');
-			}
-		})
-	})
-})
-
-```
-Whew! That's a lot of functionality for one button. And the user should be unaware of almost all of it. The best UX is the one that's invisible.
-
-## Improvements
-
-One improvement I'm currently working on is adding some sort of alert/message to the designer once the developer says the project is live. I think the functionality will be similar to the message to the developer that their request has been accepted, but I just haven't had time to implement it yet.
-
-Something I would like to add in the future is an additional view for users who are not signed in or registered. I always hate it when a website makes you sign up before you can see anything. I would like users to be able to still interact with the site (in a limited way) before committing to signing up.
-
-Another improvement would be to make the messaging part of the app a little nicer looking. I would love to change the inbox view to display just the subject and date of each message and allow the user to click to open the full message as an accordion or modal. I would also love to have some sort of indication when the message has been read, but I didn't have time to accomplish all of this in four days.
-
-Finally, as it stands now, the rejection button just deletes the message, and doesn't give any feedback to the requester, besides the message being removed from their outbox. (I mean... Facebook doesn't tell you if your friend request was accepted right?) One update I might make, is to provide a gentle rejection notice to the requester when this happens, "The designer has decided to go in a different direction. Your request was not accepted at this time.", or something so the requester at least knows what happened.
 
 ## Deployment
 
@@ -144,17 +129,16 @@ Finally, as it stands now, the rejection button just deletes the message, and do
 
 ## Tech/frameworks used
 
-* Node.js
 * MongoDB / Mongoose
 * Express / EJS
+* AngularJS
+* Node.js
 * Materialize (CSS framework)
 * bcrypt (password hashing function)
-* Using RESTful Routes and full CRUD
+* Using RESTful Routes, full CRUD, MVC
+* This is a single-page application
 
-## Author
-
-* **Danielle Walraven** - (https://github.com/dwalraven21)
 
 ## Acknowledgments
 
-* Inspiration and images used in prototype were taken from <a href="www.dribbble.com">Dribbble</a>.
+* Inspiration and seed data used in prototype were taken from <a href="https://tinyhouselistings.com">Tiny House Listings</a>.

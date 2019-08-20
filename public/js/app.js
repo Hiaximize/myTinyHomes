@@ -11,9 +11,10 @@ const controller = this;
 this.getFavorites = () => {
   $http({
     method: "GET",
-    url: "/users/" + controller.currentUser._id,
+    url: "/users/",
   }).then((response)=>{
-    console.log(response.data);
+    this.favorites = response.currentUser.favorites
+	console.log(response.currentUser);
 
   })
 }
@@ -29,6 +30,7 @@ this.updateUserFavorites = (userID, home) => {
 	   }
 	}).then(
        (response) => {
+		   this.getFavorites()
        }
     )
 }
@@ -45,6 +47,7 @@ this.removeFavorite = (userID, favorite) => {
 	   }
 	}).then(
        (response) => {
+		   this.getFavorites()
        }
     )
 }
@@ -74,8 +77,6 @@ this.sortBy = (newName) => {
 		controller.message = "High to Low"
 	}
 }
-
-
 
 //======================
 // GET ID
@@ -324,4 +325,8 @@ this.editHome = (_id) => {
 // Call on page load:
   this.getHomes();
   this.goApp();
+  //if there's a user, load favorites.
+  if (this.currentUser){
+	  this.getFavorites()
+  }
 }]);
