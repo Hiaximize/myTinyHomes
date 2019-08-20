@@ -12,7 +12,7 @@ My Tiny Home is a Marketplace Web App that allows users to post tiny homes for s
 ## Motivation
 We're millennials. We just love tiny homes!
 
-## Wireframes
+## Wireframes & Screenshots
 
 ![Authenticated Wireframe](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/Authenticated_view.png)
 
