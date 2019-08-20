@@ -112,7 +112,7 @@ this.updateUserFavorites = (userID, home) => {
 Here's the AngularJS syntax to add a home as a favorite on click
 
 ```HTML
-<a ng-if="!ctrl.currentUser.favorites.indexOf(home)" ng-click="ctrl.updateUserFavorites(ctrl.currentUser._id, home); ctrl.getHomes(); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+<a ng-click="ctrl.updateUserFavorites(ctrl.currentUser._id, home); ctrl.getHomes(); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
 ```
 
 Then we used a GET Route to access those favorites
@@ -162,6 +162,19 @@ Here's the AngularJS syntax to make this happen on click
 ```HTML
 <a ng-click="ctrl.removeFavorite(ctrl.currentUser._id, favorite); ctrl.getFavorites()" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite</i></a>
 ```
+
+In order to make the favorites section disappear when the user has no favorites, we added this showFavorites function.
+
+```JavaScript
+this.showFavorites = () => {
+if (controller.currentUser.favorites.length > 0){
+	return true
+} else {
+	return false
+}
+}
+```
+There is still more functionality to be desired here. One problem that we still need to fix is that when a buyer updates the home, it updates in the available homes section but not the favorites section. This is because that user favorites are stored in a separate array within the user data. 
 
 ## Future Improvements
 
