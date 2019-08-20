@@ -46,8 +46,6 @@ We're millennials. We just love tiny homes!
 
 * Authenticated Users should be able to remove houses as favorites.
 
-![Screencast](http://g.recordit.co/y5rh4IbeSO.gif)
-
 ## Challenges / Example Code
 
 ### Sorting
