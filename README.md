@@ -22,7 +22,9 @@ We're millennials. We just love tiny homes!
 
 ![Unauthenticated View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/unauth-view.png)
 
-![Unauthenticated SignIn/Up Wireframes](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/Unauthenticated_signinUp.png)
+![Unauthenticated Details View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/Unauthenticated_detail_view.png)
+
+![Unauthenticated Details View](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/unauth-show.png)
 
 ![Unauthenticated SignIn/Up](https://raw.githubusercontent.com/Hiaximize/myTinyHomes/master/public/screenshots/signup.png)
 
