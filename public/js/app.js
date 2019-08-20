@@ -19,10 +19,6 @@ this.updateUserFavorites = (userID, home) => {
 	   }
 	}).then(
        (response) => {
-		 // console.log(controller.currentUser.favorites);
-		 // console.log(home);
- 		 // console.log(newFavoritesArr)
-
        }
     )
 }
@@ -38,7 +34,6 @@ this.removeFavorite = (userID, favorite) => {
 	   }
 	}).then(
        (response) => {
-
        }
     )
 }
@@ -53,18 +48,23 @@ this.showFavorites = () => {
 //=======================
 // TOGGLE SORT HOMES
 //=======================
-this.propertyName = ''
-this.reverse = true;
+this.propertyName = 'name'
+this.reverse = false;
+this.message = ""
 
 this.sortBy = (newName) => {
 	if (controller.propertyName === newName) {
-		controller.reverse = false
-	} else {
-		controller.reverse = true
+		controller.reverse = !controller.reverse
 	}
 	controller.propertyName = newName;
+	if (!controller.reverse){
+		controller.message = "Low to High"
+	} else {
+		controller.message = "High to Low"
+	}
 }
-// Help us Dan!!! You're our only hope.
+
+
 
 //======================
 // GET ID

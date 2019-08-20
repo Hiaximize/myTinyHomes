@@ -8,10 +8,10 @@
 			<input type="text" ng-model="searchbox" placeholder="search" id="searchBar">
 			</div>
 			<div class="col">
-			<button id="sortButton" ng-click="sortBy('price')">Sort By Price</button>
+			<button id="sortButton" ng-click="ctrl.sortBy('price')">Sort By Price: {{ctrl.message}}</button>
 			</div>
 			<div class="col">
-			<button id="sortButton" ng-click="sortBy('sqft')">Sort By Square Footage</button>
+			<!-- <button id="sortButton" ng-click="ctrl.sortBy('sqft')">Sort By Sqft {{ctrl.message}}</button> -->
 			</div>
 		</div>
 
@@ -20,8 +20,8 @@
 </div>
 <!-- This is the favorites card view for authenticated users -->
 <div ng-show="ctrl.currentUser" class="row">
-<div ng-show="ctrl.showFavorites()">
-	<h3>My Favorite Homes</h3>
+<div>
+	<h3 ng-show="ctrl.showFavorites()">My Favorite Homes</h3>
 	<div ng-repeat="favorite in ctrl.currentUser.favorites" class="col s12 m6 l4 xl3">
 		<div class="card shadow-pop-br">
 		    <div class="card-image">
@@ -42,7 +42,7 @@
 <!-- This is the general card view for all users -->
 <div class="row">
 	<h3>Available Homes</h3>
-    <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:reverse" class="col s12 m6 l4 xl3">
+    <div ng-repeat="home in ctrl.homes | filter: searchbox | orderBy: ctrl.propertyName:ctrl.reverse" class="col s12 m6 l4 xl3">
       <div class="card shadow-pop-br">
         <div class="card-image">
           <img ng-src="{{home.image}}">
