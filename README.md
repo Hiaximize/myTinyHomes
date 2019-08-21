@@ -203,7 +203,7 @@ We love the way our "modal" forms turned out! Hope you enjoy them too.
 ## Tech/frameworks used
 
 * MongoDB / Mongoose
-* Express / EJS
+* Express
 * AngularJS
 * Node.js
 * Materialize (CSS framework)
